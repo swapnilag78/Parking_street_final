@@ -46,7 +46,7 @@
   </ul>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="images/car.jpg" alt="Los Angeles" width="900" height="300">
+      <img src="images/streetlights.jpg" alt="Los Angeles" width="900" height="300">
       <div class="carousel-caption">
         <h2>Welcome to Parking Street</h2>
         <h4> Hotel Registration Window</h4>
@@ -66,14 +66,14 @@
 
 <form class="mr-5 mx-5 my-5">
 
-                    <div class="form-group">
-                        <label for="business">Name of Business</label>
-                        <input type="text" class="form-control" name="business" aria-describedby="businessHelp" placeholder="Business Name">
-                      </div>
-                      <div class="form-group">
-                        <label for="business">Type  of Business</label>
-                        <input type="text" class="form-control" name="business" aria-describedby="businessHelp" placeholder="Business Type">
-                      </div>
+  <div class="form-group">
+      <label for="business">Name of Business</label>
+        <input type="text" class="form-control" name="business"  placeholder="Business Name">
+  </div>
+      <div class="form-group">
+        <label for="business">Type  of Business</label>
+        <input type="text" class="form-control" name="business" placeholder="Business Type">
+      </div>
 
   <div class="form-row">
     <div class="form-group col-md-6">
@@ -132,7 +132,7 @@
       </label>
     </div>
   </div>
-  <button type="submit" class="btn btn-success">Submit</button>
+  <a href="admin_login.php"> <button type="button" class="btn btn-primary">Submit</button> </a>
 </form>
 
 
