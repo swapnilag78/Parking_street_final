@@ -17,6 +17,7 @@
                 <hr>
                 <div id="qrbox" style="text-align: center;">
                     <img src="generate.php?text=<?php echo $_GET['text']?>" alt="">
+                    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Fetch Your Vechile</button>
                 </div>
                 <hr>
                 <a href="employee.php">Generate One More...</a>
