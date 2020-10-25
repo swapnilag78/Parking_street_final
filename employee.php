@@ -85,7 +85,11 @@
     <section class="">
         <div class="mr-5 mx-5 my-7">
             <h2> Valet Parking</h2>
-            <button type="click" class="btn-btn-success">GENERATE QR CODE</button>
+            <form action="show.php" method="get">
+                    <input type="text" autocomplete="off" class="form-control" name="text" style="border-radius: 0px; " placeholder="Text..." value="">
+                    <br>
+                    <input type="submit" class="btn btn-md btn-danger btn-block" value="Generate">
+                </form>
         </div>
       </section>
 
@@ -126,17 +130,7 @@
       </section>
 
 
-     
-
-
-
-
-
-
-
-
-
-
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
