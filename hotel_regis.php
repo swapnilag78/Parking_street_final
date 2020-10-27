@@ -64,7 +64,7 @@
 </div>
 
 
-<form class="mr-5 mx-5 my-5">
+<form class="mr-5 mx-5 my-5" method="post" action="connection.php">
 
   <div class="form-group">
       <label for="business">Name of Business</label>
