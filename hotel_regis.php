@@ -83,9 +83,13 @@
         <input type="email" class="form-control" name="email" placeholder="Email">
       </div>
       <div class="form-group col-md-6">
-        <label for="inputPassword4">Password</label>
-        <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+        <label for="pass_w">Password</label>
+        <input type="password" class="form-control" name="pass_w" placeholder="Password">
       </div>
+    </div>
+    <div class="form-group">
+      <label for="phne">Contact Number</label>
+      <input type="phone" class="form-control" name="phne" placeholder="Contact Number">
     </div>
     <div class="form-group">
       <label for="address">Address</label>
@@ -113,6 +117,11 @@
       </div>
     </div>
     <div class="form-group">
+      <label for="admin_user">Admin Username</label>
+      <input type="text" class="form-control" name="admin_user" placeholder="Admin Username">
+    </div>
+    
+    <div class="form-group">
       <label for="exampleFormControlSelect1">Number of Floors</label>
       <select class="form-control" id="exampleFormControlSelect1">
         <option>1</option>
@@ -130,11 +139,11 @@
       <div class="form-check">
         <input class="form-check-input" type="checkbox" id="gridCheck">
         <label class="form-check-label" for="gridCheck">
-          By signing up, I agree to have read and accepted terms of use, cookie and privacy policy of Parking Street
+          <span>By signing up, I agree to have read and accepted terms of use, cookie and privacy policy of Parking Street</span>
         </label>
       </div>
     </div>
-    <a href="admin_login.php"> <button type="submit" class="btn btn-primary">Submit</button> </a>
+     <button type="submit" class="btn btn-primary">Submit</button> 
   </form>
 
 
