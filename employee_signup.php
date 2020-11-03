@@ -5,7 +5,8 @@ include('config.php');
 //include('check_login.php');
 //check_login();
 
-if (isset($_POST['submit'])) {
+if (isset($_POST['submit'])) 
+{
 	$empname = $_POST['em_name'];
 	$emusername = $_POST['username'];
 	$ememail = $_POST['em_email'];
