@@ -5,17 +5,24 @@ include('config.php');
 //include('check_login.php');
 //check_login();
 
+
 if (isset($_POST['submit'])) 
 {
+
+echo "<script>alert('i know');</script>";
+if (isset($_POST['submit'])) {
+
 	$empname = $_POST['em_name'];
 	$emusername = $_POST['username'];
 	$ememail = $_POST['em_email'];
 	$password = md5($_POST['npass']);
-	$sql = mysqli_query($con, "insert into employee_table(emp_name, emp_username, emp_password) values ('$empname', '$emusername', '$ememail', '$password')");
+	
+	$sql = mysqli_query($con, "insert into employee_table(emp_name, emp_username,emp_contact_num,emp_password) values ('$empname', '$emusername', '$ememail', '$password')");
 	if ($sql) {
 		echo "<script>alert('Employee added Successfully');</script>";
 		header('location:view_em.php');
 	}
+}
 }
 ?>
 <!DOCTYPE html>
@@ -206,6 +213,6 @@ if (isset($_POST['submit']))
 		</script>
 		<!-- end: JavaScript Event Handlers for this page -->
 		<!-- end: CLIP-TWO JAVASCRIPTS -->
-</body>
+    </body>
 
 </html>

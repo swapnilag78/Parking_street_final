@@ -6,6 +6,10 @@ $conn= mysqli_connect('localhost', 'root');
 if($conn)
 {
    echo "connection successful";
+   $extra="index.php";
+   $host=$_SERVER['HTTP_HOST'];
+   $uri=rtrim(dirname($_SERVER['PHP_SELF']),'/\\');
+   header("location:http://$host$uri/$extra");
 }
 else{
    echo "connection unsuccessful";
