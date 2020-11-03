@@ -1,7 +1,31 @@
 <?php
 session_start();
-include('connection_em.php');
-
+error_reporting(0);
+include("connection_em.php");
+if(isset($_POST['submit']))
+{
+$ret=mysqli_query($conn,"SELECT * FROM employee_table WHERE emp_name='".$_POST['em_name']."' and emp_username='".$_POST['user_name']."' and emp_password='".$_POST['pass_w']."'");
+$num=mysqli_fetch_array($ret);
+if($num>0)
+{
+$extra="manage_em.php";//
+$_SESSION['login']=$_POST['user_name'];
+$_SESSION['id']=$num['emp_id'];
+$host=$_SERVER['HTTP_HOST'];
+$uri=rtrim(dirname($_SERVER['PHP_SELF']),'/\\');
+header("location:http://$host$uri/$extra");
+exit();
+}
+else
+{
+$_SESSION['errmsg']="Invalid username or password";
+$extra="business_em_ad.php";
+$host  = $_SERVER['HTTP_HOST'];
+$uri  = rtrim(dirname($_SERVER['PHP_SELF']),'/\\');
+header("location:http://$host$uri/$extra");
+exit();
+}
+}
 ?>
 
 <!DOCTYPE html>
@@ -47,7 +71,7 @@ include('connection_em.php');
                     <section id="page-title">
                         <div class="row">
                             <div class="col-sm-8">
-                                <h1 class="mainTitle">Hotel Employee | Dashboard</h1>
+                                <h1 class="mainTitle">Hotel Employee </h1>
                             </div>
                             <ol class="breadcrumb">
                                 <li>
@@ -65,11 +89,11 @@ include('connection_em.php');
                     <div class="container-fluid container-fullw bg-white">
                         <div class="row">
                             <div class="col-md-8">
-                                <div class="panel panel-white no-radius text-center">
+                                <div class="panel panel-white ">
                                     <form class="mr-5 mx-5 my-5" method="post" action="manage_em.php">
                                         <div class="form-group">
-                                            <label for="emp_name">Name of Employee</label>
-                                            <input type="text" class="form-control" name="emp_name" placeholder="Employee Name">
+                                            <label for="em_name">Name of Employee</label>
+                                            <input type="text" class="form-control" name="em_name" placeholder="Employee Name">
                                         </div>
                                         <div class="form-group">
                                             <label for="user_name"> Username</label>
@@ -77,7 +101,7 @@ include('connection_em.php');
                                         </div>
 
                                         <div class="form-row">
-                                            <div class="form-group col-md-6">
+                                            <div class="form-group col-md-8">
                                                 <label for="email">Email</label>
                                                 <input type="email" class="form-control" name="email" placeholder="Email">
                                             </div>
