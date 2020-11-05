@@ -2,13 +2,14 @@
 session_start();
 include('config.php');
 
+
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <title>Hotel | Dashboard</title>
+    <title>Hotel | Parking Lot</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -29,7 +30,37 @@ include('config.php');
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/plugins.css">
     <link rel="stylesheet" href="assets/css/themes/theme-1.css" id="skin_color" />
-    <link rel="stylesheet" href="css/parking_car.css">
+
+
+    <style>
+        .car_parking {
+            display: grid;
+            grid-template-columns: auto auto auto auto auto auto;
+            grid-gap: 15px;
+            background-color: whitesmoke;
+            padding: 10px;
+        }
+
+        .car_parking>div {
+            background-color: green;
+            text-align: center;
+            padding: 30px 0;
+            font-size: 40px;
+        }
+
+        .car_parking>div>img {
+            background-color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            height: 120px;
+            width: 60px;
+
+
+        }
+
+        .item1 {
+            grid-row: 1 / 2;
+        }
+    </style>
 
 
 </head>
@@ -48,57 +79,60 @@ include('config.php');
                     <section id="page-title">
                         <div class="row">
                             <div class="col-sm-8">
-                                <h1 class="mainTitle">Hotel Admin | Dashboard</h1>
+                                <h1 class="mainTitle">Parking Lot</h1>
                             </div>
                             <ol class="breadcrumb">
                                 <li>
-                                    <span> Hotel Admin</span>
+                                    <span> Hotel Parking Lot</span>
                                 </li>
-                                <li class="active">
-                                    <span>Dashboard</span>
-                                </li>
+
                             </ol>
                         </div>
                     </section>
                     <!-- end: PAGE TITLE -->
                     <!-- start: BASIC EXAMPLE -->
 
-                    <svg width="400" height="180">
-                        <rect x="50" y="20" width="150" height="150" style="fill:dark green;stroke:pink;stroke-width:8;fill-opacity:0.1;stroke-opacity:0.9" />
-
-                    </svg>
-
-
-                    <svg width="400" height="180">
-                        <rect x="50" y="20" width="150" height="150" style="fill:blue;stroke:pink;stroke-width:5;fill-opacity:0.1;stroke-opacity:0.9" />
-
-                    </svg>
 
 
 
-                    <svg width="400" height="180">
-                        <rect x="50" y="20" width="150" height="150" style="fill:blue;stroke:pink;stroke-width:5;fill-opacity:0.1;stroke-opacity:0.9" />
+                    <div class="container">
+                       
+                        <!-- Trigger the modal with a button -->
 
-                    </svg>
+                        <div class="car_parking">
+                            <div class="item1" data-toggle="modal" data-target="#myModal" ><img src="images/car_svg.jpg"></div>
+                            <div class="item1" data-toggle="modal" data-target="#myModal" ><img src="images/car_svg.jpg"></div>
+                            <div class="item1" data-toggle="modal" data-target="#myModal" ><img src="images/car_svg.jpg"></div>
+                            <div class="item1" data-toggle="modal" data-target="#myModal" ><img src="images/car_svg.jpg"></div>
+                            <div class="item1" data-toggle="modal" data-target="#myModal" ><img src="images/car_svg.jpg"></div>
+                            <div class="item1" data-toggle="modal" data-target="#myModal" ><img src="images/car_svg.jpg"></div>
+                        </div>
 
+                        
 
-                    <svg width="400" height="180">
-                        <rect x="50" y="20" width="150" height="150" style="fill:blue;stroke:pink;stroke-width:5;fill-opacity:0.1;stroke-opacity:0.9" />
+                        <!-- Modal -->
+                        <div class="modal fade" id="myModal" role="dialog">
+                            <div class="modal-dialog">
 
-                    </svg>
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">Options</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                    <button type="button" class="btn btn-info" >Pre-book</button>
+                                    <button type="button" class="btn btn-info" >Valet-Parking</button>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
 
-                    <svg width="400" height="180">
-                        <rect x="50" y="20" width="150" height="150" style="fill:blue;stroke:pink;stroke-width:5;fill-opacity:0.1;stroke-opacity:0.9" />
+                            </div>
+                        </div>
 
-                    </svg>
-
-
-                    <svg width="400" height="180">
-                        <rect x="50" y="20" width="150" height="150" style="fill:blue;stroke:pink;stroke-width:5;fill-opacity:0.1;stroke-opacity:0.9" />
-                        <img src="images/car_svg.jpg">
-                    </svg>
-
-              
+                    </div>
 
                     <!-- start: FOOTER -->
                     <?php include('include/footer.php'); ?>

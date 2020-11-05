@@ -95,7 +95,7 @@
       <label for="address">Address</label>
       <textarea class="form-control" name="address" placeholder=""></textarea>
     </div>
-    
+
     <div class="form-row">
       <div class="form-group col-md-6">
         <label for="inputCity">City</label>
@@ -117,10 +117,18 @@
       <label for="admin_user">Admin Username</label>
       <input type="text" class="form-control" name="admin_user" placeholder="Admin Username">
     </div>
-    
     <div class="form-group">
-      <label for="exampleFormControlSelect1">Number of Floors</label>
-      <select class="form-control" id="exampleFormControlSelect1">
+      <label for="valet_park"> Do You Want Valet Parking?</label>
+    <label class="radio-inline">
+      <input type="radio" name="valet_park" checked>Yes
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="valet_park">No
+    </label>
+    </div>
+    <div class="form-group">
+      <label for="floor_number">Number of Floors</label>
+      <select class="form-control" name="floor_number">
         <option>1</option>
         <option>2</option>
         <option>3</option>
@@ -128,19 +136,19 @@
       </select>
     </div>
     <div class="form-group">
-      <label for="formGroupExampleInput">Number of lots on each floor</label>
-      <input type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+      <label for="number_lots">Number of lots on each floor</label>
+      <input type="text" class="form-control" name="number_lots" placeholder=" Number of Parking Lots">
     </div>
 
     <div class="form-group">
       <div class="form-check">
-        <input class="form-check-input" type="checkbox" id="gridCheck">
-        <label class="form-check-label" for="gridCheck" reuired="required">
+        <input class="form-check-input" type="checkbox" id="gridCheck" required="required">
+        <label class="form-check-label" for="gridCheck">
           <a href="#">By signing up, I agree to have read and accepted terms of use, cookie and privacy policy of Parking Street</a>
         </label>
       </div>
     </div>
-     <button type="submit" class="btn btn-primary">Submit</button> 
+    <button type="submit" class="btn btn-primary">Submit</button>
   </form>
 
 
