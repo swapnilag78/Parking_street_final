@@ -93,12 +93,9 @@
     </div>
     <div class="form-group">
       <label for="address">Address</label>
-      <input type="text" class="form-control" name="address" placeholder="">
+      <textarea class="form-control" name="address" placeholder=""></textarea>
     </div>
-    <div class="form-group">
-      <label for="inputAddress2">Address 2</label>
-      <input type="text" class="form-control" id="inputAddress2" placeholder="">
-    </div>
+    
     <div class="form-row">
       <div class="form-group col-md-6">
         <label for="inputCity">City</label>
@@ -138,8 +135,8 @@
     <div class="form-group">
       <div class="form-check">
         <input class="form-check-input" type="checkbox" id="gridCheck">
-        <label class="form-check-label" for="gridCheck">
-          <span>By signing up, I agree to have read and accepted terms of use, cookie and privacy policy of Parking Street</span>
+        <label class="form-check-label" for="gridCheck" reuired="required">
+          <a href="#">By signing up, I agree to have read and accepted terms of use, cookie and privacy policy of Parking Street</a>
         </label>
       </div>
     </div>
