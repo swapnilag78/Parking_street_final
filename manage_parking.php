@@ -29,7 +29,7 @@ include('config.php');
     <link href="vendor/bootstrap-timepicker/bootstrap-timepicker.min.css" rel="stylesheet" media="screen">
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/plugins.css">
-    <link rel="stylesheet" href="assets/css/themes/theme-1.css" id="skin_color" />
+    <link rel="stylesheet" href="assets/css/themes/theme-4.css" id="skin_color" />
 
 
     <style>
@@ -109,7 +109,7 @@ include('config.php');
                         </div>
 
                         
-
+        
                         <!-- Modal -->
                         <div class="modal fade" id="myModal" role="dialog">
                             <div class="modal-dialog">
@@ -122,7 +122,7 @@ include('config.php');
                                     </div>
                                     <div class="modal-body">
                                     <button type="button" class="btn btn-info" >Pre-book</button>
-                                    <button type="button" class="btn btn-info" >Valet-Parking</button>
+                                    <button type="button" class="btn btn-info" >Valet-Parking </button>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

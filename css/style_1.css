@@ -60,36 +60,10 @@ body{
 }
 .top-nav li.active> a, .top-nav li> a:hover {
 	background: rgb(50, 133, 209);
-	border-left-color:rgb(50, 133, 209);
+	border-left-color:rgb(209, 172, 50);
 }
 /*-----content-grids-----*/
-.content-grids{
-	background:#3391E7;
-	padding: 10px 0px;
-}
-/*  GRID OF THREE   ============================================================================= */
-.section {
-	clear: both;
-	padding: 0px;
-	margin: 0px;
-}
-.group:before,
-.group:after {
-    content:"";
-    display:table;
-}
-.group:after {
-    clear:both;
-}
-.group {
-    zoom:1;
-}
-.listview_1_of_3{
-	display: block;
-	float:left;
-	margin: 0% 0 0% 1.6%;
-	background: #F1F6F9;
-}
+
 .listimg{
 	display: block;
 	float:left;
@@ -118,7 +92,7 @@ body{
 	display:block;
 }
 .list_1_of_2  h3{
-	color:#3391E7;
+	color:#0b141d;
 	margin-bottom:0.2em;
 	margin-top:0;
 	font-size: 2em;
@@ -128,7 +102,7 @@ body{
 }
 .list_1_of_2  p{
 	font-size:0.8125em;	
-	color: #3391E7;
+	color: #d1971a;
 	line-height: 1.5em;
 	font-family: Arial, "Helvetica Neue", "Helvetica", Tahoma, Verdana, sans-serif;
 	padding:0; 	
@@ -144,7 +118,7 @@ body{
 }
 .list_1_of_2 .button a:hover{
         text-decoration:none; 
-        color:#3391E7;
+        color:#dab720;
 }
 
 /***** Media Quries *****/
