@@ -1,16 +1,18 @@
 <?php
 include_once('config.php');
 if (isset($_POST['submit'])) {
-    $fname = $_POST['full_name'];
-    $address = $_POST['address'];
-    $city = $_POST['city'];
-    $gender = $_POST['gender'];
+    $user_name = $_POST['cust_user'];
     $email = $_POST['email'];
-    $password = md5($_POST['password']);
-    $query = mysqli_query($con, "insert into users(fullname,address,city,gender,email,password) values('$fname','$address','$city','$gender','$email','$password')");
+    $contact_num = $_POST['phne'];
+    $vehicle_num = $_POST['phne_1'];
+    $password = $_POST['password'];
+    $extra="customer_signin.php";
+    $host=$_SERVER['HTTP_HOST'];
+    $uri=rtrim(dirname($_SERVER['PHP_SELF']),'/\\');
+    $query = mysqli_query($con, "insert into customer_table(cust_username,cust_password,cust_email,cust_contact_num, cust_vehicle_num1) values('$user_name','$password', '$email', '$contact_num', '$vehicle_num')");
     if ($query) {
         echo "<script>alert('Successfully Registered. You can login now');</script>";
-        //header('location:user-login.php');
+        header("location:http://$host$uri/$extra");
     }
 }
 ?>
@@ -57,8 +59,8 @@ if (isset($_POST['submit'])) {
     <div class="row">
         <div class="main-login col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4">
             <div class="logo margin-top-30">
-                <a href="../index.html">
-                    <h2>HMS | Patient Registration</h2>
+                <a href="index.php">
+                    <h2>Parking-Street | Customer Registration</h2>
                 </a>
             </div>
             <!-- start: REGISTER BOX -->
@@ -111,12 +113,12 @@ if (isset($_POST['submit'])) {
                         </div>
                         <div class="form-group">
                             <span class="input-icon">
-                                <input type="phone" class="form-control" name="phne" placeholder="Vehicle Number">
+                                <input type="phone" class="form-control" name="phne_1" placeholder="Vehicle Number">
                                 <i class="fa fa-car"></i></span>
                         </div>
                         <div class="form-group">
                            <span class="input-icon">
-                            <input type="text" class="form-control" name="admin_user" placeholder="Username">
+                            <input type="text" class="form-control" name="cust_user" placeholder="Username">
                             <i class="fa fa-user"></i> </span>
                         </div>
                         <div class="form-group">

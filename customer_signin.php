@@ -1,33 +1,22 @@
 
 <?php
 session_start();
-error_reporting(0);
+//error_reporting(0);
 include("config.php");
 if(isset($_POST['submit']))
 {
-$ret=mysqli_query($con,"SELECT * FROM customer_table WHERE cust_username='".$_POST['username']."' and cust_password='".$_POST['password']."'");
+$ret=mysqli_query($con,"SELECT * FROM customer_table WHERE cust_username='".$_POST['cust_user']."' and cust_password='".$_POST['password']."'");
 $num=mysqli_fetch_array($ret);
 if($num>0)
 {
-$extra="dashboard.php";//
-$_SESSION['login']=$_POST['username'];
-$_SESSION['id']=$num['id'];
+$extra="dashboard.php";
 $host=$_SERVER['HTTP_HOST'];
-$uip=$_SERVER['REMOTE_ADDR'];
-$status=1;
-// For stroing log if user login successfull
-//$log=mysqli_query($con,"insert into userlog(uid,username,userip,status) values('".$_SESSION['id']."','".$_SESSION['login']."','$uip','$status')");
 $uri=rtrim(dirname($_SERVER['PHP_SELF']),'/\\');
 header("location:http://$host$uri/$extra");
 exit();
 }
 else
 {
-	// For stroing log if user login unsuccessfull
-$_SESSION['login']=$_POST['username'];	
-$uip=$_SERVER['REMOTE_ADDR'];
-$status=0;
-//mysqli_query($con,"insert into userlog(username,userip,status) values('".$_SESSION['login']."','$uip','$status')");
 $_SESSION['errmsg']="Invalid username or password";
 $extra="customer_signin.php";
 $host  = $_SERVER['HTTP_HOST'];
@@ -75,11 +64,11 @@ exit();
 							</legend>
 							<p>
 								Please enter your name and password to log in.<br />
-								<span style="color:red;"></span>
+								<span style="color:red;"> <?php echo $_SESSION['errmsg']; ?><?php echo $_SESSION['errmsg']="";?></span>
 							</p>
 							<div class="form-group">
 								<span class="input-icon">
-									<input type="text" class="form-control" name="username" placeholder="Username">
+									<input type="text" class="form-control" name="cust_user" placeholder="Username">
 									<i class="fa fa-user"></i> </span>
 							</div>
 							<div class="form-group form-actions">
