@@ -1,7 +1,7 @@
 <?php
 session_start();
 //error_reporting(0);
-include('config.php');
+include('../config.php');
 
 if (isset($_POST['submit'])) {
 	$busname = $_POST['business_n'];
