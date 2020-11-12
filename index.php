@@ -107,7 +107,7 @@
           <div class="text list_1_of_2">
             <h3>Business Login</h3>
             <p><b> Already have an account?</b> </p>
-            <div class="button"><span><a href="Business/business_em_ad.php">Click Here</a></span></div>
+            <div class="button"><span><a href="business_em_ad.php">Click Here</a></span></div>
           </div>
         </div>
 
