@@ -1,13 +1,12 @@
 <?php
 session_start();
 //error_reporting(0);
-//include('include/config.php');
-//include('include/checklogin.php');
-//check_login();
+include('config.php');
+
 
 
 if (isset($_GET['del'])) {
-	mysqli_query($con, "delete from doctors where id = '" . $_GET['id'] . "'");
+	mysqli_query($con, "delete from business_table where bus_id = '" . $_GET['id'] . "'");
 	$_SESSION['msg'] = "data deleted !!";
 }
 ?>
@@ -15,7 +14,7 @@ if (isset($_GET['del'])) {
 <html lang="en">
 
 <head>
-	<title>Admin | Manage Doctors</title>
+	<title>Admin | Manage Business</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
 	<meta name="apple-mobile-web-app-capable" content="yes">
@@ -51,15 +50,15 @@ if (isset($_GET['del'])) {
 					<!-- start: PAGE TITLE -->
 					<section id="page-title">
 						<div class="row">
-							<div class="col-sm-12">
-								<h1 class="mainTitle">ADMIN | Manage Employee</h1>
+							<div class="col-sm-8">
+								<h1 class="mainTitle">Admin | Manage Business</h1>
 							</div>
 							<ol class="breadcrumb">
 								<li>
 									<span>Admin</span>
 								</li>
 								<li class="active">
-									<span>Manage Employee</span>
+									<span>Manage Business</span>
 								</li>
 							</ol>
 						</div>
@@ -71,7 +70,7 @@ if (isset($_GET['del'])) {
 
 						<div class="row">
 							<div class="col-md-12">
-								<h4 class="over-title margin-bottom-15">Manage <span class="text-bold">Employee</span></h4>
+								<h5 class="over-title margin-bottom-15">Manage <span class="text-bold">Business</span></h5>
 								<p style="color:red;"><?php echo htmlentities($_SESSION['msg']); ?>
 									<?php echo htmlentities($_SESSION['msg'] = ""); ?></p>
 								<table class="table table-hover" id="sample-table-1">
@@ -79,9 +78,8 @@ if (isset($_GET['del'])) {
 										<tr>
 											<th class="center">#</th>
 											<th>Name of Business</th>
-											<th class="hidden-xs">Username</th>
-											<th>Password</th>
-                                            <th>Email </th>
+											<th class="hidden-xs">Contact</th>
+											<th>Email</th>
 											<th>Action</th>
 
 										</tr>
@@ -95,16 +93,16 @@ if (isset($_GET['del'])) {
 
 											<tr>
 												<td class="center"><?php echo $cnt; ?>.</td>
-												<td class="hidden-xs"><?php echo $row['specilization']; ?></td>
-												<td><?php echo $row['doctorName']; ?></td>
-												<td><?php echo $row['creationDate']; ?>
+												<td class="hidden-xs"><?php echo $row['bus_name']; ?></td>
+												<td><?php echo $row['bus_contact_num']; ?></td>
+												<td><?php echo $row['bus_email']; ?>
 												</td>
 
 												<td>
 													<div class="visible-md visible-lg hidden-sm hidden-xs">
-														<a href="edit-doctor.php?id=<?php echo $row['id']; ?>" class="btn btn-transparent btn-xs" tooltip-placement="top" tooltip="Edit"><i class="fa fa-pencil"></i></a>
 
-														<a href="manage-doctors.php?id=<?php echo $row['id'] ?>&del=delete" onClick="return confirm('Are you sure you want to delete?')" class="btn btn-transparent btn-xs tooltips" tooltip-placement="top" tooltip="Remove"><i class="fa fa-times fa fa-white"></i></a>
+
+														<a href="manage_business.php?id=<?php echo $row['id'] ?>&del=delete" onClick="return confirm('Are you sure you want to delete?')" class="btn btn-transparent btn-xs tooltips" tooltip-placement="top" tooltip="Remove"><i class="fa fa-times fa fa-white"></i></a>
 													</div>
 													<div class="visible-xs visible-sm hidden-md hidden-lg">
 														<div class="btn-group" dropdown is-open="status.isopen">

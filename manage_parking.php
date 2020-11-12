@@ -93,83 +93,79 @@ include('config.php');
 
 
 
-                    <div class="container">
-                       
+                    <div class="flex-container">
+
                         <!-- Trigger the modal with a button -->
 
-                        <div class="car_parking">
-                            <div class="item1" data-toggle="modal" data-target="#myModal" ><img src="images/car_svg.jpg"></div>
-                            <div class="item1" data-toggle="modal" data-target="#myModal" ><img src="images/car_svg.jpg"></div>
-                            <div class="item1" data-toggle="modal" data-target="#myModal" ><img src="images/car_svg.jpg"></div>
-                            <div class="item1" data-toggle="modal" data-target="#myModal" ><img src="images/car_svg.jpg"></div>
-                            <div class="item1" data-toggle="modal" data-target="#myModal" ><img src="images/car_svg.jpg"></div>
-                            <div class="item1" data-toggle="modal" data-target="#myModal" ><img src="images/car_svg.jpg"></div>
-                        </div>
+                        <?php $street = 1; ?>
 
-                        
-        
-                        <!-- Modal -->
-                        <div class="modal fade" id="myModal" role="dialog">
-                            <div class="modal-dialog">
+                        <tr>
+                            <td><?php
+                                $res = mysqli_query($con, "SELECT floor_num, lot_num, parking_status from parking_lot_table");
+                                echo '<table border="20" style="width:100% ;" cellspacing="16" cellpadding="10" font face="Arial, Helvetica, sans-serif"  >';
+                                while ($row = mysqli_fetch_assoc($res)) {
+                                    $id = $row['lot_num'];
+                                    echo "<tr>";
+                                    echo "<td>" . $row['floor_num'] . "</td>";
+                                    $sql = "SELECT * FROM parking_lot_table WHERE bus_id='$street' and lot_num='$id' and parking_status='yes'";
+                                    $result = mysqli_query($con, $sql);
+                                    $count = mysqli_num_rows($result);
+                                    if ($count == 1) {
+                                        echo "<td style=\" text-align: center;\">" . $row['lot_num'] .  "</td>";
+                                        echo "<td  style=\"background-color : red; text-align: center;\" >" . "Booked" .  "</td>";
+                                    } else {
+                                        echo "<td style=\" text-align: center;\">" . $row['lot_num'] .  "</td>";
+                                        echo ("<td style=\"background-color : green; text-align: center; background:url(images/car_svg.jpg);\">  <button class=btn btn-success>click!</button> </td>");
+                                    }
+                                }
+                                echo "</table>";
 
-                                <!-- Modal content-->
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                        <h4 class="modal-title">Options</h4>
-                                    </div>
-                                    <div class="modal-body">
-                                    <button type="button" class="btn btn-info" >Pre-book</button>
-                                    <button type="button" class="btn btn-info" >Valet-Parking </button>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                    </div>
-                                </div>
+                                ?>
 
-                            </div>
-                        </div>
+                            </td>
+                        </tr>
+
+
 
                     </div>
+                        <!-- start: FOOTER -->
+                        <?php include('include/footer.php'); ?>
+                        <!-- end: FOOTER -->
 
-                    <!-- start: FOOTER -->
-                    <?php include('include/footer.php'); ?>
-                    <!-- end: FOOTER -->
-
-                    <!-- start: SETTINGS -->
-                    <?php include('include/setting.php'); ?>
-                    <!-- end: SETTINGS -->
-                </div>
-                <!-- start: MAIN JAVASCRIPTS -->
-                <script src="vendor/jquery/jquery.min.js"></script>
-                <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-                <script src="vendor/modernizr/modernizr.js"></script>
-                <script src="vendor/jquery-cookie/jquery.cookie.js"></script>
-                <script src="vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-                <script src="vendor/switchery/switchery.min.js"></script>
-                <!-- end: MAIN JAVASCRIPTS -->
-                <!-- start: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
-                <script src="vendor/maskedinput/jquery.maskedinput.min.js"></script>
-                <script src="vendor/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
-                <script src="vendor/autosize/autosize.min.js"></script>
-                <script src="vendor/selectFx/classie.js"></script>
-                <script src="vendor/selectFx/selectFx.js"></script>
-                <script src="vendor/select2/select2.min.js"></script>
-                <script src="vendor/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
-                <script src="vendor/bootstrap-timepicker/bootstrap-timepicker.min.js"></script>
-                <!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
-                <!-- start: CLIP-TWO JAVASCRIPTS -->
-                <script src="assets/js/main.js"></script>
-                <!-- start: JavaScript Event Handlers for this page -->
-                <script src="assets/js/form-elements.js"></script>
-                <script>
-                    jQuery(document).ready(function() {
-                        Main.init();
-                        FormElements.init();
-                    });
-                </script>
-                <!-- end: JavaScript Event Handlers for this page -->
-                <!-- end: CLIP-TWO JAVASCRIPTS -->
+                        <!-- start: SETTINGS -->
+                        <?php include('include/setting.php'); ?>
+                        <!-- end: SETTINGS -->
+                    </div>
+                    <!-- start: MAIN JAVASCRIPTS -->
+                    <script src="vendor/jquery/jquery.min.js"></script>
+                    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+                    <script src="vendor/modernizr/modernizr.js"></script>
+                    <script src="vendor/jquery-cookie/jquery.cookie.js"></script>
+                    <script src="vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+                    <script src="vendor/switchery/switchery.min.js"></script>
+                    <!-- end: MAIN JAVASCRIPTS -->
+                    <!-- start: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
+                    <script src="vendor/maskedinput/jquery.maskedinput.min.js"></script>
+                    <script src="vendor/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+                    <script src="vendor/autosize/autosize.min.js"></script>
+                    <script src="vendor/selectFx/classie.js"></script>
+                    <script src="vendor/selectFx/selectFx.js"></script>
+                    <script src="vendor/select2/select2.min.js"></script>
+                    <script src="vendor/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+                    <script src="vendor/bootstrap-timepicker/bootstrap-timepicker.min.js"></script>
+                    <!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
+                    <!-- start: CLIP-TWO JAVASCRIPTS -->
+                    <script src="assets/js/main.js"></script>
+                    <!-- start: JavaScript Event Handlers for this page -->
+                    <script src="assets/js/form-elements.js"></script>
+                    <script>
+                        jQuery(document).ready(function() {
+                            Main.init();
+                            FormElements.init();
+                        });
+                    </script>
+                    <!-- end: JavaScript Event Handlers for this page -->
+                    <!-- end: CLIP-TWO JAVASCRIPTS -->
 </body>
 
 </html>

@@ -41,14 +41,11 @@
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="#">
       <img src="images/final_logo.jpg" width="60" height="50" class="d-inline-block align-top" alt="" loading="lazy">
-
     </a>
     <a class="navbar-brand" href="#">Parking Street</a>
-
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto px-3">
         <li class="nav-item active pr-5">
@@ -60,13 +57,10 @@
         <li class="nav-item pr-4">
           <a class="nav-link" href="#">Contact Us</a>
         </li>
-
-        <div>
-        </div>
+        <a href="hotel_regis.php"> <button type="button" class="btn btn-primary">Register Now with Us</button></a>
       </ul>
     </div>
   </nav>
-  </div>
 
   <div id="demo" class="carousel slide" data-ride="carousel">
     <ul class="carousel-indicators">
