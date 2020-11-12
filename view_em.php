@@ -2,11 +2,12 @@
 session_start();
 //error_reporting(0);
 include('config.php');
-
+include('check_login.php');
+check_login();
 
 
 if (isset($_GET['del'])) {
-	mysqli_query($con, "delete from doctors where id = '" . $_GET['id'] . "'");
+	mysqli_query($con, "delete from employee_table where emp_id = '" . $_GET['id'] . "'");
 	$_SESSION['msg'] = "data deleted !!";
 }
 ?>
@@ -87,7 +88,7 @@ if (isset($_GET['del'])) {
 									</thead>
 									<tbody>
 										<?php
-										$sql = mysqli_query($con, "select * from employee_table");
+										$sql = mysqli_query($con, "select * from employee_table where bus_id='".$_SESSION['id']."'");
 										$cnt = 1;
 										while ($row = mysqli_fetch_array($sql)) {
 										?>

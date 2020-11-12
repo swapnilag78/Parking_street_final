@@ -2,8 +2,8 @@
 session_start();
 //error_reporting(0);
 include('config.php');
-//include('check_login.php');
-//check_login();
+include('check_login.php');
+check_login();
 
 
 if (isset($_POST['submit'])) 
@@ -16,8 +16,8 @@ if (isset($_POST['submit'])) {
 	$emusername = $_POST['username'];
 	$ememail = $_POST['em_email'];
 	$password = md5($_POST['npass']);
-	
-	$sql = mysqli_query($con, "insert into employee_table(emp_name, emp_username,emp_contact_num,emp_password) values ('$empname', '$emusername', '$ememail', '$password')");
+	$bus=$_SESSION['id'];
+	$sql = mysqli_query($con, "insert into employee_table(emp_name, emp_username,emp_contact_num,emp_password,bus_id) values ('$empname', '$emusername', '$ememail', '$password', '$bus')");
 	if ($sql) {
 		echo "<script>alert('Employee added Successfully');</script>";
 		header('location:view_em.php');

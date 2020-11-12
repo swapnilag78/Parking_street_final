@@ -95,42 +95,42 @@ include('config.php');
 
 
 
-                    <div class="container">
+                    <div class="flex-container">
                        
                         <!-- Trigger the modal with a button -->
 
-                        <div class="car_parking">
-                            <div class="item1" data-toggle="modal" data-target="#myModal" ><img src="images/car_svg.jpg"></div>
-                            <div class="item1" data-toggle="modal" data-target="#myModal" ><img src="images/car_svg.jpg"></div>
-                            <div class="item1" data-toggle="modal" data-target="#myModal" ><img src="images/car_svg.jpg"></div>
-                            <div class="item1" data-toggle="modal" data-target="#myModal" ><img src="images/car_svg.jpg"></div>
-                            <div class="item1" data-toggle="modal" data-target="#myModal" ><img src="images/car_svg.jpg"></div>
-                            <div class="item1" data-toggle="modal" data-target="#myModal" ><img src="images/car_svg.jpg"></div>
-                        </div>
+                        <?php $street = 1; ?>
+
+<tr>
+<td><?php
+$res = mysqli_query($con,"SELECT floor_num, lot_num, parking_status from parking_lot_table");
+            echo '<table border="20" style="width:100% ;" cellspacing="16" cellpadding="10" font face="Arial, Helvetica, sans-serif"  >';
+            while ($row = mysqli_fetch_assoc($res)) {
+				$id = $row['lot_num'];
+                echo "<tr>";
+				echo "<td>" . $row['floor_num'] . "</td>";
+				$sql= "SELECT * FROM parking_lot_table WHERE bus_id='$street' and lot_num='$id' and parking_status='yes'";
+         	    $result=mysqli_query($con,$sql);
+				 $count=mysqli_num_rows($result);
+				if($count==1){	
+					echo "<td style=\" text-align: center;\">" . $row['lot_num'] .  "</td>";
+					echo "<td  style=\"background-color : red; text-align: center;\" >" ."Booked".  "</td>";
+				}
+					 else{
+					echo "<td style=\" text-align: center;\">" . $row['lot_num'] .  "</td>";
+					echo("<td style=\"background-color : green; text-align: center; background:url(images/car_svg.jpg);\">  <button class=btn btn-success>click!</button> </td>");
+					}
+				
+            }
+            echo "</table>";
+
+?>
+</td>
+</tr>
 
                         
 
-                        <!-- Modal -->
-                        <div class="modal fade" id="myModal" role="dialog">
-                            <div class="modal-dialog">
-
-                                <!-- Modal content-->
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                        <h4 class="modal-title">Options</h4>
-                                    </div>
-                                    <div class="modal-body">
-                                    <button type="button" class="btn btn-info" >Pre-book</button>
-                                    <button type="button" class="btn btn-info" >Valet-Parking</button>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
+                        
 
                     </div>
 

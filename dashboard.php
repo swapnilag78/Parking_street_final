@@ -1,7 +1,8 @@
 <?php
 session_start();
 include('config.php');
-
+include('check_login.php');
+check_login();
 ?>
 
 <!DOCTYPE html>
@@ -71,7 +72,7 @@ include('config.php');
 
 										<p class="links cl-effect-1">
 											<a href="manage_em.php">
-												<?php $result = mysqli_query($con, "SELECT * FROM employee_table ");
+												<?php $result = mysqli_query($con, "SELECT * FROM employee_table where bus_id='".$_SESSION['id']."' ");
 												$num_rows = mysqli_num_rows($result); {
 												?>
 													Total Employees :<?php echo htmlentities($num_rows);
