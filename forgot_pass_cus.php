@@ -1,42 +1,33 @@
-
 <?php
 session_start();
-//error_reporting(0);
+error_reporting(0);
 include("config.php");
-if(isset($_POST['submit']))
-{
-$ret=mysqli_query($con,"SELECT * FROM customer_table WHERE cust_username='".$_POST['cust_user']."' and cust_password='".$_POST['password']."'");
-$num=mysqli_fetch_array($ret);
-if($num>0)
-{
-$extra="dashboard_cus.php";
+//Checking Details for reset password
+if(isset($_POST['submit'])){
+$name=$_POST['username'];
+$email=$_POST['email'];
+$query=mysqli_query($con,"select cust_id from  customer_table where cust_username='$name' and cust_email='$email'");
+$row=mysqli_num_rows($query);
+if($row>0){
 
-$host=$_SERVER['HTTP_HOST'];
-$uri=rtrim(dirname($_SERVER['PHP_SELF']),'/\\');
-header("location:http://$host$uri/$extra");
-exit();
+$_SESSION['name']=$name;
+$_SESSION['email']=$email;
+header('location:cus_reset_pass.php');
+} else {
+echo "<script>alert('Invalid details. Please try with valid details');</script>";
+echo "<script>window.location.href ='forgot_pass_cus.php'</script>";
+
+
 }
-else
-{
-$_SESSION['errmsg']="Invalid username or password";
-$extra="customer_signin.php";
-$host  = $_SERVER['HTTP_HOST'];
-$uri  = rtrim(dirname($_SERVER['PHP_SELF']),'/\\');
-header("location:http://$host$uri/$extra");
-exit();
-}
+
 }
 ?>
 
-
-
-
-?>
 
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>User-Login</title>
+		<title>Customer  Password Recovery</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
 		<meta name="apple-mobile-web-app-capable" content="yes">
@@ -58,42 +49,43 @@ exit();
 		<div class="row">
 			<div class="main-login col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4">
 				<div class="logo margin-top-30">
-				<a href="../index.html"><h2> PARKING STREET | Customer Login</h2></a>
+				<a href="index.php"><h2> Parking Street | Customer Password Recovery</h2></a>
 				</div>
 
 				<div class="box-login">
 					<form class="form-login" method="post">
 						<fieldset>
 							<legend>
-								Sign in to your account
+								Customer Password Recovery
 							</legend>
 							<p>
-								Please enter your name and password to log in.<br />
-								<span style="color:red;"> <?php echo $_SESSION['errmsg']; ?><?php echo $_SESSION['errmsg']="";?></span>
+								Please enter your Email and Username to recover your password.<br />
+					
 							</p>
-							<div class="form-group">
-								<span class="input-icon">
-									<input type="text" class="form-control" name="cust_user" placeholder="Username">
-									<i class="fa fa-user"></i> </span>
-							</div>
+
 							<div class="form-group form-actions">
 								<span class="input-icon">
-									<input type="password" class="form-control password" name="password" placeholder="Password">
+									<input type="text" class="form-control" name="username" placeholder="Registred Username">
 									<i class="fa fa-lock"></i>
-									 </span><a href="forgot_pass_cus.php">
-									Forgot Password ?
-								</a>
+									 </span>
 							</div>
+
+							<div class="form-group">
+								<span class="input-icon">
+									<input type="email" class="form-control" name="email" placeholder="Registred Email">
+									<i class="fa fa-user"></i> </span>
+							</div>
+
 							<div class="form-actions">
 								
 								<button type="submit" class="btn btn-primary pull-right" name="submit">
-									Login <i class="fa fa-arrow-circle-right"></i>
+									Reset <i class="fa fa-arrow-circle-right"></i>
 								</button>
 							</div>
 							<div class="new-account">
-								Don't have an account yet?
-								<a href="registration.php">
-									Create an account
+								Already have an account? 
+								<a href="customer_signin.php">
+									Log-in
 								</a>
 							</div>
 						</fieldset>

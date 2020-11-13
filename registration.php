@@ -135,8 +135,9 @@ if (isset($_POST['submit'])) {
                         <div class="form-group">
                             <div class="checkbox clip-check check-primary">
                                 <input type="checkbox" id="agree" value="agree" checked="true" readonly=" true">
-                                <label for="agree">
-                                    I agree to terms and policy of Parking Street
+                                <label for="agree"> 
+                                    <a href="#">
+                                    I agree to terms and policy of Parking Street </a>
                                 </label>
                             </div>
                         </div>
