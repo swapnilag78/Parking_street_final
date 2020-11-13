@@ -1,16 +1,15 @@
 <?php
 session_start();
-//error_reporting(0);
 include("config.php");
-// Code for updating Password
 if (isset($_POST['change'])) {
     $name = $_SESSION['username'];
     $email = $_SESSION['email'];
+    $check =$_SESSION['id'];
     $newpassword = $_POST['password'];
     $query = mysqli_query($con, "update customer_table set cust_password='$newpassword' where cust_username='$name' and cust_email='$email'");
     if ($query) {
-        echo "<script>alert('Password successfully updated.');</script>";
-        echo "<script>window.location.href ='customer_signin.php'</script>";
+       echo "<script>alert('Password successfully updated.');</script>";
+       echo "<script>window.location.href ='customer_signin.php'</script>";
     }
 }
 

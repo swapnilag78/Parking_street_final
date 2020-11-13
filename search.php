@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Customer | Book Appointment </title>
+    <title>Dynamic Dependent Searchable Select Box with PHP Ajax jQuery</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -11,7 +11,7 @@
   <body>
     <br />
     <div class="container">
-      <h3 align="center"></h3>
+      <h3 align="center">Dynamic Dependent Searchable Select Box with PHP Ajax jQuery</h3>
       <br />
       <div class="panel panel-default">
         <div class="panel-heading">Select Data</div>

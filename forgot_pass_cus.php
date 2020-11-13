@@ -2,6 +2,7 @@
 session_start();
 error_reporting(0);
 include("config.php");
+
 //Checking Details for reset password
 if(isset($_POST['submit'])){
 $name=$_POST['username'];
@@ -10,7 +11,7 @@ $query=mysqli_query($con,"select cust_id from  customer_table where cust_usernam
 $row=mysqli_num_rows($query);
 if($row>0){
 
-$_SESSION['name']=$name;
+$_SESSION['username']=$name;
 $_SESSION['email']=$email;
 header('location:cus_reset_pass.php');
 } else {
