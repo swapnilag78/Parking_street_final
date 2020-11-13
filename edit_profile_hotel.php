@@ -2,14 +2,15 @@
 session_start();
 //error_reporting(0);
 include('config.php');
-
+include('check_login.php');
+check_login();
 if (isset($_POST['submit'])) {
 	$busname = $_POST['business_n'];
 	$bus_address = $_POST['address'];
-	$admin_username=$_POST['admin_user'];
 	$bus_contactno = $_POST['phne'];
 	$bus_email = $_POST['email'];
-	$sql = mysqli_query($con, "Update business_table set bus_name='$busname',bus_address='$bus_address',bus_contact_num='$bus_contactno',bus_email='$bus_email',admin_username='$admin_username' where id='" . $_SESSION['bus_id'] . "'");
+	$bus=$_SESSION['id']; 
+	$sql = mysqli_query($con, "Update business_table set bus_name='$busname',bus_address='$bus_address',bus_contact_num='$bus_contactno',bus_email='$bus_email' where bus_id='$bus'");
 	if ($sql) {
 		echo "<script>alert('Hotel Details updated Successfully');</script>";
 	}
@@ -52,7 +53,7 @@ if (isset($_POST['submit'])) {
 			<div class="main-content">
 				<div class="wrap-content container" id="container">
 					<!-- start: PAGE TITLE -->
-					<section id="page-title">
+					<section id="page-.phptitle">
 						<div class="row">
 							<div class="col-sm-8">
 								<h1 class="mainTitle">HOTEL | Edit HOTEL Details</h1>
@@ -80,67 +81,50 @@ if (isset($_POST['submit'])) {
 												<h5 class="panel-title">Edit Hotel Registration Form</h5>
 											</div>
 											<div class="panel-body">
-												<?php $sql = mysqli_query($con, "select * from business_table where docEmail='" . $_SESSION['dlogin'] . "'");
+												<?php $sql = mysqli_query($con, "select * from business_table where admin_username='" . $_SESSION['login'] . "'");
 												while ($data = mysqli_fetch_array($sql)) {
 												?>
-													<h4><?php echo htmlentities($data['business_n']); ?>'s Profile</h4>
-													<p><b>Profile Reg. Date: </b><?php echo htmlentities($data['creationDate']); ?></p>
-													<?php if ($data['updationDate']) { ?>
-														<p><b>Profile Last Updation Date: </b><?php echo htmlentities($data['updationDate']); ?></p>
-													<?php } ?>
+													<h4><?php echo htmlentities($data['bus_name']); ?>'s Profile</h4>
+
 													<hr />
 													<form role="form" name="adddoc" method="post" onSubmit="return valid();">
 														<div class="form-group">
 															<label for="business_n">
 																Name Of Business
 															</label>
-															<select name="business_n" class="form-control" required="required">
-																<option value="<?php echo htmlentities($data['business_n']); ?>">
-																	<?php echo htmlentities($data['business_n']); ?></option>
-																<?php $ret = mysqli_query($con, "select * from business_table");
-																while ($row = mysqli_fetch_array($ret)) {
-																?>
-																	<option value="<?php echo htmlentities($row['business_n']); ?>">
-																		<?php echo htmlentities($row['specilization']); ?>
-																	</option>
-																<?php } ?>
-
-															</select>
-														</div>
-
-														<div class="form-group">
-															<label for="business_n">
-																Name of Business
-															</label>
-															<input type="text" name="business_n" class="form-control" value="<?php echo htmlentities($data['business_n']); ?>">
+															<input type="text" name="business_n" class="form-control" value="<?php echo htmlentities($data['bus_name']); ?>">
 														</div>
 
 
 														<div class="form-group">
 															<label for="address">
-																Doctor Clinic Address
+																Hotel Address
 															</label>
-															<textarea name="clinicaddress" class="form-control"><?php echo htmlentities($data['address']); ?></textarea>
-														</div>
-														<div class="form-group">
-															<label for="fess">
-																Doctor Consultancy Fees
-															</label>
-															<input type="text" name="docfees" class="form-control" required="required" value="<?php echo htmlentities($data['docFees']); ?>">
+															<textarea name="address" class="form-control"><?php echo htmlentities($data['bus_address']); ?></textarea>
 														</div>
 
 														<div class="form-group">
-															<label for="fess">
-																Doctor Contact no
+															<label for="valet_park"> Do You Want Valet Parking?</label>
+															<label class="radio-inline">
+																<input type="radio" name="valet_park" checked <?php echo htmlentities($data['bus_valet']); ?> >
 															</label>
-															<input type="text" name="doccontact" class="form-control" required="required" value="<?php echo htmlentities($data['contactno']); ?>">
+															<label class="radio-inline">
+																<input type="radio" name="valet_park" <?php echo htmlentities($data['bus_valet']); ?>>
+															</label>
 														</div>
 
 														<div class="form-group">
-															<label for="fess">
-																Doctor Email
+															<label for="phne">
+																Hotel Contact no
 															</label>
-															<input type="email" name="docemail" class="form-control" readonly="readonly" value="<?php echo htmlentities($data['docEmail']); ?>">
+															<input type="text" name="phne" class="form-control" required="required" value="<?php echo htmlentities($data['bus_contact_num']); ?>">
+														</div>
+
+														<div class="form-group">
+															<label for="email">
+																Email
+															</label>
+															<input type="email" name="email" class="form-control" readonly="readonly" value="<?php echo htmlentities($data['bus_email']); ?>">
 														</div>
 
 

@@ -1,3 +1,40 @@
+
+<?php
+session_start();
+//error_reporting(0);
+include("config.php");
+include("check_login.php");
+check_login();
+if(isset($_POST['submit']))
+{
+$ret=mysqli_query($con,"SELECT * FROM customer_table WHERE cust_username='".$_POST['cust_user']."' and cust_password='".$_POST['password']."'");
+$num=mysqli_fetch_array($ret);
+if($num>0)
+{
+$extra="dashboard_cus.php";
+
+$host=$_SERVER['HTTP_HOST'];
+$uri=rtrim(dirname($_SERVER['PHP_SELF']),'/\\');
+header("location:http://$host$uri/$extra");
+exit();
+}
+else
+{
+$_SESSION['errmsg']="Invalid username or password";
+$extra="customer_signin.php";
+$host  = $_SERVER['HTTP_HOST'];
+$uri  = rtrim(dirname($_SERVER['PHP_SELF']),'/\\');
+header("location:http://$host$uri/$extra");
+exit();
+}
+}
+?>
+
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -34,18 +71,18 @@
 							</legend>
 							<p>
 								Please enter your name and password to log in.<br />
-								<span style="color:red;"></span>
+								<span style="color:red;"> <?php echo $_SESSION['errmsg']; ?><?php echo $_SESSION['errmsg']="";?></span>
 							</p>
 							<div class="form-group">
 								<span class="input-icon">
-									<input type="text" class="form-control" name="username" placeholder="Username">
+									<input type="text" class="form-control" name="cust_user" placeholder="Username">
 									<i class="fa fa-user"></i> </span>
 							</div>
 							<div class="form-group form-actions">
 								<span class="input-icon">
 									<input type="password" class="form-control password" name="password" placeholder="Password">
 									<i class="fa fa-lock"></i>
-									 </span><a href="forgot-password.php">
+									 </span><a href="forgot_pass_cus.php">
 									Forgot Password ?
 								</a>
 							</div>

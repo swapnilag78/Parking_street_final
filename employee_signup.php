@@ -2,28 +2,26 @@
 session_start();
 //error_reporting(0);
 include('config.php');
-//include('check_login.php');
-//check_login();
+include('check_login.php');
+check_login();
+
 
 
 if (isset($_POST['submit'])) 
 {
-
-echo "<script>alert('i know');</script>";
-if (isset($_POST['submit'])) {
-
 	$empname = $_POST['em_name'];
 	$emusername = $_POST['username'];
 	$ememail = $_POST['em_email'];
-	$password = md5($_POST['npass']);
-	
-	$sql = mysqli_query($con, "insert into employee_table(emp_name, emp_username,emp_contact_num,emp_password) values ('$empname', '$emusername', '$ememail', '$password')");
+	$password = $_POST['npass'];
+	$emp_cont = $_POST['phone_num'];
+	$bus=$_SESSION['id'];
+	$sql = mysqli_query($con, "insert into employee_table(emp_name, emp_username,emp_email,emp_password,bus_id,emp_contact_num) values ('$empname', '$emusername', '$ememail', '$password', '$bus', '$emp_cont')");
 	if ($sql) {
 		echo "<script>alert('Employee added Successfully');</script>";
 		header('location:view_em.php');
 	}
 }
-}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -127,6 +125,15 @@ if (isset($_POST['submit'])) {
 														<input type="email"  name="em_email" class="form-control" placeholder="Enter Email id" required="true" >
 											
 													</div>
+
+													<div class="form-group">
+														<label for="phone_num">
+															Contact Number
+														</label>
+														<input type="text"  name="phone_num" class="form-control" placeholder="Enter Contact Number" required="true" >
+											
+													</div>
+
 
 													<div class="form-group">
 														<label for="exampleInputPassword1">

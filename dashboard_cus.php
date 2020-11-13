@@ -9,7 +9,7 @@ check_login();
 <html lang="en">
 
 <head>
-	<title>Hotel | Dashboard</title>
+	<title>Customer | Dashboard</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
 	<meta name="apple-mobile-web-app-capable" content="yes">
@@ -48,11 +48,11 @@ check_login();
 					<section id="page-title">
 						<div class="row">
 							<div class="col-sm-8">
-								<h1 class="mainTitle">Hotel Admin | Dashboard</h1>
+								<h1 class="mainTitle">Customer | Dashboard</h1>
 							</div>
 							<ol class="breadcrumb">
 								<li>
-									<span> Hotel Admin</span>
+									<span> Customer</span>
 								</li>
 								<li class="active">
 									<span>Dashboard</span>
@@ -62,84 +62,55 @@ check_login();
 					</section>
 					<!-- end: PAGE TITLE -->
 					<!-- start: BASIC EXAMPLE -->
-					<div class="container-fluid container-fullw bg-white">
-						<div class="row">
-							<div class="col-sm-4">
-								<div class="panel panel-white no-radius text-center">
-									<div class="panel-body">
-										<span class="fa-stack fa-2x"> <i class="fa fa-square fa-stack-2x text-primary"></i> <i class="fa fa-smile-o fa-stack-1x fa-inverse"></i> </span>
-										<h2 class="StepTitle">Manage Employee</h2>
+					
 
-										<p class="links cl-effect-1">
-											<a href="manage_em.php">
-												<?php $result = mysqli_query($con, "SELECT * FROM employee_table where bus_id='".$_SESSION['id']."' ");
-												$num_rows = mysqli_num_rows($result); {
-												?>
-													Total Employees :<?php echo htmlentities($num_rows);
-																	} ?>
-											</a>
-										</p>
+                    <div class="container-fluid container-fullw bg-white">
+							<div class="row">
+								<div class="col-sm-4">
+									<div class="panel panel-white no-radius text-center">
+										<div class="panel-body">
+											<span class="fa-stack fa-2x"> <i class="fa fa-square fa-stack-2x text-primary"></i> <i class="fa fa-smile-o fa-stack-1x fa-inverse"></i> </span>
+											<h2 class="StepTitle">My Profile</h2>
+											
+											<p class="links cl-effect-1">
+												<a href="edit_profile_cus.php">
+													Update Profile
+												</a>
+											</p>
+										</div>
+									</div>
+								</div>
+
+                                <div class="col-sm-4">
+									<div class="panel panel-white no-radius text-center">
+										<div class="panel-body">
+											<span class="fa-stack fa-2x"> <i class="fa fa-square fa-stack-2x text-primary"></i> <i class="fa fa-paperclip fa-stack-1x fa-inverse"></i> </span>
+											<h2 class="StepTitle">My Appointments</h2>
+										
+											<p class="cl-effect-1">
+												<a href="appointment-history.php">
+													View Appointment History
+												</a>
+											</p>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-4">
+									<div class="panel panel-white no-radius text-center">
+										<div class="panel-body">
+											<span class="fa-stack fa-2x"> <i class="fa fa-square fa-stack-2x text-primary"></i> <i class="fa fa-terminal fa-stack-1x fa-inverse"></i> </span>
+											<h2 class="StepTitle"> Book My Appointment</h2>
+											
+											<p class="links cl-effect-1">
+												<a href="search_1.php">
+													Book Appointment
+												</a>
+											</p>
+										</div>
 									</div>
 								</div>
 							</div>
-
-
-
-							<div class="container-fluid container-fullw bg-white">
-								<div class="row">
-									<div class="col-sm-4">
-										<div class="panel panel-white no-radius text-center">
-											<div class="panel-body">
-												<span class="fa-stack fa-2x"> <i class="fa fa-square fa-stack-2x text-primary"></i> <i class="fa fa-smile-o fa-stack-1x fa-inverse"></i> </span>
-												<h2 class="StepTitle">Update Profile</h2>
-
-												<p class="links cl-effect-1">
-													<a href="edit_profile_hotel.php"> Click Here!
-														<?php $result = mysqli_query($con, "SELECT * FROM business_table ");
-														$num_rows = mysqli_num_rows($result); {
-														?>
-															<br>Total Hotel Registrations :<?php echo htmlentities($num_rows);
-																						} ?>
-													</a>
-												</p>
-											</div>
-										</div>
-									</div>
-
-									<div class="container-fluid container-fullw bg-white">
-										<div class="row">
-											<div class="col-sm-4">
-												<div class="panel panel-white no-radius text-center">
-													<div class="panel-body">
-														<span class="fa-stack fa-2x"> <i class="fa fa-square fa-stack-2x text-primary"></i> <i class="fa fa-smile-o fa-stack-1x fa-inverse"></i> </span>
-														<h2 class="StepTitle">Manage Parking</h2>
-
-														<p class="links cl-effect-1">
-															<a href="manage_parking.php"> Click Here!
-
-															</a>
-														</p>
-													</div>
-												</div>
-											</div>
-
-
-											<div class="container-fluid container-fullw bg-white">
-												<div class="row">
-													<div class="col-sm-4">
-														<div class="panel panel-white no-radius text-center">
-															<div class="panel-body">
-																<span class="fa-stack fa-2x"> <i class="fa fa-square fa-stack-2x text-primary"></i> <i class="fa fa-smile-o fa-stack-1x fa-inverse"></i> </span>
-																<h2 class="StepTitle">Parking History</h2>
-
-																<p class="links cl-effect-1">
-																	<a href="parking_his.php"> Click Here!
-
-																	</a>
-																</p>
-															</div>
-														</div>
-													</div>
+						</div>
 
 
 
