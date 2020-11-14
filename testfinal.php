@@ -190,3 +190,215 @@ check_login();
 </body>
 
 </html>
+
+
+
+<tr>
+                            <td>
+                                
+                            <table border="20" style="width:100% ;" cellspacing="16" cellpadding="10" font face="Arial, Helvetica, sans-serif"  >
+                                <?php
+                                
+                                $res = mysqli_query($con, "SELECT floor_num, lot_num, parking_status from parking_lot_table where bus_id='".$_SESSION['id']."' ");
+                                
+                                while ($row = mysqli_fetch_assoc($res)) {  ?>
+
+
+                                    <?php $id = $row['lot_num'];?>
+                                    <tr>
+                                    <td style= "text-align: center"> <?php echo   $row['floor_num'];?> </td>
+                                    <?php $fid= $row['floor_num'];?>
+                                    <?php $sql = "SELECT * FROM parking_lot_table WHERE bus_id='$street' and floor_num='$fid' and lot_num='$id' and parking_status='yes'";
+                                    $result = mysqli_query($con, $sql);
+                                    $count = mysqli_num_rows($result);?>
+                                   <?php
+                                    if ($count == 1) { ?>
+                                        <td style= "text-align: center"> <?php echo  $row['lot_num'] ; ?> </td>
+                                        <td style= "text-align: center" bgcolor="red" > Booked  </td>
+                                    
+                                 <?php } else {?>
+                                        <td style= "text-align: center"> <?php echo  $row['lot_num'] ; ?> </td>
+                                        <td style="text-align: center" bgcolor="green">  <button class=btn btn-success>click!</button> </td>
+                                    <?php  
+                                    }?>
+
+                             <?php
+                                }?>
+
+
+                               </table>
+
+                                
+
+                            </td>
+                        </tr>
+
+
+
+
+
+
+
+
+
+                        <div class="flex-container">
+                    
+                    <div class="col-md-2 mb-4 mb-md-0"> 
+                    
+                    <button class=btn btn-success>
+                        <i class="fas fa-4x fa-car fa-color2"></i>
+                        <div>
+                        BOOKED!
+                        </div>
+                        </button> 
+                    
+                      </div>
+                  </div>
+
+                  <div class="flex-container">
+                  
+                    <div class="col-md-2 mb-4 mb-md-0"> 
+                    <button class=btn btn-success>
+                            <i class="fas fa-4x fa-parking fa-color"></i>
+                        <div>
+                        BOOK!
+                        </div>
+                        </button> 
+                      </div>
+                  </div>
+
+
+
+
+
+<div class="row"></div>
+<link rel="stylesheet" href="fontawesome/css/all.css"> <!-- mine -->
+    <link rel="stylesheet" href="MDB/css/bootstrap.min.css"> <!-- mine -->
+    <link rel="stylesheet" href="MDB/css/mdb.min.css"> <!-- mine -->
+    <link rel="stylesheet" href="MDB/css/style.css"> <!-- mine -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="container">
+
+                        <!-- Trigger the modal with a button -->
+
+                        <?php $street = $_SESSION['id']; ?>
+
+                        
+                                
+                            
+                                <?php
+                                
+                                $res = mysqli_query($con, "SELECT floor_num, lot_num, parking_status from parking_lot_table where bus_id='".$_SESSION['id']."' ");
+                                
+                                while ($row = mysqli_fetch_assoc($res)) {  ?>
+
+
+                                    <?php $id = $row['lot_num'];?>
+                                    
+                                    <div class="row ">
+                                    <div class="col-md-1 "> <?php echo   $row['floor_num'];?> </div>
+                                    <?php $fid= $row['floor_num'];?>
+                                    <?php $sql = "SELECT * FROM parking_lot_table WHERE bus_id='$street' and floor_num='$fid' and lot_num='$id' and parking_status='yes'";
+                                    $result = mysqli_query($con, $sql);
+                                    $count = mysqli_num_rows($result);?>
+                                   <?php
+                                    if ($count == 1) { ?>
+                                        
+                                        
+                                          <div class="flex-container">
+                       
+                                               <div class="col-md-2 mb-4 mb-md-0"> 
+                    
+                                                    <button class="btn btn-light  ">
+                                                   <i class="fas fa-4x fa-car fa-color2"></i>
+                                                          <div> Parking lot: <?php echo  $row['lot_num'] ; ?> </div>
+                                                    </button> 
+                    
+                                                </div>
+                                         </div>
+
+                                     
+                                    
+                                 <?php } else {?>
+                                       
+                                       <div class="flex-container">
+                    
+                                         <div class="col-md-2 mb-4 mb-md-0"> 
+                                             <button class="btn btn-light ">
+                                                  <i class="fas fa-4x fa-parking fa-color"></i>
+                                                  <div>Parking lot: <?php echo  $row['lot_num'] ; ?>  </div>
+                                            </button> 
+                                           </div>
+                                      </div>
+
+                                       
+                                    <?php  
+                                    }?>
+                                   </div>
+                                   
+                             <?php
+                                }?>
+
+
+                               
+                                
+                          </div>
+
+
+
+
+
+                         
+
+<style>
+.fa-color{
+    color:limegreen;
+}
+.fa-color2{
+    color:red;
+}
+
+</style>
+
+
+
+
+
+
+<ul class="pagination pg-blue my-1 py-1  ">
+    <li class="page-item">
+      <a class="page-link text-white" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+        <span class="sr-only">Previous</span>
+      </a>
+    </li>
+    <li class="page-item active"><a class="page-link text-white">1</a></li>
+    <li class="page-item "><a class="page-link text-white">2</a></li>
+    <li class="page-item"><a class="page-link text-white ">3</a></li>
+    <li class="page-item"><a class="page-link text-white">4</a></li>
+    <li class="page-item">
+      <a class="page-link text-white" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+        <span class="sr-only">Next</span>
+      </a>
+    </li>
+  </ul>

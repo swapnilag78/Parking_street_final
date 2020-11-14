@@ -31,40 +31,33 @@ check_login();
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/plugins.css">
     <link rel="stylesheet" href="assets/css/themes/theme-4.css" id="skin_color" />
+    <link rel="stylesheet" href="fontawesome/css/all.css"> <!-- mine -->
+    <link rel="stylesheet" href="fontawesome/css/all.css"> <!-- mine -->
+    <link rel="stylesheet" href="fontawesome/css/all.css"> <!-- mine -->
+    <link rel="stylesheet" href="MDB/css/bootstrap.min.css"> <!-- mine -->
+    <link rel="stylesheet" href="MDB/css/mdb.min.css"> <!-- mine -->
+    <link rel="stylesheet" href="MDB/css/style.css"> <!-- mine -->
 
 
-    <style>
-        .car_parking {
-            display: grid;
-            grid-template-columns: auto auto auto auto auto auto;
-            grid-gap: 15px;
-            background-color: whitesmoke;
-            padding: 10px;
-        }
-
-        .car_parking>div {
-            background-color: green;
-            text-align: center;
-            padding: 30px 0;
-            font-size: 40px;
-        }
-
-        .car_parking>div>img {
-            background-color: rgba(255, 255, 255, 0.8);
-            text-align: center;
-            height: 120px;
-            width: 60px;
 
 
-        }
-
-        .item1 {
-            grid-row: 1 / 2;
-        }
-    </style>
+ 
 
 
 </head>
+
+<style>
+.fa-color{
+    color:limegreen;
+}
+.fa-color2{
+    color:red;
+}
+
+</style>
+
+
+
 
 <body>
     <div id="app">
@@ -93,58 +86,10 @@ check_login();
                     <!-- end: PAGE TITLE -->
                     <!-- start: BASIC EXAMPLE -->
 
+                   
+                    
+               
 
-
-
-                    <div class="flex-container">
-
-                        <!-- Trigger the modal with a button -->
-
-                        <?php $street = $_SESSION['id']; ?>
-
-                        <tr>
-                            <td>
-                                
-                            <table border="20" style="width:100% ;" cellspacing="16" cellpadding="10" font face="Arial, Helvetica, sans-serif"  >
-                                <?php
-                                
-                                $res = mysqli_query($con, "SELECT floor_num, lot_num, parking_status from parking_lot_table where bus_id='".$_SESSION['id']."' ");
-                                
-                                while ($row = mysqli_fetch_assoc($res)) {  ?>
-
-
-                                    <?php $id = $row['lot_num'];?>
-                                    <tr>
-                                    <td style= "text-align: center"> <?php echo   $row['floor_num'];?> </td>
-                                    <?php $fid= $row['floor_num'];?>
-                                    <?php $sql = "SELECT * FROM parking_lot_table WHERE bus_id='$street' and floor_num='$fid' and lot_num='$id' and parking_status='yes'";
-                                    $result = mysqli_query($con, $sql);
-                                    $count = mysqli_num_rows($result);?>
-                                   <?php
-                                    if ($count == 1) { ?>
-                                        <td style= "text-align: center"> <?php echo  $row['lot_num'] ; ?> </td>
-                                        <td style= "text-align: center" bgcolor="red" > Booked  </td>
-                                    
-                                 <?php } else {?>
-                                        <td style= "text-align: center"> <?php echo  $row['lot_num'] ; ?> </td>
-                                        <td style="text-align: center" bgcolor="green">  <button class=btn btn-success>click!</button> </td>
-                                    <?php  
-                                    }?>
-
-                             <?php
-                                }?>
-
-
-                               </table>
-
-                                
-
-                            </td>
-                        </tr>
-
-                        
-
-                    </div>
                         <!-- start: FOOTER -->
                         <?php include('include/footer.php'); ?>
                         <!-- end: FOOTER -->
@@ -152,8 +97,8 @@ check_login();
                         <!-- start: SETTINGS -->
                         <?php include('include/setting.php'); ?>
                         <!-- end: SETTINGS -->
-                    </div>
-                    <!-- start: MAIN JAVASCRIPTS -->
+                       </div>
+                      <!-- start: MAIN JAVASCRIPTS -->
                     <script src="vendor/jquery/jquery.min.js"></script>
                     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
                     <script src="vendor/modernizr/modernizr.js"></script>

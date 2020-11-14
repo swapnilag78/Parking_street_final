@@ -115,7 +115,7 @@ check_login();
 														<h2 class="StepTitle">Manage Parking</h2>
 
 														<p class="links cl-effect-1">
-															<a href="manage_parking.php"> Click Here!
+															<a href="manage_testing.php"> Click Here!
 
 															</a>
 														</p>
