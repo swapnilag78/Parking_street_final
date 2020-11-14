@@ -8,7 +8,7 @@ if (isset($_POST['submit'])) {
 	$empname = $_POST['em_name'];
 	$emp_contact = $_POST['phne'];
 	$bus=$_SESSION['id']; 
-	$sql = mysqli_query($con, "Update employee_table set emp_name='$empname', emp_contact_num='$emp_contact where emp_id='$bus' and bus_id='$did'");
+	$sql = mysqli_query($con, "Update employee_table set emp_name='$empname', emp_contact_num='$emp_contact where emp_id='".$row['emp_id'] ."' and bus_id='$bus' ");
 	if ($sql) {
 		echo "<script>alert('Hotel Details updated Successfully');</script>";
 	}

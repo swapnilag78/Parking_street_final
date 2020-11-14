@@ -68,10 +68,10 @@ check_login();
 
 <body>
     <div id="app">
-        <?php include('bus_sidebar.php'); ?>
+        <?php include('sidebar.php'); ?>
         <div class="app-content">
 
-            <?php include('bus_header.php'); ?>
+            <?php include('header.php'); ?>
 
             <!-- end: TOP NAVBAR -->
             <div class="main-content">
@@ -103,46 +103,50 @@ check_login();
                         <?php $street = $_SESSION['id']; ?>
 
                         <tr>
-                            <td>
-                                
-                            <table border="20" style="width:100% ;" cellspacing="16" cellpadding="10" font face="Arial, Helvetica, sans-serif"  >
-                                <?php
+                            <td><?php
                                 
                                 $res = mysqli_query($con, "SELECT floor_num, lot_num, parking_status from parking_lot_table where bus_id='".$_SESSION['id']."' ");
-                                
-                                while ($row = mysqli_fetch_assoc($res)) {  ?>
-
-
-                                    <?php $id = $row['lot_num'];?>
-                                    <tr>
-                                    <td style= "text-align: center"> <?php echo   $row['floor_num'];?> </td>
-                                    <?php $fid= $row['floor_num'];?>
-                                    <?php $sql = "SELECT * FROM parking_lot_table WHERE bus_id='$street' and floor_num='$fid' and lot_num='$id' and parking_status='yes'";
+                                echo '<table border="20" style="width:100% ;" cellspacing="16" cellpadding="10" font face="Arial, Helvetica, sans-serif"  >';
+                                while ($row = mysqli_fetch_assoc($res)) {
+                                    $id = $row['lot_num'];
+                                    echo "<tr>";
+                                    echo "<td>" . $row['floor_num'] . "</td>";
+                                    $fid= $row['floor_num'];
+                                    $sql = "SELECT * FROM parking_lot_table WHERE bus_id='$street' and floor_num='$fid' and lot_num='$id' and parking_status='yes'";
                                     $result = mysqli_query($con, $sql);
-                                    $count = mysqli_num_rows($result);?>
-                                   <?php
-                                    if ($count == 1) { ?>
-                                        <td style= "text-align: center"> <?php echo  $row['lot_num'] ; ?> </td>
-                                        <td style= "text-align: center" bgcolor="red" > Booked  </td>
-                                    
-                                 <?php } else {?>
-                                        <td style= "text-align: center"> <?php echo  $row['lot_num'] ; ?> </td>
-                                        <td style="text-align: center" bgcolor="green">  <button class=btn btn-success>click!</button> </td>
-                                    <?php  
-                                    }?>
+                                    $count = mysqli_num_rows($result);
+                                    if ($count == 1) {
+                                        echo "<td style=\" text-align: center;\">" . $row['lot_num'] .  "</td>";
+                                        echo "<td  style=\"background-color : red; text-align: center;\" >" . "Booked" .  "</td>";
+                                    } else {
+                                        echo "<td style=\" text-align: center;\">" . $row['lot_num'] .  "</td>";
+                                        echo ("<td style=\"background-color : green; text-align: center; background:url(images/car_svg.jpg);\">  <button class=btn btn-success>click!</button> </td>");
+                                    }
+                                }
+                                echo "</table>";
 
-                             <?php
-                                }?>
-
-
-                               </table>
-
-                                
+                                ?>
 
                             </td>
                         </tr>
 
-                        
+                        <div class="container-fluid container-fullw bg-dark">
+								<div class="row">
+									<div class="col-sm-2">
+										<div class="panel panel-white no-radius text-center">
+											<div class="panel-body">
+												
+												<h2 class="StepTitle"> <img src="images/car_svg.jpg height="60px" width="40px"></h2>
+
+												<p class="links cl-effect-1">
+													<a href="edit_profile_hotel.php">
+														
+															
+													</a>
+												</p>
+											</div>
+										</div>
+									</div>
 
                     </div>
                         <!-- start: FOOTER -->

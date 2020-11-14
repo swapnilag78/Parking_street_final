@@ -40,10 +40,10 @@ if (isset($_GET['del'])) {
 
 <body>
 	<div id="app">
-		<?php include('sidebar.php'); ?>
+		<?php include('bus_sidebar.php'); ?>
 		<div class="app-content">
 
-			<?php include('header.php'); ?>
+			<?php include('bus_header.php'); ?>
 
 			<!-- end: TOP NAVBAR -->
 			<div class="main-content">
@@ -102,6 +102,7 @@ if (isset($_GET['del'])) {
 												</td>
 
 												<td>
+												<?php echo $em=$row['emp_id']; ?>
 													<div class="visible-md visible-lg hidden-sm hidden-xs">
 														<a href="edit_emp.php?id=<?php echo $row['emp_id']; ?>" class="btn btn-transparent btn-xs" tooltip-placement="top" tooltip="Edit"><i class="fa fa-pencil"></i></a>
 

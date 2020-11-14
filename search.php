@@ -1,3 +1,11 @@
+<?php
+session_start();
+error_reporting(0);
+include('config.php');
+
+?>
+
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -31,8 +39,14 @@
         </div>
       </div>
     </div>
+
+
+    <a href="cust_parking.php"> <button type="button" class="btn btn-success  pull-right"> Submit </button> </a>
   </body>
 </html>
+
+
+
 
 <script>
 $(document).ready(function(){

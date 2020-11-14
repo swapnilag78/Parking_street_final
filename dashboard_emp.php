@@ -36,10 +36,10 @@ check_login();
 
 <body>
 	<div id="app">
-		<?php include('cus_sidebar.php'); ?>
+		<?php include('emp_sidebar.php'); ?>
 		<div class="app-content">
 
-			<?php include('cus_header.php'); ?>
+			<?php include('emp_header.php'); ?>
 
 			<!-- end: TOP NAVBAR -->
 			<div class="main-content">

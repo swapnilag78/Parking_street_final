@@ -36,10 +36,10 @@ check_login();
 
 <body>
 	<div id="app">
-		<?php include('sidebar.php'); ?>
+		<?php include('bus_sidebar.php'); ?>
 		<div class="app-content">
 
-			<?php include('header.php'); ?>
+			<?php include('bus_header.php'); ?>
 
 			<!-- end: TOP NAVBAR -->
 			<div class="main-content">
@@ -72,7 +72,7 @@ check_login();
 
 										<p class="links cl-effect-1">
 											<a href="manage_em.php">
-												<?php $result = mysqli_query($con, "SELECT * FROM employee_table where bus_id='".$_SESSION['id']."' ");
+												<?php $result = mysqli_query($con, "SELECT * FROM employee_table where bus_id='" . $_SESSION['id'] . "' ");
 												$num_rows = mysqli_num_rows($result); {
 												?>
 													Total Employees :<?php echo htmlentities($num_rows);
@@ -85,109 +85,111 @@ check_login();
 
 
 
-							<div class="container-fluid container-fullw bg-white">
-								<div class="row">
-									<div class="col-sm-4">
-										<div class="panel panel-white no-radius text-center">
-											<div class="panel-body">
-												<span class="fa-stack fa-2x"> <i class="fa fa-square fa-stack-2x text-primary"></i> <i class="fa fa-smile-o fa-stack-1x fa-inverse"></i> </span>
-												<h2 class="StepTitle">Update Profile</h2>
 
-												<p class="links cl-effect-1">
-													<a href="edit_profile_hotel.php"> Click Here!
-														<?php $result = mysqli_query($con, "SELECT * FROM business_table ");
-														$num_rows = mysqli_num_rows($result); {
-														?>
-															<br>Total Hotel Registrations :<?php echo htmlentities($num_rows);
-																						} ?>
-													</a>
-												</p>
-											</div>
-										</div>
+							<div class="col-sm-4">
+								<div class="panel panel-white no-radius text-center">
+									<div class="panel-body">
+										<span class="fa-stack fa-2x"> <i class="fa fa-square fa-stack-2x text-primary"></i> <i class="fa fa-smile-o fa-stack-1x fa-inverse"></i> </span>
+										<h2 class="StepTitle">Update Profile</h2>
+
+										<p class="links cl-effect-1">
+											<a href="edit_profile_hotel.php"> Click Here!
+												<?php $result = mysqli_query($con, "SELECT * FROM business_table ");
+												$num_rows = mysqli_num_rows($result); {
+												?>
+													<br>Total Hotel Registrations :<?php echo htmlentities($num_rows);
+																				} ?>
+											</a>
+										</p>
 									</div>
-
-									<div class="container-fluid container-fullw bg-white">
-										<div class="row">
-											<div class="col-sm-4">
-												<div class="panel panel-white no-radius text-center">
-													<div class="panel-body">
-														<span class="fa-stack fa-2x"> <i class="fa fa-square fa-stack-2x text-primary"></i> <i class="fa fa-smile-o fa-stack-1x fa-inverse"></i> </span>
-														<h2 class="StepTitle">Manage Parking</h2>
-
-														<p class="links cl-effect-1">
-															<a href="manage_parking.php"> Click Here!
-
-															</a>
-														</p>
-													</div>
-												</div>
-											</div>
-
-
-											<div class="container-fluid container-fullw bg-white">
-												<div class="row">
-													<div class="col-sm-4">
-														<div class="panel panel-white no-radius text-center">
-															<div class="panel-body">
-																<span class="fa-stack fa-2x"> <i class="fa fa-square fa-stack-2x text-primary"></i> <i class="fa fa-smile-o fa-stack-1x fa-inverse"></i> </span>
-																<h2 class="StepTitle">Parking History</h2>
-
-																<p class="links cl-effect-1">
-																	<a href="parking_his.php"> Click Here!
-
-																	</a>
-																</p>
-															</div>
-														</div>
-													</div>
+								</div>
+							</div>
 
 
 
+							<div class="col-sm-4">
+								<div class="panel panel-white no-radius text-center">
+									<div class="panel-body">
+										<span class="fa-stack fa-2x"> <i class="fa fa-square fa-stack-2x text-primary"></i> <i class="fa fa-smile-o fa-stack-1x fa-inverse"></i> </span>
+										<h2 class="StepTitle">Manage Parking</h2>
 
+										<p class="links cl-effect-1">
+											<a href="manage_parking.php"> Click Here!
 
-													<!-- end: SELECT BOXES -->
-
-												</div>
-											</div>
-										</div>
-										<!-- start: FOOTER -->
-										<?php include('include/footer.php'); ?>
-										<!-- end: FOOTER -->
-
-										<!-- start: SETTINGS -->
-										<?php include('include/setting.php'); ?>
-										<!-- end: SETTINGS -->
+											</a>
+										</p>
 									</div>
-									<!-- start: MAIN JAVASCRIPTS -->
-									<script src="vendor/jquery/jquery.min.js"></script>
-									<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-									<script src="vendor/modernizr/modernizr.js"></script>
-									<script src="vendor/jquery-cookie/jquery.cookie.js"></script>
-									<script src="vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-									<script src="vendor/switchery/switchery.min.js"></script>
-									<!-- end: MAIN JAVASCRIPTS -->
-									<!-- start: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
-									<script src="vendor/maskedinput/jquery.maskedinput.min.js"></script>
-									<script src="vendor/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
-									<script src="vendor/autosize/autosize.min.js"></script>
-									<script src="vendor/selectFx/classie.js"></script>
-									<script src="vendor/selectFx/selectFx.js"></script>
-									<script src="vendor/select2/select2.min.js"></script>
-									<script src="vendor/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
-									<script src="vendor/bootstrap-timepicker/bootstrap-timepicker.min.js"></script>
-									<!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
-									<!-- start: CLIP-TWO JAVASCRIPTS -->
-									<script src="assets/js/main.js"></script>
-									<!-- start: JavaScript Event Handlers for this page -->
-									<script src="assets/js/form-elements.js"></script>
-									<script>
-										jQuery(document).ready(function() {
-											Main.init();
-											FormElements.init();
-										});
-									</script>
-									<!-- end: JavaScript Event Handlers for this page -->
-									<!-- end: CLIP-TWO JAVASCRIPTS -->
+								</div>
+							</div>
+
+
+
+
+
+
+							<div class="col-sm-4">
+								<div class="panel panel-white no-radius text-center">
+									<div class="panel-body">
+										<span class="fa-stack fa-2x"> <i class="fa fa-square fa-stack-2x text-primary"></i> <i class="fa fa-smile-o fa-stack-1x fa-inverse"></i> </span>
+										<h2 class="StepTitle">Parking History</h2>
+
+										<p class="links cl-effect-1">
+											<a href="parking_his.php"> Click Here!
+
+											</a>
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+
+
+					<!-- end: SELECT BOXES -->
+
+				</div>
+			</div>
+		</div>
+		<!-- start: FOOTER -->
+		<?php include('include/footer.php'); ?>
+		<!-- end: FOOTER -->
+
+		<!-- start: SETTINGS -->
+		<?php include('include/setting.php'); ?>
+		<!-- end: SETTINGS -->
+	</div>
+	<!-- start: MAIN JAVASCRIPTS -->
+	<script src="vendor/jquery/jquery.min.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="vendor/modernizr/modernizr.js"></script>
+	<script src="vendor/jquery-cookie/jquery.cookie.js"></script>
+	<script src="vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+	<script src="vendor/switchery/switchery.min.js"></script>
+	<!-- end: MAIN JAVASCRIPTS -->
+	<!-- start: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
+	<script src="vendor/maskedinput/jquery.maskedinput.min.js"></script>
+	<script src="vendor/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+	<script src="vendor/autosize/autosize.min.js"></script>
+	<script src="vendor/selectFx/classie.js"></script>
+	<script src="vendor/selectFx/selectFx.js"></script>
+	<script src="vendor/select2/select2.min.js"></script>
+	<script src="vendor/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+	<script src="vendor/bootstrap-timepicker/bootstrap-timepicker.min.js"></script>
+	<!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
+	<!-- start: CLIP-TWO JAVASCRIPTS -->
+	<script src="assets/js/main.js"></script>
+	<!-- start: JavaScript Event Handlers for this page -->
+	<script src="assets/js/form-elements.js"></script>
+	<script>
+		jQuery(document).ready(function() {
+			Main.init();
+			FormElements.init();
+		});
+	</script>
+	<!-- end: JavaScript Event Handlers for this page -->
+	<!-- end: CLIP-TWO JAVASCRIPTS -->
 </body>
 
 </html>
