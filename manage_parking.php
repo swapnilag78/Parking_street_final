@@ -125,6 +125,148 @@ include('config.php');
                             </td>
                         </tr>
 
+                                
+                                
+                        <div class="container-fluid container-fullw bg-white">
+								<div class="row">
+									<div class="col-sm-2">
+										<div class="panel panel-white 80-radius text-center">
+											<div class="panel-body">
+												<h2 class="StepTitle"> <img src="images/cars_1.jpg" height="80px" width="100px"></h2>
+											</div>
+										</div>
+									</div>
+
+                                  
+                                    <div class="container-fluid container-fullw bg-white">
+								<div class="row">
+									<div class="col-sm-2">
+										<div class="panel panel-white 80-radius text-center">
+											<div class="panel-body">
+												<h2 class="StepTitle"> <img src="images/cars_2.jpg" height="80px" width="100px"></h2>
+											</div>
+										</div>
+									</div>
+
+
+                                    <div class="container-fluid container-fullw bg-white">
+								<div class="row">
+									<div class="col-sm-2">
+										<div class="panel panel-white 80-radius text-center">
+											<div class="panel-body">
+												<h2 class="StepTitle"> <img src="images/cars_1.jpg" height="80px" width="100px"></h2>
+											</div>
+										</div>
+									</div>
+
+                                  
+                                    <div class="container-fluid container-fullw bg-white">
+								<div class="row">
+									<div class="col-sm-2">
+										<div class="panel panel-white 80-radius text-center">
+											<div class="panel-body">
+												<h2 class="StepTitle"> <img src="images/cars_2.jpg" height="80px" width="100px"></h2>
+											</div>
+										</div>
+									</div>
+
+
+
+                                    <div class="container-fluid container-fullw bg-white">
+								<div class="row">
+									<div class="col-sm-2">
+										<div class="panel panel-white 80-radius text-center">
+											<div class="panel-body">
+												<h2 class="StepTitle"> <img src="images/cars_1.jpg" height="80px" width="100px"></h2>
+											</div>
+										</div>
+									</div>
+
+                                  
+                                    <div class="container-fluid container-fullw bg-white">
+								<div class="row">
+									<div class="col-sm-2">
+										<div class="panel panel-white 80-radius text-center">
+											<div class="panel-body">
+												<h2 class="StepTitle"> <img src="images/cars_2.jpg" height="80px" width="100px"></h2>
+											</div>
+										</div>
+									</div>
+
+
+
+                                    <div class="container-fluid container-fullw bg-white">
+								<div class="row">
+									<div class="col-sm-2">
+										<div class="panel panel-white 80-radius text-center">
+											<div class="panel-body">
+												<h2 class="StepTitle"> <img src="images/cars_1.jpg" height="80px" width="100px"></h2>
+											</div>
+										</div>
+									</div>
+
+                                  
+                                    <div class="container-fluid container-fullw bg-white">
+								<div class="row">
+									<div class="col-sm-2">
+										<div class="panel panel-white 80-radius text-center">
+											<div class="panel-body">
+												<h2 class="StepTitle"> <img src="images/cars_2.jpg" height="80px" width="100px"></h2>
+											</div>
+										</div>
+									</div>
+
+
+
+                                    <div class="container-fluid container-fullw bg-white">
+								<div class="row">
+									<div class="col-sm-2">
+										<div class="panel panel-white 80-radius text-center">
+											<div class="panel-body">
+												<h2 class="StepTitle"> <img src="images/cars_1.jpg" height="80px" width="100px"></h2>
+											</div>
+										</div>
+									</div>
+
+                                  
+                                    <div class="container-fluid container-fullw bg-white">
+								<div class="row">
+									<div class="col-sm-2">
+										<div class="panel panel-white 80-radius text-center">
+											<div class="panel-body">
+												<h2 class="StepTitle"> <img src="images/cars_2.jpg" height="80px" width="100px"></h2>
+											</div>
+										</div>
+									</div>
+
+
+
+                                    <div class="container-fluid container-fullw bg-white">
+								<div class="row">
+									<div class="col-sm-2">
+										<div class="panel panel-white 80-radius text-center">
+											<div class="panel-body">
+												<h2 class="StepTitle"> <img src="images/cars_1.jpg" height="80px" width="100px"></h2>
+											</div>
+										</div>
+									</div>
+
+                                  
+                                    <div class="container-fluid container-fullw bg-white">
+								<div class="row">
+									<div class="col-sm-2">
+										<div class="panel panel-white 80-radius text-center">
+											<div class="panel-body">
+												<h2 class="StepTitle"> <img src="images/cars_2.jpg" height="80px" width="100px"></h2>
+											</div>
+										</div>
+									</div>
+
+
+                                
+                       
+                                    
+                                    
 
 
                     </div>

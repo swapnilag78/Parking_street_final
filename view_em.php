@@ -103,7 +103,7 @@ if (isset($_GET['del'])) {
 
 												<td>
 													<div class="visible-md visible-lg hidden-sm hidden-xs">
-														<a href="edit-doctor.php?id=<?php echo $row['emp_id']; ?>" class="btn btn-transparent btn-xs" tooltip-placement="top" tooltip="Edit"><i class="fa fa-pencil"></i></a>
+														<a href="edit_emp.php?id=<?php echo $row['emp_id']; ?>" class="btn btn-transparent btn-xs" tooltip-placement="top" tooltip="Edit"><i class="fa fa-pencil"></i></a>
 
 														<a href="view_em.php?id=<?php echo $row['emp_id'] ?>&del=delete" onClick="return confirm('Are you sure you want to delete?')" class="btn btn-transparent btn-xs tooltips" tooltip-placement="top" tooltip="Remove"><i class="fa fa-times fa fa-white"></i></a>
 													</div>
