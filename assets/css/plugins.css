@@ -189,9 +189,9 @@
 /*  Crop Image
 /* ---------------------------------------------------------------------- */
 .cropBox {
-  background-color: #f5f5f5;
-  border-radius: 4px;
-  color: #666;
+  background-color: #23db42;
+  border-radius: 8px;
+  color: rgb(184, 22, 22);
   margin-bottom: 20px;
   padding: 10px;
 }
@@ -260,8 +260,8 @@ img-crop {
 }
 
 .group-title {
-  background-color: #687074 !important;
-  color: #FFF !important;
+  background-color: #ffb92d !important;
+  color: rgb(240, 69, 69) !important;
 }
 
 .dd {

@@ -47,9 +47,9 @@ if (isset($_POST['submit'])) {
 
 <body>
 	<div id="app">
-		<?php include('sidebar.php'); ?>
+		<?php include('bus_sidebar.php'); ?>
 		<div class="app-content">
-			<?php include('header.php'); ?>
+			<?php include('bus_header.php'); ?>
 			<div class="main-content">
 				<div class="wrap-content container" id="container">
 					<!-- start: PAGE TITLE -->

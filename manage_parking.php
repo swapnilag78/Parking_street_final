@@ -1,6 +1,9 @@
 <?php
 session_start();
 include('config.php');
+include('check_login.php');
+check_login();
+
 ?>
 
 <!DOCTYPE html>
@@ -28,47 +31,40 @@ include('config.php');
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/plugins.css">
     <link rel="stylesheet" href="assets/css/themes/theme-4.css" id="skin_color" />
+    <link rel="stylesheet" href="fontawesome/css/all.css"> <!-- mine -->
+    <link rel="stylesheet" href="fontawesome/css/all.css"> <!-- mine -->
+    <link rel="stylesheet" href="fontawesome/css/all.css"> <!-- mine -->
+    <link rel="stylesheet" href="MDB/css/bootstrap.min.css"> <!-- mine -->
+    <link rel="stylesheet" href="MDB/css/mdb.min.css"> <!-- mine -->
+    <link rel="stylesheet" href="MDB/css/style.css"> <!-- mine -->
 
 
-    <style>
-        .car_parking {
-            display: grid;
-            grid-template-columns: auto auto auto auto auto auto;
-            grid-gap: 15px;
-            background-color: whitesmoke;
-            padding: 10px;
-        }
-
-        .car_parking>div {
-            background-color: green;
-            text-align: center;
-            padding: 30px 0;
-            font-size: 40px;
-        }
-
-        .car_parking>div>img {
-            background-color: rgba(255, 255, 255, 0.8);
-            text-align: center;
-            height: 120px;
-            width: 60px;
 
 
-        }
-
-        .item1 {
-            grid-row: 1 / 2;
-        }
-    </style>
+ 
 
 
 </head>
 
+<style>
+.fa-color{
+    color:limegreen;
+}
+.fa-color2{
+    color:red;
+}
+
+</style>
+
+
+
+
 <body>
     <div id="app">
-        <?php include('sidebar.php'); ?>
+        <?php include('bus_sidebar.php'); ?>
         <div class="app-content">
 
-            <?php include('header.php'); ?>
+            <?php include('bus_header.php'); ?>
 
             <!-- end: TOP NAVBAR -->
             <div class="main-content">
@@ -90,44 +86,10 @@ include('config.php');
                     <!-- end: PAGE TITLE -->
                     <!-- start: BASIC EXAMPLE -->
 
+                   
+                    
+               
 
-
-
-                    <div class="flex-container">
-
-                        <!-- Trigger the modal with a button -->
-
-                        <?php $street = 1; ?>
-
-                        <tr>
-                            <td><?php
-                                $res = mysqli_query($con, "SELECT floor_num, lot_num, parking_status from parking_lot_table");
-                                echo '<table border="20" style="width:100% ;" cellspacing="16" cellpadding="10" font face="Arial, Helvetica, sans-serif"  >';
-                                while ($row = mysqli_fetch_assoc($res)) {
-                                    $id = $row['lot_num'];
-                                    echo "<tr>";
-                                    echo "<td>" . $row['floor_num'] . "</td>";
-                                    $sql = "SELECT * FROM parking_lot_table WHERE bus_id='$street' and lot_num='$id' and parking_status='yes'";
-                                    $result = mysqli_query($con, $sql);
-                                    $count = mysqli_num_rows($result);
-                                    if ($count == 1) {
-                                        echo "<td style=\" text-align: center;\">" . $row['lot_num'] .  "</td>";
-                                        echo "<td  style=\"background-color : red; text-align: center;\" >" . "Booked" .  "</td>";
-                                    } else {
-                                        echo "<td style=\" text-align: center;\">" . $row['lot_num'] .  "</td>";
-                                        echo ("<td style=\"background-color : green; text-align: center; background:url(images/car_svg.jpg);\">  <button class=btn btn-success>click!</button> </td>");
-                                    }
-                                }
-                                echo "</table>";
-
-                                ?>
-
-                            </td>
-                        </tr>
-
-
-
-                    </div>
                         <!-- start: FOOTER -->
                         <?php include('include/footer.php'); ?>
                         <!-- end: FOOTER -->
@@ -135,8 +97,8 @@ include('config.php');
                         <!-- start: SETTINGS -->
                         <?php include('include/setting.php'); ?>
                         <!-- end: SETTINGS -->
-                    </div>
-                    <!-- start: MAIN JAVASCRIPTS -->
+                       </div>
+                      <!-- start: MAIN JAVASCRIPTS -->
                     <script src="vendor/jquery/jquery.min.js"></script>
                     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
                     <script src="vendor/modernizr/modernizr.js"></script>

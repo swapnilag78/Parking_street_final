@@ -65,10 +65,10 @@ if (isset($_POST['submit']))
 
 <body>
 	<div id="app">
-		<?php include('sidebar.php'); ?>
+		<?php include('emp_sidebar.php'); ?>
 		<div class="app-content">
 
-			<?php include('header.php'); ?>
+			<?php include('emp_header.php'); ?>
 
 			<!-- end: TOP NAVBAR -->
 			<div class="main-content">
