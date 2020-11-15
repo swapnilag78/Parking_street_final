@@ -104,6 +104,8 @@ check_login();
 									</div>
 								</div>
 							</div>
+														<p class="links cl-effect-1">
+															<a href="manage_testing.php"> Click Here!
 
 
 

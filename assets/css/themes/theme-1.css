@@ -417,7 +417,7 @@ header .dropdown-off-sidebar {
 }
 
 #app > footer {
-  background: #ffffff !important;
+  background: rgb(151, 17, 17) !important;
   border-top-color: #c8c7cc !important;
   color: #777;
 }
