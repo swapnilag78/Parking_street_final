@@ -46,12 +46,12 @@
 					</li>
 
 					<li>
-						<a href="change-password.php">
+						<a href="change_pass_cus.php">
 							Change Password
 						</a>
 					</li>
 					<li>
-						<a href="logout.php">
+						<a href="#">
 							Log Out
 						</a>
 					</li>

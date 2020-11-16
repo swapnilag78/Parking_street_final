@@ -40,7 +40,7 @@
 				</a>
 				<ul class="dropdown-menu dropdown-dark">
 					<li>
-						<a href="logout.php">
+						<a href="ad_logout.php">
 							Log Out
 						</a>
 					</li>

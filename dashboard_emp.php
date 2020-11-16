@@ -109,6 +109,22 @@ check_login();
 									</div>
 								</div>
 							</div>
+
+
+							<div class="col-sm-4">
+								<div class="panel panel-white no-radius text-center">
+									<div class="panel-body">
+										<span class="fa-stack fa-2x"> <i class="fa fa-square fa-stack-2x text-primary"></i> <i class="fa fa-terminal fa-stack-1x fa-inverse"></i> </span>
+										<h2 class="StepTitle"> Generate Bill</h2>
+
+										<p class="links cl-effect-1">
+											<a href="billing.php">
+												Click Here!
+											</a>
+										</p>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 
