@@ -46,7 +46,7 @@
 					</li>
 
 					<li>
-						<a href="change_pass_cus.php">
+						<a href="#">
 							Change Password
 						</a>
 					</li>
