@@ -1,64 +1,409 @@
 <!DOCTYPE html>
+<html lang="en">
+
+<style>
+    .navbar .navbar-brand img {
+      height: 20px;
+    }
+
+    .navbar .navbar-brand {
+      padding-top: 0;
+    }
+
+    .navbar .nav-link {
+      color: #eee6e6!important;
+    }
+
+    .navbar .button-collapse {
+      padding-top: 1px;
+    }
+
+    .card-intro .card-body {
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
+      border-radius: 0 !important;
+    }
+
+    .card-intro .card-body h1 {
+      margin-bottom: 0;
+    }
+
+    .card-intro {
+      margin-top: 64px;
+    }
+
+    @media (max-width: 450px) {
+      .card-intro {
+        margin-top: 56px;
+      }
+    }
+
+    @media (min-width: 1441px) {
+      .card-intro {
+        padding-left: 0 !important;
+      }
+    }
+</style>
+
 <head>
-    <title>PArking Street</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Parking Street</title>
+  
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <!-- Google Fonts Roboto -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="MDB/css/bootstrap.min.css">
+  <!-- Material Design Bootstrap -->
+  <link rel="stylesheet" href="MDB/css/mdb.min.css">
+  <!-- Your custom styles (optional) -->
+  <link rel="stylesheet" href="MDB/css/style.css">
+
 </head>
 <body>
-    <!--Navbar -->
-<nav class="mb-1 navbar navbar-expand-lg navbar-dark default-color">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
-      aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home
-            <span class="sr-only">(current)</span>
+    <!-- Navbar -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark mdb-color lighten-2scrolling-navbar">
+        <div class="container">
+  
+          <!-- Brand -->
+          <a class="navbar-brand waves-effect" href="https://mdbootstrap.com/docs/jquery/" target="_blank">
+            <img src="images/Park_logo.png" alt="Logo">
           </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">Dropdown
-          </a>
-          <div class="dropdown-menu dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
+  
+          <!-- Collapse -->
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+  
+          <!-- Links -->
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  
+            <!-- Left -->
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <a class="nav-link waves-effect" href="#" target="_blank">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link waves-effect" href="#" target="_blank">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link waves-effect" href="#" target="_blank">Contact Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link waves-effect" href="#" target="_blank">Blog</a>
+              </li>
+            </ul>
+   
+            <!-- Right -->
+            <ul class="navbar-nav nav-flex-icons">
+              <li class="nav-item">
+                <a href="#" class="nav-link waves-effect" target="_blank">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+              </li> 
+              <li class="nav-item">
+                <a href="#" class="nav-link waves-effect" target="_blank">
+                  <i class="fab fa-twitter"></i>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link waves-effect"
+                  target="_blank">
+                  <i class="fab fa-github"></i>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link waves-effect" target="_blank">
+                  <i class="fab fa-instagram"></i>
+                </a>
+              </li>
+            </ul>
+  
           </div>
-        </li>
-      </ul>
-      <ul class="navbar-nav ml-auto nav-flex-icons">
-        <li class="nav-item">
-          <a class="nav-link waves-effect waves-light">
-            <i class="fab fa-twitter"></i>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link waves-effect waves-light">
-            <i class="fab fa-google-plus-g"></i>
-          </a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            <i class="fas fa-user"></i>
-          </a>
-          <div class="dropdown-menu dropdown-menu-right dropdown-default"
-            aria-labelledby="navbarDropdownMenuLink-333">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
+  
+        </div>
+      </nav>
+      <!-- Navbar -->
+  
+      <!-- Intro 
+      <div class="card card-intro blue-gradient">
+  
+        <div class="card-body white-text rgba-black-light text-center">
+  
+          Grid row
+          <div class="row d-flex justify-content-center">
+  
+            Grid column
+            <div class="col-md-6">
+  
+              <p class="h5 mb-2">
+                Welcome to Parking Street
+              </p>
+  
+              <p class="mb-0">We provide solution to all your parking problems!</p>
+  
+            </div>
+            Grid column
+  
           </div>
-        </li>
-      </ul>
+          Grid row
+  
+        </div>
+  
+      </div>
+      Intro -->
+  
+    </header>
+
+    <div class="container my-5 py-5 z-depth-1">
+ 
+ 
+        <!--Section: Content-->
+        <section class="px-md-5 mx-md-5 text-center text-lg-left dark-grey-text">
+    
+          <!--Grid row-->
+          <div class="row">
+    
+            <!--Grid column-->
+            <div class="col-md-6 mb-4 mb-md-0">
+    
+              <h3 class="font-weight-bold">Why choose us?</h3>
+    
+              <p class="text-muted">
+                
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id quam sapiente
+                molestiae
+                numquam quas, voluptates omnis nulla ea odio quia similique corrupti magnam, doloremque laborum.
+              </p>
+    
+            </div>
+            <!--Grid column-->
+    
+            <!--Grid column-->
+            <div class="col-md-6 mb-4 mb-md-0">
+    
+              <!--Image-->
+              <div class="view overlay z-depth-1-half">
+                <img src="https://mdbootstrap.com/img/Photos/Others/img%20(29).jpg" class="img-fluid"
+                  alt="">
+                <a href="#">
+                  <div class="mask rgba-white-light"></div>
+                </a>
+              </div>
+    
+            </div>
+            <!--Grid column-->
+    
+          </div>
+          <!--Grid row-->
+    
+    
+        </section>
+        <!--Section: Content-->
+    
+    
+      </div>
+    <div class="container my-5">
+
+        <!-- Section -->
+        <section>
+      
+          <h6 class="font-weight-bold text-center grey-text text-uppercase small mb-4">Services</h6>
+          <h3 class="font-weight-bold text-center dark-grey-text pb-2">Our Services</h3>
+          <hr class="w-header my-4">
+          <p class="lead text-center text-muted pt-2 mb-5">
+            Join thousands of satisfied customers using our template
+            globally.
+          </p>
+      
+          <div class="row">
+      
+            <div class="col-md-6 col-xl-3 mb-4">
+              <div class="card text-center bg-light text-dark">
+                <div class="card-body">
+                  <p class="mt-4 pt-2"><i class="fa fa-user fa-4x" aria-hidden="true"></i></p>
+                  <h5 class="font-weight-normal my-4 py-2"><a class="dark-grey-text" href="#">Customer Login</a></h5>
+                  <p class="text-muted mb-4">He polite be object change. Consider no overcame yourself sociable children.</p>
+                </div>
+              </div>
+            </div>
+      
+            <div class="col-md-6 col-xl-3 mb-4">
+              <div class="card text-center bg-light text-dark">
+                <div class="card-body">
+                  <p class="mt-4 pt-2"><i class="fa fa-briefcase fa-4x" aria-hidden="true"></i></p>
+                  <h5 class="font-weight-normal my-4 py-2"><a class="dark-grey-text" href="#">Business Login</a></h5>
+                  <p class="text-muted mb-4">He polite be object change. Consider no overcame yourself sociable children.</p>
+                </div>
+              </div>
+            </div>
+      
+            <div class="col-md-6 col-xl-3 mb-4">
+              <div class="card text-center bg-light text-dark">
+                <div class="card-body">
+                  <p class="mt-4 pt-2"><i class="fa fa-user-circle fa-4x" aria-hidden="true"></i></p>
+                  <h5 class="font-weight-normal my-4 py-2"><a class="dark-grey-text" href="#">Employee Login</a></h5>
+                  <p class="text-muted mb-4">He polite be object change. Consider no overcame yourself sociable children.</p>
+                </div>
+              </div>
+            </div>
+      
+            <div class="col-md-6 col-xl-3">
+              <div class="card text-center bg-light text-dark">
+                <div class="card-body">
+                  <p class="mt-4 pt-2"><i class="fa fa-lock fa-4x" aria-hidden="true"></i></p>
+                  <h5 class="font-weight-normal my-4 py-2"><a class="dark-grey-text" href="#">Admin Login</a></h5>
+                  <p class="text-muted mb-4">He polite be object change. Consider no overcame yourself sociable children.</p>
+                </div>
+              </div>
+            </div>
+      
+          </div>
+      
+        </section>
+        <!-- Section -->
+      
+      </div>
+
+
+      <!-- Footer -->
+<footer class="page-footer font-small navbar-dark  deep-purple accent-9">
+
+    <!-- Footer Links -->
+    <div class="container text-center text-md-left">
+  
+      <!-- Grid row -->
+      <div class="row">
+  
+        <!-- Grid column -->
+        <div class="col-md-3 mx-auto">
+  
+          <!-- Links -->
+          <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
+  
+          <ul class="list-unstyled">
+            <li>
+              <a href="#!">Very long link 1</a>
+            </li>
+            <li>
+              <a href="#!">Very long link 2</a>
+            </li>
+            <li>
+              <a href="#!">Very long link 3</a>
+            </li>
+            <li>
+              <a href="#!">Very long link 4</a>
+            </li>
+          </ul>
+  
+        </div>
+        <!-- Grid column -->
+  
+        <hr class="clearfix w-100 d-md-none">
+  
+        <!-- Grid column -->
+        <div class="col-md-3 mx-auto">
+  
+          <!-- Links -->
+          <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
+  
+          <ul class="list-unstyled">
+            <li>
+              <a href="#!">Link 1</a>
+            </li>
+            <li>
+              <a href="#!">Link 2</a>
+            </li>
+            <li>
+              <a href="#!">Link 3</a>
+            </li>
+            <li>
+              <a href="#!">Link 4</a>
+            </li>
+          </ul>
+  
+        </div>
+        <!-- Grid column -->
+  
+        <hr class="clearfix w-100 d-md-none">
+  
+        <!-- Grid column -->
+        <div class="col-md-3 mx-auto">
+  
+          <!-- Links -->
+          <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
+  
+          <ul class="list-unstyled">
+            <li>
+              <a href="#!">Link 1</a>
+            </li>
+            <li>
+              <a href="#!">Link 2</a>
+            </li>
+            <li>
+              <a href="#!">Link 3</a>
+            </li>
+            <li>
+              <a href="#!">Link 4</a>
+            </li>
+          </ul>
+  
+        </div>
+        <!-- Grid column -->
+  
+        <hr class="clearfix w-100 d-md-none">
+  
+        <!-- Grid column -->
+        <div class="col-md-3 mx-auto">
+  
+          <!-- Links -->
+          <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
+  
+          <ul class="list-unstyled">
+            <li>
+              <a href="#!">Link 1</a>
+            </li>
+            <li>
+              <a href="#!">Link 2</a>
+            </li>
+            <li>
+              <a href="#!">Link 3</a>
+            </li>
+            <li>
+              <a href="#!">Link 4</a>
+            </li>
+          </ul>
+  
+        </div>
+        <!-- Grid column -->
+  
+      </div>
+      <!-- Grid row -->
+  
     </div>
-  </nav>
-  <!--/.Navbar -->
+    <!-- Footer Links -->
+  
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2020 Copyright:
+      <a href="https://mdbootstrap.com/education/bootstrap/"> ParkingStreet.com</a>
+    </div>
+    <!-- Copyright -->
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="MDB/js/jquery.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="MDB/js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="MDB/js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="MDB/js/mdb.min.js"></script>
+  <!-- Your custom scripts (optional) -->
+  <script type="text/javascript"></script>
+
 </body>
+</html>
