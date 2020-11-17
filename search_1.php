@@ -29,6 +29,8 @@ include('config.php');
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/plugins.css">
     <link rel="stylesheet" href="assets/css/themes/theme-1.css" id="skin_color" />
+    
+    
 
 
 
@@ -139,7 +141,17 @@ include('config.php');
     <!-- end: CLIP-TWO JAVASCRIPTS -->
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
-    <script>
+   
+
+</body>
+
+</html>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>
+
+<script>
         $(document).ready(function() {
 
             $('#category_item').selectpicker();
@@ -180,7 +192,3 @@ include('config.php');
 
         });
     </script>
-
-</body>
-
-</html>

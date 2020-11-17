@@ -5,6 +5,49 @@ include('config.php');
 include('check_login.php');
 check_login();
 
+$page = isset($_GET['page']) ? $_GET['page'] : 1;
+$b_name = mysqli_query($con,"SELECT * from business_table where bus_id='".$_SESSION['id']."' ");
+$row = mysqli_fetch_array($b_name);
+$pages= $row['num_floor'];
+$Previous = $page - 1;
+$Next = $page + 1;
+
+if(isset($_POST['meow']))
+{
+ 
+ 
+ $extra="book_value.php";
+ 
+ $host=$_SERVER['HTTP_HOST'];
+ $uri=rtrim(dirname($_SERVER['PHP_SELF']),'/\\');
+ header("location:http://$host$uri/$extra");
+
+
+
+}
+
+if(isset($_POST['bookId']))
+{
+ $_SESSION['vechile']=$_POST['form3'];
+ $_SESSION['cust_em']=$_POST['form2'];
+  $_SESSION['varf']=$_POST['bookId'];
+ $extra="check.php";
+ 
+ $host=$_SERVER['HTTP_HOST'];
+ $uri=rtrim(dirname($_SERVER['PHP_SELF']),'/\\');
+ header("location:http://$host$uri/$extra");
+
+
+
+}
+
+
+
+
+
+
+
+
 ?>
 
 
@@ -19,11 +62,22 @@ check_login();
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
 
     <!-- Material Design for Bootstrap CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+    
     <link rel="stylesheet" href="fontawesome/css/all.css"> <!-- mine -->
     <link rel="stylesheet" href="MDB/css/bootstrap.min.css"> <!-- mine -->
     <link rel="stylesheet" href="MDB/css/mdb.min.css"> <!-- mine -->
     <link rel="stylesheet" href="MDB/css/style.css"> <!-- mine -->
+ <!-- Font Awesome -->
+ <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+<!-- Google Fonts -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+<!-- Bootstrap core CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+
+   
+
  
 
 <style>
@@ -33,6 +87,12 @@ check_login();
    .fa-color2{
     color:red;
      }
+
+     
+ 
+
+
+
 
 </style>
 
@@ -64,22 +124,44 @@ check_login();
               
             </ul>
           </div>
+
+
  <nav class="navbar navbar-expand-lg navbar-dark deep-purple accent-4 d-flex justify-content-between">
 
-<div>
-  <ul class="list-inline my-2 py-1 text-white">
-    <li class="list-inline-item">
-      <i class="fas fa-bars" aria-hidden="true"></i>
+ <ul class="pagination pg-blue my-1 py-1 ">
+    <li class="page-item">
+      <a href="manage_testing.php?page=<?= $Previous; ?>" class="page-link text-white" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+        <span class="sr-only">Previous</span>
+      </a>
     </li>
-    <li class="list-inline-item pl-3">
-      Select floor
+              <?php for($i = 1; $i<= $pages; $i++) : ?>
+               
+				    	<li class="page-item ">
+            
+
+              <a class="page-link text-white" href="manage_testing.php?page=<?= $i; ?>"><?= $i; ?>
+              
+             </a>
+              </li>
+				       <?php endfor; ?>
+
+
+    <li class="page-item">
+      <a  href="manage_testing.php?page=<?= $Next; ?>"  class="page-link text-white" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+        <span class="sr-only">Next</span>
+      </a>
     </li>
   </ul>
- 
 
 
 
-</div>
+
+
+
+
+
 
 <div>
   <ul class="list-inline my-2 py-1 text-white">
@@ -106,7 +188,7 @@ check_login();
 <?php $street = $_SESSION['id']; ?> 
         <?php
         $var=1;
-        $res = mysqli_query($con, "SELECT floor_num, lot_num, parking_status from parking_lot_table where bus_id='".$_SESSION['id']."' ");
+        $res = mysqli_query($con, "SELECT floor_num, lot_num, parking_status from parking_lot_table where floor_num='$page'and  bus_id='".$_SESSION['id']."' ");
         
         while ($row = mysqli_fetch_assoc($res)) {  ?>
 
@@ -128,13 +210,13 @@ check_login();
 
          <?php } else {?>
                
-              
-                     <button class="btn  btn-outline-dark">
+                     <?php $x=$row['lot_num'] ; ?> 
+                                        <button class="open-AddBookDialog btn  btn-outline-dark" name='click' data-id= "<?= $x;?>"  data-toggle="modal" data-target="#exampleModal" >
                           <i class="fas fa-4x fa-parking fa-color"></i>
                           <div>Parking lot: <?php echo  $row['lot_num'] ; ?>  </div>
                     </button> 
-              
-               
+                      
+         
                     <?php }?>
             </div>
         
@@ -153,13 +235,53 @@ check_login();
    
  
 
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog  modal-notify modal-info" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center text-white">
+        <h4 class="modal-title w-100 font-weight-bold">BOOK </h4>
+        <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form action="" method="POST">
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <i class=" fas fa-car-side prefix grey-text"></i>
+          <input type="text" id="form3" name="form3" class="form-control validate">
+          <label data-error="wrong" data-success="right" for="form3">Enter vehicle number</label>
+        </div>
+
+        <div class="md-form mb-4">
+          <i class="fas fa-envelope prefix grey-text"></i>
+          <input type="email" id="form2" name="form2" class="form-control validate">
+          <label data-error="wrong" data-success="right" for="form2">Enter customer email</label>
+        </div>
+       <!-- <form action="" method="POST">-->
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <button class="btn btn-indigo" id ="bookId" value="bookId" name="bookId">Submit<i class="fas fa-paper-plane-o ml-1"></i></button>
+      </div>
+      </form>
+
+    </div>
+  </div>
+</div>
 
 
 
 
 
+<form action="" method="POST">
+<!--<input id="someId" type="submit" name="meow" value="Button name">-->
 
 
+<button class="btn  btn-outline-dark" name='meow' >
+                         
+                    </button> 
+
+</form>
 
 
 
@@ -168,10 +290,9 @@ check_login();
     
 
 
-
+    <script src="MDB/js/jquery.js"></script>
 <script src="MDB/js/popper.js"></script>
 <script src="MDB/js/bootstrap.min.js"></script>
-<script src="MDB/js/jquery.js"></script>
 
 
 
@@ -181,6 +302,13 @@ check_login();
 })
 </script>
 
+
+
+
+
+
+
+
 <script>
 $(function () {
 $('.example-popover').popover({
@@ -189,14 +317,34 @@ container: 'body'
 })
 </script>
 
+<script>
+$(document).on("click", ".open-AddBookDialog", function () {
+     var myBookId = $(this).data('id');
+     $(".modal-footer #bookId").val( myBookId );
+     // As pointed out in comments, 
+     // it is unnecessary to have to manually call the modal.
+     // $('#addBookDialog').modal('show');
+});
 
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
-    <script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script>
+
+
+</script>
+
+
+
+
+
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+
+
+
   </body>
 </html>

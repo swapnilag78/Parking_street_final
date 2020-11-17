@@ -2,6 +2,17 @@
 session_start();
 error_reporting(0);
 include('config.php');
+if(isset($_POST["type"]))
+{
+ if($_POST["type"] == "sub_sub_category_data")
+ {
+  
+   $_SESSION['var2']= $_POST["sub_sub_category_id"];
+ 
+  
+ }
+
+ }
 
 ?>
 
@@ -16,9 +27,10 @@ include('config.php');
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>
   </head>
+
   <body>
     <br />
-    <div class="container">
+    
       <h3 align="center">Dynamic Dependent Searchable Select Box with PHP Ajax jQuery</h3>
       <br />
       <div class="panel panel-default">
@@ -38,17 +50,18 @@ include('config.php');
           </div>
         </div>
       </div>
-    </div>
+   
 
 
     <a href="cust_parking.php"> <button type="button" class="btn btn-success  pull-right"> Submit </button> </a>
-  </body>
-</html>
 
 
 
 
-<script>
+
+    
+
+    <script>
 $(document).ready(function(){
 
   $('#category_item').selectpicker();
@@ -85,10 +98,58 @@ $(document).ready(function(){
     })
   }
 
+  function final (type, sub_sub_category_id = '')
+  {
+    $.ajax({
+      url:"search.php",
+      method:"POST",
+      data:{type:type, sub_sub_category_id:sub_sub_category_id},
+      dataType:"json",
+     
+    })
+  }
+
+
+
+
+
+
+
+
   $(document).on('change', '#category_item', function(){
     var category_id = $('#category_item').val();
     load_data('sub_category_data', category_id);
   });
+
+  $(document).on('change', '#sub_category_item', function(){
+    var sub_sub_category_id = $('#sub_category_item').val();
+    final('sub_sub_category_data', sub_sub_category_id);
+  });
+
+
+
+
+
   
 });
 </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+  </body>
+</html>
+
+
+
+

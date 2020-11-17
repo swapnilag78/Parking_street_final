@@ -402,3 +402,75 @@ check_login();
       </a>
     </li>
   </ul>
+
+
+
+
+
+
+
+
+  <style>
+    .fa-color{
+    color:limegreen;
+     }
+   .fa-color2{
+    color:red;
+     }
+
+     div div div nav ul li a{
+       background:white;
+     }
+
+    div div div  nav ul li a.active{
+          
+          background:black;
+
+     }
+
+</style>
+
+
+
+
+<script type=text/javascript>
+const currentLocation = location.href;
+const menuItem = document.querySelectorAll('a');
+const menulength = menuItem.length
+for (let j=0; j<menulength; j++){
+ if(menuItem[j].href==currentLocation){
+   menuItem[j].className = "active"
+ }
+
+}
+</script>
+
+
+on sunday
+
+<script>
+  $(function(){
+  $('[data-toggle="popover"]').popover({
+
+    html : true,
+    content : '<div class="bs-example"> <button type="button" class="btn btn-primary" >Click Me</button> <div class="media-body"><h5 class="media-heading">Jhon Carter</h5><p>Excellent Bootstrap popover! I really love it.</p></div></div>'
+
+
+
+
+  })
+})
+</script>
+
+
+
+<script>
+  $(function(){
+  $('[data-toggle="pop"]').popover({
+
+    html : true,
+    content : ' <div class="media-body"><h5 class="media-heading">Jhon Carter</h5><p>Excellent Bootstrap popover! I really love it.</p> <div class="bs-example"> <a href="book_value.php" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">BOOK  </a>  </div></div>'
+
+  })
+})
+</script>
