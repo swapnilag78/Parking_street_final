@@ -86,16 +86,16 @@
             <!-- Left -->
             <ul class="navbar-nav mr-auto">
               <li class="nav-item">
-                <a class="nav-link waves-effect" href="#" target="_blank">Home</a>
+                <a class="nav-link waves-effect" href="index_page.php">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link waves-effect" href="#" target="_blank">About Us</a>
+                <a class="nav-link waves-effect" href="about_us.php" >About Us</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link waves-effect" href="#" target="_blank">Contact Us</a>
+                <a class="nav-link waves-effect" href="contact_us.php" >Contact Us</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link waves-effect" href="#" target="_blank">Blog</a>
+                <a class="nav-link waves-effect" href="blog.php" >Blog</a>
               </li>
             </ul>
    
@@ -163,6 +163,7 @@
       <div class="carousel-caption">
         <h3 class="h3-responsive">Have trouble finding a parking lot?</h3>
         <p>Become a customer now!</p>
+         <a href="customer_signin.php"> <button type="button" class="btn btn-primary">Sign In</button></a>
       </div>
     </div>
     <div class="carousel-item">
@@ -175,6 +176,9 @@
       <div class="carousel-caption">
         <h3 class="h3-responsive">Want to manage your parking lot in a more effeicient way?</h3>
         <p>Create a Business Account to manage it better!</p>
+ <a href="hotel_regis.php"> <button type="button" class="btn btn-primary">Register Now with Us</button></a>
+
+      
       </div>
     </div>
   </div>
@@ -263,7 +267,7 @@
               <div class="card text-center bg-light text-dark">
                 <div class="card-body">
                   <p class="mt-4 pt-2"><i class="fa fa-user fa-4x" aria-hidden="true"></i></p>
-                  <h5 class="font-weight-normal my-4 py-2"><a class="dark-grey-text" href="#">Customer Login</a></h5>
+                  <h5 class="font-weight-normal my-4 py-2"> Customer Login  <br> <a class="dark-grey-text" href="customer_signin.php"> [Click Here]</a></h5>
                   <p class="text-muted mb-4">He polite be object change. Consider no overcame yourself sociable children.</p>
                 </div>
               </div>
@@ -273,7 +277,7 @@
               <div class="card text-center bg-light text-dark">
                 <div class="card-body">
                   <p class="mt-4 pt-2"><i class="fa fa-briefcase fa-4x" aria-hidden="true"></i></p>
-                  <h5 class="font-weight-normal my-4 py-2"><a class="dark-grey-text" href="#">Business Login</a></h5>
+                  <h5 class="font-weight-normal my-4 py-2"> Business Login <br> <a class="dark-grey-text" href="business_em_ad.php">[Click Here]</a></h5>
                   <p class="text-muted mb-4">He polite be object change. Consider no overcame yourself sociable children.</p>
                 </div>
               </div>
@@ -283,7 +287,7 @@
               <div class="card text-center bg-light text-dark">
                 <div class="card-body">
                   <p class="mt-4 pt-2"><i class="fa fa-user-circle fa-4x" aria-hidden="true"></i></p>
-                  <h5 class="font-weight-normal my-4 py-2"><a class="dark-grey-text" href="#">Employee Login</a></h5>
+                  <h5 class="font-weight-normal my-4 py-2">Employee Login <br> <a class="dark-grey-text" href="employee_signin.php">[Click Here]</a></h5>
                   <p class="text-muted mb-4">He polite be object change. Consider no overcame yourself sociable children.</p>
                 </div>
               </div>
@@ -293,7 +297,7 @@
               <div class="card text-center bg-light text-dark">
                 <div class="card-body">
                   <p class="mt-4 pt-2"><i class="fa fa-lock fa-4x" aria-hidden="true"></i></p>
-                  <h5 class="font-weight-normal my-4 py-2"><a class="dark-grey-text" href="#">Admin Login</a></h5>
+                  <h5 class="font-weight-normal my-4 py-2"> Admin Login <br> <a class="dark-grey-text" href="ad_owner.php">[Click Here]</a></h5>
                   <p class="text-muted mb-4">He polite be object change. Consider no overcame yourself sociable children.</p>
                 </div>
               </div>
@@ -324,16 +328,16 @@
   
           <ul class="list-unstyled">
             <li>
-              <a href="#!">Very long link 1</a>
+              <a href="index_page.php">Home</a>
             </li>
             <li>
-              <a href="#!">Very long link 2</a>
+              <a href="about_us.php">About Us</a>
             </li>
             <li>
-              <a href="#!">Very long link 3</a>
+              <a href="contact_us.php">Contact Us</a>
             </li>
             <li>
-              <a href="#!">Very long link 4</a>
+              <a href="blog.php">Blog</a>
             </li>
           </ul>
   
