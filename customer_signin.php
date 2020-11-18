@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 //error_reporting(0);
@@ -8,11 +7,11 @@ check_login();
 if(isset($_POST['submit']))
 {
 $ret=mysqli_query($con,"SELECT * FROM customer_table WHERE cust_username='".$_POST['cust_user']."' and cust_password='".$_POST['password']."'");
-$num=mysqli_fetch_array($ret);
-if($num>0)
+$custdetails=mysqli_fetch_array($ret);
+if($custdetails>0)
 {
-$extra="dashboard_cus.php";
-
+$extra="customer_dashboard.php";
+$_SESSION['cid']=$custdetails['cust_id'];
 $host=$_SERVER['HTTP_HOST'];
 $uri=rtrim(dirname($_SERVER['PHP_SELF']),'/\\');
 header("location:http://$host$uri/$extra");
@@ -33,7 +32,8 @@ exit();
 
 
 
-?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
