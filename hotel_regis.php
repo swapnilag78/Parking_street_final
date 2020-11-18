@@ -61,11 +61,8 @@
   <link rel="stylesheet" href="MDB/css/mdb.min.css">
   <!-- Your custom styles (optional) -->
   <link rel="stylesheet" href="MDB/css/style.css">
-  
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="css/style.css">
 
 </head>
 
@@ -304,6 +301,8 @@
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
 
+
+  
 <!-- Footer -->
 <footer class="page-footer font-small indigo">
 
