@@ -2,7 +2,10 @@
 <html lang="en">
 
 <style>
-    
+
+    .navbar .navbar-brand img {
+      height: 70px;
+    }
     .navbar .navbar-brand {
       padding-top: 0;
     }
@@ -69,12 +72,12 @@
 <body>
 
  <!-- Navbar -->
- <nav class="navbar fixed-top navbar-expand-lg navbar-light mdb-color lighten-2scrolling-navbar">
+ <nav class="navbar fixed-top navbar-expand-lg indigo">
         <div class="container">
   
           <!-- Brand -->
           <a class="navbar-brand waves-effect">
-            <img src="images/logo_1.jpg" alt="Logo" width="60px">
+            <img src="images/Park_logo.png" alt="Logo" width="60px">
           </a>
   
           <!-- Collapse -->
@@ -133,32 +136,58 @@
       </nav>
       <!-- Navbar -->
 
- 
-
-  <div id="demo" class="carousel slide" data-ride="carousel">
-    <ul class="carousel-indicators">
-      <li data-target="#demo" data-slide-to="0" class="active"></li>
-
-
-    </ul>
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="images/streetlights.jpg" alt="Los Angeles" width="900" height="300">
-        <div class="carousel-caption">
-          <h2>Welcome to Parking Street</h2>
-          <h4> Hotel Registration Window</h4>
-
-        </div>
+ <!--Carousel Wrapper-->
+<div id="carousel-example-2" class="carousel slide carousel-fade" data-ride="carousel">
+  <!--Indicators-->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-2" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-2" data-slide-to="1"></li>
+  </ol>
+  <!--/.Indicators-->
+  <!--Slides-->
+  <div class="carousel-inner" role="listbox">
+    <div class="carousel-item active">
+      <div class="view">
+        <img class="d-block w-100" src="images/streetlights.jpg"
+          alt="First slide">
+        <div class="mask rgba-black-light"></div>
       </div>
-
+      <div class="carousel-caption">
+        <h3 class="h3-responsive">Welcome to Parking Street</h3>
+      </div>
     </div>
-    <a class="carousel-control-prev" href="#demo" data-slide="prev">
-      <span class="carousel-control-prev-icon"></span>
-    </a>
-    <a class="carousel-control-next" href="#demo" data-slide="next">
-      <span class="carousel-control-next-icon"></span>
-    </a>
+    <div class="carousel-item">
+      <!--Mask color-->
+      <div class="view">
+        <img class="d-block w-100" src="images/pexels-sergio-souza-2805314_1.jpg"
+          alt="Second slide">
+        <div class="mask rgba-black-light"></div>
+      </div>
+      <div class="carousel-caption">
+        <h3 class="h3-responsive">Hotel Registration Window</h3>
+      </div>
+    </div>
+    <div class="carousel-item">
+
+      
+      </div>
+    </div>
   </div>
+  <!--/.Slides-->
+  <!--Controls-->
+  <a class="carousel-control-prev" href="#carousel-example-2" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carousel-example-2" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+  <!--/.Controls-->
+</div>
+<!--/.Carousel Wrapper-->
+
+  
 
 
   <form class="mr-5 mx-5 my-5" method="post" action="connection.php">
@@ -170,6 +199,7 @@
     <div class="form-group">
       <label for="bus_type">Type of Business</label>
       <select class="form-control" name="bus_type" required="required"  placeholder="Choose">
+      <option selected>Choose...</option>
         <option>Hotel</option>
         <option>Restaurant</option>
         <option>Mall</option>
@@ -204,7 +234,24 @@
         <label for="inputState">State</label>
         <select id="inputState" class="form-control">
           <option selected>Choose...</option>
-          <option>...</option>
+          <option>Andra Pradesh</option>
+          <option>Arunachal Pradesh</option>
+          <option>Assam</option>
+          <option>Bihar</option>
+          <option>Chhattisgarh</option>
+          <option>Delhi</option>
+          <option>Goa</option>
+          <option>Gujarat</option>
+          <option>Haryana</option>
+          <option>Himachal Pradesh</option>
+          <option>Jharkhand</option>
+          <option>Karnataka</option>
+          <option>Kerala</option>
+          <option>Madhya Pradesh</option>
+          <option>Maharashtra</option>
+          <option>Manipur</option>
+          <option>Uttar Pradesh</option>
+          <option></option>
         </select>
       </div>
       <div class="form-group col-md-2">
@@ -230,6 +277,7 @@
     <div class="form-group">
       <label for="floor_number">Number of Floors</label>
       <select class="form-control" name="floor_number">
+      <option selected>Choose...</option>
         <option>1</option>
         <option>2</option>
         <option>3</option>
@@ -257,11 +305,11 @@
   </form>
 
 <!-- Footer -->
-<footer class="page-footer font-small blue">
+<footer class="page-footer font-small indigo">
 
   <!-- Copyright -->
   <div class="footer-copyright text-center py-3">© 2020 Copyright:
-    <a href="index.php"> PARKING STREET</a>
+    <a href="index.php"> PARKING-STREET</a>
   </div>
   <!-- Copyright -->
 
