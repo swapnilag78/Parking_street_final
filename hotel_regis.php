@@ -148,10 +148,10 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto px-3">
         <li class="nav-item active pr-5">
-          <a class="nav-link pr-6" href="index.php">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link pr-6" href="index_page.php">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item pr-5">
-          <a class="nav-link" href="about.php">About Us</a>
+          <a class="nav-link" href="about_us.php">About Us</a>
         </li>
         <li class="nav-item pr-4">
           <a class="nav-link" href="#">Contact Us</a>
@@ -190,30 +190,34 @@
 
     <div class="form-group">
       <label for="business_n">Name of Business</label>
-      <input type="text" class="form-control" name="business_n" placeholder="Business Name">
+      <input type="text" class="form-control" name="business_n" placeholder="Business Name" required="required">
     </div>
     <div class="form-group">
-      <label for="business">Type of Business</label>
-      <input type="text" class="form-control" name="business" placeholder="Business Type">
+      <label for="bus_type">Type of Business</label>
+      <select class="form-control" name="bus_type" required="required"  placeholder="Choose">
+        <option>Hotel</option>
+        <option>Restaurant</option>
+        <option>Mall</option>
+      </select>
     </div>
 
-    <div class="form-row">
-      <div class="form-group col-md-6">
+
+      <div class="form-group ">
         <label for="email">Email</label>
-        <input type="email" class="form-control" name="email" placeholder="Email">
+        <input type="email" class="form-control" name="email" placeholder="Email" required="required">
       </div>
-      <div class="form-group col-md-6">
+      <div class="form-group ">
         <label for="pass_w">Password</label>
-        <input type="password" class="form-control" name="pass_w" placeholder="Password">
+        <input type="password" class="form-control" name="pass_w" placeholder="Password" required="required">
       </div>
-    </div>
+    
     <div class="form-group">
       <label for="phne">Contact Number</label>
-      <input type="phone" class="form-control" name="phne" placeholder="Contact Number">
+      <input type="phone" class="form-control" name="phne" placeholder="Contact Number" required="required">
     </div>
     <div class="form-group">
       <label for="address">Address</label>
-      <textarea class="form-control" name="address" placeholder=""></textarea>
+      <textarea class="form-control" name="address" placeholder="" required="required"></textarea>
     </div>
 
     <div class="form-row">
@@ -230,20 +234,22 @@
       </div>
       <div class="form-group col-md-2">
         <label for="inputZip">Zip</label>
-        <input type="text" class="form-control" id="inputZip">
+        <input type="text" class="form-control" id="inputZip" required="required">
       </div>
     </div>
     <div class="form-group">
       <label for="admin_user">Admin Username</label>
-      <input type="text" class="form-control" name="admin_user" placeholder="Admin Username">
+      <input type="text" class="form-control" name="admin_user" placeholder="Admin Username" required="required">
     </div>
     <div class="form-group">
       <label for="valet_park"> Do You Want Valet Parking?</label>
+      <br>
     <label class="radio-inline">
-      <input type="radio" name="valet_park" checked>Yes
+      <input type="radio" name="valet_park" required="required"> Yes
     </label>
+    <br>
     <label class="radio-inline">
-      <input type="radio" name="valet_park">No
+      <input type="radio" name="valet_park" required="required"> No
     </label>
     </div>
     <div class="form-group">
@@ -257,14 +263,18 @@
     </div>
     <div class="form-group">
       <label for="number_lots">Number of lots on each floor</label>
-      <input type="text" class="form-control" name="number_lots" placeholder=" Number of Parking Lots">
+      <input type="number" class="form-control" name="number_lots" placeholder=" Number of Parking Lots" required="required">
+    </div>
+    <div class="form-group">
+      <label for="parking_rate">Enter Your Parking Lot Rate</label>
+      <input type="number" class="form-control" name="parking_rate" placeholder=" Parking Lot Rate" required="required"> 
     </div>
 
     <div class="form-group">
       <div class="form-check">
         <input class="form-check-input" type="checkbox" id="gridCheck" required="required">
         <label class="form-check-label" for="gridCheck">
-          <a href="#">By signing up, I agree to have read and accepted terms of use, cookie and privacy policy of Parking Street</a>
+          <a href="terms&con.html">By signing up, I agree to have read and accepted terms of use, cookie and privacy policy of Parking Street</a>
         </label>
       </div>
     </div>
