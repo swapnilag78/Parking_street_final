@@ -1,10 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<style>
+    
+    .navbar .navbar-brand {
+      padding-top: 0;
+    }
+
+    .navbar .nav-link {
+      color: #eee6e6!important;
+    }
+
+    .navbar .button-collapse {
+      padding-top: 1px;
+    }
+
+    .card-intro .card-body {
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
+      border-radius: 0 !important;
+    }
+
+    .card-intro .card-body h1 {
+      margin-bottom: 0;
+    }
+
+    .card-intro {
+      margin-top: 64px;
+    }
+
+    @media (max-width: 450px) {
+      .card-intro {
+        margin-top: 56px;
+      }
+    }
+
+    @media (min-width: 1441px) {
+      .card-intro {
+        padding-left: 0 !important;
+      }
+    }
+</style>
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Parking Street</title>
+
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <!-- Google Fonts Roboto -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="MDB/css/bootstrap.min.css">
+  <!-- Material Design Bootstrap -->
+  <link rel="stylesheet" href="MDB/css/mdb.min.css">
+  <!-- Your custom styles (optional) -->
+  <link rel="stylesheet" href="MDB/css/style.css">
+  
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -13,6 +67,72 @@
 </head>
 
 <body>
+
+ <!-- Navbar -->
+ <nav class="navbar fixed-top navbar-expand-lg navbar-light mdb-color lighten-2scrolling-navbar">
+        <div class="container">
+  
+          <!-- Brand -->
+          <a class="navbar-brand waves-effect" href="https://mdbootstrap.com/docs/jquery/" target="_blank">
+            <img src="" alt="Logo">
+          </a>
+  
+          <!-- Collapse -->
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+  
+          <!-- Links -->
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  
+            <!-- Left -->
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <a class="nav-link waves-effect" href="#" target="_blank">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link waves-effect" href="#" target="_blank">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link waves-effect" href="#" target="_blank">Contact Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link waves-effect" href="#" target="_blank">Blog</a>
+              </li>
+            </ul>
+   
+            <!-- Right -->
+            <ul class="navbar-nav nav-flex-icons">
+              <li class="nav-item">
+                <a href="#" class="nav-link waves-effect" target="_blank">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+              </li> 
+              <li class="nav-item">
+                <a href="#" class="nav-link waves-effect" target="_blank">
+                  <i class="fab fa-twitter"></i>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link waves-effect"
+                  target="_blank">
+                  <i class="fab fa-github"></i>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link waves-effect" target="_blank">
+                  <i class="fab fa-instagram"></i>
+                </a>
+              </li>
+            </ul>
+  
+          </div>
+  
+        </div>
+      </nav>
+      <!-- Navbar -->
+
   <!--------navigation bar---------------->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="#">
