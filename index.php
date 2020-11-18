@@ -3,7 +3,7 @@
 
 <style>
     .navbar .navbar-brand img {
-      height: 20px;
+      height: 70px;
     }
 
     .navbar .navbar-brand {
@@ -66,12 +66,12 @@
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar fixed-top navbar-expand-lg navbar-light mdb-color lighten-2scrolling-navbar">
+    <nav class="navbar fixed-top navbar-expand-lg  indigo">
         <div class="container">
   
           <!-- Brand -->
-          <a class="navbar-brand waves-effect" href="https://mdbootstrap.com/docs/jquery/" target="_blank">
-            <img src="images/Park_logo.png" alt="Logo">
+          <a class="navbar-brand waves-effect" href="#" >
+            <img src="images/Park_logo.png" alt="Logo"  height="80px"  width="70px" >
           </a>
   
           <!-- Collapse -->
@@ -102,28 +102,25 @@
             <!-- Right -->
             <ul class="navbar-nav nav-flex-icons">
               <li class="nav-item">
-                <a href="#" class="nav-link waves-effect" target="_blank">
+                <a href="https://www.facebook.com/" class="nav-link waves-effect" target="_blank">
                   <i class="fab fa-facebook-f"></i>
                 </a>
               </li> 
               <li class="nav-item">
-                <a href="#" class="nav-link waves-effect" target="_blank">
+                <a href="https://twitter.com/" class="nav-link waves-effect" target="_blank">
                   <i class="fab fa-twitter"></i>
                 </a>
               </li>
+             
               <li class="nav-item">
-                <a href="#" class="nav-link waves-effect"
-                  target="_blank">
-                  <i class="fab fa-github"></i>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link waves-effect" target="_blank">
+                <a href="https://www.instagram.com/" class="nav-link waves-effect" target="_blank">
                   <i class="fab fa-instagram"></i>
                 </a>
               </li>
+             
+
             </ul>
-  
+            <a href="hotel_regis.php"> <button type="button" class="btn btn-primary">Register Now with Us</button></a>
           </div>
   
         </div>
@@ -213,9 +210,10 @@
     
               <p class="text-muted">
                 
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id quam sapiente
-                molestiae
-                numquam quas, voluptates omnis nulla ea odio quia similique corrupti magnam, doloremque laborum.
+               We provide digitalise parking system in a simpler and user-friendly way!<br>
+               Check the real time availiability of a parking lot<br>
+               Book a Parking lot in advance
+
               </p>
     
             </div>
@@ -256,10 +254,7 @@
           <h6 class="font-weight-bold text-center grey-text text-uppercase small mb-4">Services</h6>
           <h3 class="font-weight-bold text-center dark-grey-text pb-2">Our Services</h3>
           <hr class="w-header my-4">
-          <p class="lead text-center text-muted pt-2 mb-5">
-            Join thousands of satisfied customers using our template
-            globally.
-          </p>
+         
       
           <div class="row">
       
@@ -268,7 +263,7 @@
                 <div class="card-body">
                   <p class="mt-4 pt-2"><i class="fa fa-user fa-4x" aria-hidden="true"></i></p>
                   <h5 class="font-weight-normal my-4 py-2"> Customer Login  <br> <a class="dark-grey-text" href="customer_signin.php"> [Click Here]</a></h5>
-                  <p class="text-muted mb-4">He polite be object change. Consider no overcame yourself sociable children.</p>
+                  <p class="text-muted mb-4">Can't wait to get out of your house to have some fun? Login to check the status of the parking lot!</p>
                 </div>
               </div>
             </div>
@@ -278,7 +273,7 @@
                 <div class="card-body">
                   <p class="mt-4 pt-2"><i class="fa fa-briefcase fa-4x" aria-hidden="true"></i></p>
                   <h5 class="font-weight-normal my-4 py-2"> Business Login <br> <a class="dark-grey-text" href="business_em_ad.php">[Click Here]</a></h5>
-                  <p class="text-muted mb-4">He polite be object change. Consider no overcame yourself sociable children.</p>
+                  <p class="text-muted mb-4"> Too much incoming traffic in your parking lot? Login to start managing your Parking Lot now!</p>
                 </div>
               </div>
             </div>
@@ -288,7 +283,7 @@
                 <div class="card-body">
                   <p class="mt-4 pt-2"><i class="fa fa-user-circle fa-4x" aria-hidden="true"></i></p>
                   <h5 class="font-weight-normal my-4 py-2">Employee Login <br> <a class="dark-grey-text" href="employee_signin.php">[Click Here]</a></h5>
-                  <p class="text-muted mb-4">He polite be object change. Consider no overcame yourself sociable children.</p>
+                  <p class="text-muted mb-4">Work for a business that isregistered with us? Login to start managing the parking lots!</p>
                 </div>
               </div>
             </div>
@@ -298,7 +293,7 @@
                 <div class="card-body">
                   <p class="mt-4 pt-2"><i class="fa fa-lock fa-4x" aria-hidden="true"></i></p>
                   <h5 class="font-weight-normal my-4 py-2"> Admin Login <br> <a class="dark-grey-text" href="ad_owner.php">[Click Here]</a></h5>
-                  <p class="text-muted mb-4">He polite be object change. Consider no overcame yourself sociable children.</p>
+                  <p class="text-muted mb-4">Are you the Website Development and Operations Manager? Login here to start managing the website!</p>
                 </div>
               </div>
             </div>
@@ -309,130 +304,122 @@
         <!-- Section -->
       
       </div>
+<!-- Footer -->
+<footer class="page-footer font-small indigo">
 
+  <!-- Footer Links -->
+  <div class="container">
 
-      <!-- Footer -->
-<footer class="page-footer font-small navbar-dark  deep-purple accent-9">
+    <!-- Grid row-->
+    <div class="row text-center d-flex justify-content-center pt-5 mb-3">
 
-    <!-- Footer Links -->
-    <div class="container text-center text-md-left">
-  
-      <!-- Grid row -->
-      <div class="row">
-  
-        <!-- Grid column -->
-        <div class="col-md-3 mx-auto">
-  
-          <!-- Links -->
-          <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
-  
-          <ul class="list-unstyled">
-            <li>
-              <a href="index_page.php">Home</a>
-            </li>
-            <li>
-              <a href="about_us.php">About Us</a>
-            </li>
-            <li>
-              <a href="contact_us.php">Contact Us</a>
-            </li>
-            <li>
-              <a href="blog.php">Blog</a>
-            </li>
-          </ul>
-  
-        </div>
-        <!-- Grid column -->
-  
-        <hr class="clearfix w-100 d-md-none">
-  
-        <!-- Grid column -->
-        <div class="col-md-3 mx-auto">
-  
-          <!-- Links -->
-          <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
-  
-          <ul class="list-unstyled">
-            <li>
-              <a href="#!">Link 1</a>
-            </li>
-            <li>
-              <a href="#!">Link 2</a>
-            </li>
-            <li>
-              <a href="#!">Link 3</a>
-            </li>
-            <li>
-              <a href="#!">Link 4</a>
-            </li>
-          </ul>
-  
-        </div>
-        <!-- Grid column -->
-  
-        <hr class="clearfix w-100 d-md-none">
-  
-        <!-- Grid column -->
-        <div class="col-md-3 mx-auto">
-  
-          <!-- Links -->
-          <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
-  
-          <ul class="list-unstyled">
-            <li>
-              <a href="#!">Link 1</a>
-            </li>
-            <li>
-              <a href="#!">Link 2</a>
-            </li>
-            <li>
-              <a href="#!">Link 3</a>
-            </li>
-            <li>
-              <a href="#!">Link 4</a>
-            </li>
-          </ul>
-  
-        </div>
-        <!-- Grid column -->
-  
-        <hr class="clearfix w-100 d-md-none">
-  
-        <!-- Grid column -->
-        <div class="col-md-3 mx-auto">
-  
-          <!-- Links -->
-          <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
-  
-          <ul class="list-unstyled">
-            <li>
-              <a href="#!">Link 1</a>
-            </li>
-            <li>
-              <a href="#!">Link 2</a>
-            </li>
-            <li>
-              <a href="#!">Link 3</a>
-            </li>
-            <li>
-              <a href="#!">Link 4</a>
-            </li>
-          </ul>
-  
-        </div>
-        <!-- Grid column -->
-  
+      <!-- Grid column -->
+      <div class="col-md-2 mb-3">
+        <h6 class="text-uppercase font-weight-bold">
+          <a href="index.php">Home</a>
+        </h6>
       </div>
-      <!-- Grid row -->
-  
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-2 mb-3">
+        <h6 class="text-uppercase font-weight-bold">
+          <a href="about_us.php">About Us</a>
+        </h6>
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-2 mb-3">
+        <h6 class="text-uppercase font-weight-bold">
+          <a href="contact_us.php">Contact Us</a>
+        </h6>
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+    
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-2 mb-3">
+        <h6 class="text-uppercase font-weight-bold">
+          <a href="blog.php">Blog</a>
+        </h6>
+      </div>
+      <!-- Grid column -->
+
     </div>
-    <!-- Footer Links -->
-  
-    <!-- Copyright -->
-    <div class="footer-copyright text-center py-3">© 2020 Copyright:
-      <a href="https://mdbootstrap.com/education/bootstrap/"> ParkingStreet.com</a>
+    <!-- Grid row-->
+    <hr class="rgba-white-light" style="margin: 0 15%;">
+
+    <!-- Grid row-->
+    <div class="row d-flex text-center justify-content-center mb-md-0 mb-4">
+
+      <!-- Grid column -->
+      <div class="col-md-8 col-12 mt-5">
+        <p style="line-height: 1.7rem">
+        Our platform aims at converting the existing parking system into a smart parking system. 
+        We use the concept of real-time data acquisition, to not only make the process of finding a parking spot easier but also allow let you manage your parking spaces 
+        in a much more efficient way. Our platform also provides tools to 
+        tackle the problems faced in a traditional Valet parking system. 
+        </p>
+      </div>
+      <!-- Grid column -->
+
     </div>
-    <!-- Copyright -->
+    <!-- Grid row-->
+    <hr class="clearfix d-md-none rgba-white-light" style="margin: 10% 15% 5%;">
+
+    <!-- Grid row-->
+    <div class="row pb-3">
+
+      <!-- Grid column -->
+      <div class="col-md-12">
+
+        <div class="mb-5 flex-center">
+
+          <!-- Facebook -->
+          <a class="fb-ic" href="https://www.facebook.com/">
+            <i class="fab fa-facebook-f fa-lg white-text mr-4"> </i>
+          </a>
+          <!-- Twitter -->
+          <a class="tw-ic" href="https://twitter.com/">
+            <i class="fab fa-twitter fa-lg white-text mr-4"> </i>
+          </a>
+          <!-- Google +-->
+        
+          <!--Linkedin -->
+          <a class="li-ic" href="https://in.linkedin.com/">
+            <i class="fab fa-linkedin-in fa-lg white-text mr-4"> </i>
+          </a>
+          <!--Instagram-->
+          <a class="ins-ic" href="https://www.instagram.com/">
+            <i class="fab fa-instagram fa-lg white-text mr-4"> </i>
+          </a>
+          <!--Pinterest-->
+        
+
+        </div>
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row-->
+
+  </div>
+  <!-- Footer Links -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2020 Copyright:
+    <a href="index.php"> PARKING-STREET</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+
 
   <!-- jQuery -->
   <script type="text/javascript" src="MDB/js/jquery.min.js"></script>

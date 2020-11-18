@@ -256,7 +256,17 @@
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
 
+<!-- Footer -->
+<footer class="page-footer font-small blue">
 
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2020 Copyright:
+    <a href="index.php"> PARKING STREET</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
 
 
 
