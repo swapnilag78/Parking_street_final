@@ -73,8 +73,8 @@
         <div class="container">
   
           <!-- Brand -->
-          <a class="navbar-brand waves-effect" href="https://mdbootstrap.com/docs/jquery/" target="_blank">
-            <img src="" alt="Logo">
+          <a class="navbar-brand waves-effect">
+            <img src="images/logo_1.jpg" alt="Logo" width="60px">
           </a>
   
           <!-- Collapse -->
@@ -133,32 +133,7 @@
       </nav>
       <!-- Navbar -->
 
-  <!--------navigation bar---------------->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">
-      <img src="images/final_logo.jpg" width="60" height="50" class="d-inline-block align-top" alt="" loading="lazy">
-
-    </a>
-    <a class="navbar-brand" href="#">Parking Street</a>
-
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto px-3">
-        <li class="nav-item active pr-5">
-          <a class="nav-link pr-6" href="index_page.php">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item pr-5">
-          <a class="nav-link" href="about_us.php">About Us</a>
-        </li>
-        <li class="nav-item pr-4">
-          <a class="nav-link" href="#">Contact Us</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+ 
 
   <div id="demo" class="carousel slide" data-ride="carousel">
     <ul class="carousel-indicators">
@@ -286,7 +261,16 @@
 
 
 
-
+<!-- jQuery -->
+<script type="text/javascript" src="MDB/js/jquery.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="MDB/js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="MDB/js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="MDB/js/mdb.min.js"></script>
+  <!-- Your custom scripts (optional) -->
+  <script type="text/javascript"></script>
 
 
 

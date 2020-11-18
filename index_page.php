@@ -67,8 +67,8 @@
         <div class="container">
   
           <!-- Brand -->
-          <a class="navbar-brand waves-effect" href="https://mdbootstrap.com/docs/jquery/" target="_blank">
-            <img src="images/Park_logo.png" alt="Logo">
+          <a class="navbar-brand waves-effect">
+            <img src="images/Park_logo.png" alt="Logo" width="60px" height="60px">
           </a>
   
           <!-- Collapse -->
