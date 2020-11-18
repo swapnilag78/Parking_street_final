@@ -35,10 +35,10 @@ include('config.php');
 
 <body>
 	<div id="app">
-		<?php include('sidebar.php'); ?>
+		<?php include('bus_sidebar.php'); ?>
 		<div class="app-content">
 
-			<?php include('header.php'); ?>
+			<?php include('bus_header.php'); ?>
 
 			<!-- end: TOP NAVBAR -->
 			<div class="main-content">

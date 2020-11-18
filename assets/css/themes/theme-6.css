@@ -2,7 +2,7 @@
 /*  Theme 6
 /* ---------------------------------------------------------------------- */
 body {
-  background: #F0F3F4;
+  background: #6fcff0;
 }
 
 @media (max-width: 991px) {
@@ -20,7 +20,7 @@ header .navbar-header .sidebar-toggler, header .navbar-header .sidebar-mobile-to
   color: #5c798f !important;
 }
 header .navbar-header .navbar-brand {
-  color: #ffffff !important;
+  color: #c7f5b2 !important;
 }
 header .navbar-header .menu-toggler {
   color: #5c798f !important;
@@ -205,7 +205,7 @@ header .dropdown-off-sidebar {
 }
 #sidebar nav .button-o {
   border-color: #51C6EA !important;
-  color: #51C6EA !important;
+  color: #8a5411 !important;
 }
 
 @media (min-width: 992px) {

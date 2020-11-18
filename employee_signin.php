@@ -8,9 +8,12 @@ $ret=mysqli_query($con,"SELECT * FROM employee_table WHERE emp_username='".$_POS
 $num=mysqli_fetch_array($ret);
 if($num>0)
 {
-$extra="dashboard.php";
+$extra="new_emp_dashboard.php";
+// making changes here check when pushing the code
 $_SESSION['login']=$_POST['username'];
-$_SESSION['id']=$num['emp_id'];
+$_SESSION['empid']=$num['emp_id'];
+$_SESSION['id']=$num['bus_id'];
+// up to here
 $host=$_SERVER['HTTP_HOST'];
 $uri=rtrim(dirname($_SERVER['PHP_SELF']),'/\\');
 header("location:http://$host$uri/$extra");
@@ -18,7 +21,9 @@ exit();
 }
 else
 {
+
 $_SESSION['errmsg']="Invalid username or password";
+// make some changes here , it should not redirect to emp sign up
 $extra="employee_signup.php";
 $host  = $_SERVER['HTTP_HOST'];
 $uri  = rtrim(dirname($_SERVER['PHP_SELF']),'/\\');

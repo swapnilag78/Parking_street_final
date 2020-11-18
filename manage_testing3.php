@@ -2,7 +2,7 @@
 session_start();
 error_reporting(0);
 include('config.php');
-
+$custid=$_SESSION['cid'];
 $_SESSION['id']=$_SESSION['VAR2'];
 $page = isset($_GET['page']) ? $_GET['page'] : 1;
 $b_name = mysqli_query($con,"SELECT * from business_table where bus_id='".$_SESSION['id']."' ");
@@ -10,8 +10,56 @@ $row = mysqli_fetch_array($b_name);
 $pages= $row['num_floor'];
 $Previous = $page - 1;
 $Next = $page + 1;
+date_default_timezone_set('Asia/Calcutta');
+if(isset($_POST['bookId']))
+{
 
 
+ $_SESSION['timehr']=$_POST['formH'];
+ $_SESSION['timemin']=$_POST['form_min'];
+$h=$_POST['formH'];
+$m=$_POST['form_min'];
+$t=((($h*100)+$m)*100);
+
+
+  $_SESSION['vari']=$_POST['bookId'];
+
+
+  $tim=strtotime($t) ;
+  $tim1=date('y-m-d H:i:s',$tim);
+  
+  $arr1=mysqli_query($con,"SELECT * FROM customer_table WHERE cust_id='$custid' ");
+  $custdet=mysqli_fetch_array($arr1);
+  if($custdet>0)
+  {
+  // check for spelling of vehicle in database
+  $_SESSION['ve1']=$custdet['cust_vehicle_num1'];
+  }
+
+//i have inserted everything in parking lot table ony IN FUTURE i should insert them in pre book table
+  $query = mysqli_query($con, "UPDATE parking_lot_table SET vehicle_num='".$_SESSION['ve1']."',parking_status='yes',entering_time='$tim1' WHERE bus_id='".$_SESSION['id']."' and lot_num= '".$_SESSION['vari']."' and floor_num='$page'     ");
+  if ($query) {
+     echo "<script>alert('Booking done successfully.');</script>";
+//$_SESSION['CHECK']=$tim1;
+
+//$_SESSION['FLOORCHECK']=$page;
+
+  //   $extra="checkanother.php";
+     
+  //   $host=$_SERVER['HTTP_HOST'];
+  //   $uri=rtrim(dirname($_SERVER['PHP_SELF']),'/\\');
+  //   header("location:http://$host$uri/$extra");
+    
+
+     
+
+    echo "<script>window.location.href ='customer_dashboard.php'</script>";
+  }
+
+ 
+
+
+}
 
 
 
@@ -47,7 +95,7 @@ $Next = $page + 1;
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
 <!-- Bootstrap core CSS -->
-
+<link rel="stylesheet" href="custmain.css" />
 
    
   
@@ -342,8 +390,8 @@ position:absolute;
          <?php } else {?>
                
                      <?php $x=$row['lot_num'] ; ?> 
-                     
-                     <button class="btn  btn-outline-dark" name='click' value= <?= $x;?>  data-toggle="modal" data-target="#exampleModal" >
+                     <button class="open-AddBookDialog btn  btn-outline-dark" name='click' data-id= "<?= $x;?>"  data-toggle="modal" data-target="#exampleModal" >
+
                           <i class="fas fa-4x fa-parking fa-color"></i>
                           <div>Parking lot: <?php echo  $row['lot_num'] ; ?>  </div>
                     </button> 
@@ -377,7 +425,9 @@ position:absolute;
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
+      <form action="" method="POST">
       <div class="modal-body mx-3">
+          <!-- UN NECESSARY 
         <div class="md-form mb-5">
           <i class=" fas fa-car-side prefix grey-text"></i>
           <input type="text" id="form3" class="form-control validate">
@@ -389,11 +439,38 @@ position:absolute;
           <input type="email" id="form2" class="form-control validate">
           <label data-error="wrong" data-success="right" for="form2">Enter customer email</label>
         </div>
+        -->
+
+
+        <div class="md-form mb-4">
+        <div class="time-picker" data-time="00:00"  >
+		<div class="hour">
+			<div class="hr-up"></div>
+			<input type="number" class="hr" value="00" id="formH" name="formH"/>
+			<div class="hr-down"></div>
+		</div>
+
+		<div class="separator">:</div>
+
+		<div class="minute">
+			<div class="min-up"></div>
+			<input type="number" class="min" value="00" id="form_min" name="form_min"        >
+			<div class="min-down"></div>
+		</div>
+	</div>
+    </div>
+
+
+
+
+
 
       </div>
       <div class="modal-footer d-flex justify-content-center">
-        <button class="btn btn-indigo">Submit<i class="fas fa-paper-plane-o ml-1"></i></button>
+      <button class="btn btn-indigo" id ="bookId" value="" name="bookId">Submit<i class="fas fa-paper-plane-o ml-1"></i></button>
       </div>
+      </form>
+
     </div>
   </div>
 </div>
@@ -584,8 +661,8 @@ position:absolute;
     <!--/.Copyright-->
 
   </footer>
-  <!--/.Footer-->
-
+  <!--/.for time selectorrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr-->
+  <script src="custmain.js"></script>
   <!-- SCRIPTS -->
   <!-- JQuery -->
   <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
@@ -634,6 +711,28 @@ position:absolute;
   $('[data-toggle="popover"]').popover()
 })
 </script>
+
+<script>
+$(document).on("click", ".open-AddBookDialog", function () {
+     var myBookId = $(this).data('id');
+     $(".modal-footer #bookId").val( myBookId );
+     // As pointed out in comments, 
+     // it is unnecessary to have to manually call the modal.
+     // $('#addBookDialog').modal('show');
+});
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
 
 
 
