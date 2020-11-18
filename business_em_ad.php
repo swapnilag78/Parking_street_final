@@ -8,7 +8,7 @@ $ret=mysqli_query($con,"SELECT * FROM business_table WHERE admin_username='".$_P
 $num=mysqli_fetch_array($ret);
 if($num>0)
 {
-$extra="dashboard.php";
+$extra="new_bus_dash.php";
 $_SESSION['login']=$_POST['username'];
 $_SESSION['id']=$num['bus_id'];
 $host=$_SERVER['HTTP_HOST'];
