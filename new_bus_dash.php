@@ -148,15 +148,9 @@ position:absolute;
     <!-- Sidebar -->
     <div class="sidebar-fixed position-fixed text-center">
 
-<<<<<<< HEAD
       <a class="logo waves-effect ">
         <img src="images/Park_logo.png" alt="logo" height="150px" width="150px">
       </a>
-=======
-<a class="logo waves-effect ">
-  <img src="images/Park_logo.png" alt="logo" height="150px" width="150px">
-</a>
->>>>>>> 0188ebb674ab8d9289a761fcbe47ff0c0bd1b5c2
 
       <div class="list-group list-group-flush">
         <a href="#" class="list-group-item active waves-effect">
