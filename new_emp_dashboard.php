@@ -35,6 +35,8 @@ if(isset($_POST['bookId']))
   
   $timen=date('y-m-d H:i:s',$timen);
 
+
+
   $query = mysqli_query($con, "UPDATE parking_lot_table SET vehicle_num='".$_SESSION['vechile_E']."',parking_status='yes',entering_time='$timen' WHERE bus_id='".$_SESSION['id']."' and lot_num= '".$_SESSION['varentry']."' and floor_num='$page'     ");
   if ($query) {
      echo "<script>alert('vehicle details entered successfully.');</script>";
@@ -80,6 +82,11 @@ $flr=$parkdet['floor_num'];
 $lnum=$parkdet['lot_num'];
 
   }
+$k=0;
+  $querychange = mysqli_query($con, "UPDATE customer_table SET p_book=$k where cust_vehicle_num1='$venum' ");
+
+
+
 //note : need to make many changes , the data base is not proper and i need to insert exit  time in paring lot before making it null and billing also
   $queryhist = mysqli_query($con, "insert into history_table(bus_id,floor_num,lot_num,vehicle_num,entering_time,exiting_time,pre_booking) values ( '$busi','$flr','$lnum', '$venum', '$entryt', '$timeE', '$pre')");
 
@@ -274,8 +281,8 @@ position:absolute;
               </a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link border border-light rounded waves-effect"
-                target="_blank">
+              <a href="index.php" class="nav-link border border-light rounded waves-effect"
+                >
                 LOGOUT
               </a>
             </li>
@@ -287,12 +294,11 @@ position:absolute;
     </nav>
     <!-- Navbar -->
 
-    <!-- Sidebar -->
-    <div class="sidebar-fixed position-fixed">
+    <div class="sidebar-fixed position-fixed text-center">
 
-      <a class="logo-wrapper waves-effect">
-        <img src="images/Park_logo.png" class="img-fluid" alt="">
-      </a>
+<a class="logo waves-effect ">
+  <img src="images/Park_logo.png" alt="logo" height="150px" width="150px">
+</a>
 
       <div class="list-group list-group-flush">
         <a href="#" class="list-group-item active waves-effect">

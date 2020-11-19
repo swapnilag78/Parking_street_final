@@ -335,14 +335,14 @@ position:absolute;
   $preb=$custdet['p_book'];
   }
 ?>
-<?php  if ($preb == 1) { ?>
+<?php  if ($preb == 0) { ?>
           <div class="card  danger-color text-white">
           <?php }else{ ?>
             <div class="card  success-color text-white">
 <?php } ?>
           <div class = "card-header text-center"> BOOKING STATUS</div>
           <div class="card-body py-3 text-center text-white">
-          <?php  if ($preb == 1) { ?>
+          <?php  if ($preb == 0) { ?>
             <h4>No current bookings</h4>
           <?php }else{ ?>
             <p>
