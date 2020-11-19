@@ -133,8 +133,7 @@ position:absolute;
               </a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link border border-light rounded waves-effect"
-                target="_blank">
+              <a href="bus_logout.php" class="nav-link border border-light rounded waves-effect">
                 LOGOUT
               </a>
             </li>
@@ -147,23 +146,23 @@ position:absolute;
     <!-- Navbar -->
 
     <!-- Sidebar -->
-    <div class="sidebar-fixed position-fixed">
+    <div class="sidebar-fixed position-fixed text-center">
 
-      <a class="logo-wrapper waves-effect">
-        <img src="images/Park_logo.png" class="img-fluid" alt="logo">
-      </a>
+<a class="logo waves-effect ">
+  <img src="images/Park_logo.png" alt="logo" height="150px" width="150px">
+</a>
 
       <div class="list-group list-group-flush">
         <a href="#" class="list-group-item active waves-effect">
           <i class="fas fa-chart-pie mr-3"></i>Dashboard
         </a>
-        <a href="#" class="list-group-item list-group-item-action waves-effect">
+        <a href="new_edit_profile_hotel.php" class="list-group-item list-group-item-action waves-effect">
           <i class="fas fa-user mr-3"></i>Update Profile</a>
-        <a href="#" class="list-group-item list-group-item-action waves-effect">
+        <a href="new_manage_emp.php" class="list-group-item list-group-item-action waves-effect">
           <i class="fas fa-table mr-3"></i>Manage Employee</a>
-        <a href="#" class="list-group-item list-group-item-action waves-effect">
+        <a href="new_hotel_parking.php" class="list-group-item list-group-item-action waves-effect">
           <i class="fas fa-map mr-3"></i>Manage Parking</a>
-        <a href="#" class="list-group-item list-group-item-action waves-effect">
+        <a href="new_parking_history.php" class="list-group-item list-group-item-action waves-effect">
           <i class="fas fa-money-bill-alt mr-3"></i>Parking History</a>
       </div>
 
@@ -214,7 +213,7 @@ position:absolute;
 								<div class="card card-white no-radius text-center ">
 									<div class="card-body">
 										<span class="fa-stack fa-2x"> <i class="fa fa-square fa-stack-2x text-primary"></i> <i class="fa fa-user fa-stack-1x fa-inverse"></i> </span>
-										<h2 class="StepTitle">Update Your Business Profile</h2>
+										<h2 class="StepTitle">Update  Profile</h2>
 
 										<p class="links cl-effect-1">
 											<a href="new_edit_profile_hotel.php"> Click Here!
@@ -235,7 +234,7 @@ position:absolute;
 								<div class="card card-white no-radius text-center">
 									<div class="card-body">
 										<span class="fa-stack fa-2x"> <i class="fa fa-square fa-stack-2x text-primary"></i> <i class="fa fa-users fa-stack-1x fa-inverse"></i> </span>
-										<h2 class="StepTitle">Manage Your Employees</h2>
+										<h2 class="StepTitle">Manage Employees</h2>
 
 										<p class="links cl-effect-1">
 											<a href="new_manage_emp.php">
@@ -255,7 +254,7 @@ position:absolute;
 								<div class="card card-white no-radius text-center">
 									<div class="card-body">
 										<span class="fa-stack fa-2x"> <i class="fa fa-square fa-stack-2x text-primary"></i> <i class="fas fa-car-side fa-stack-1x fa-inverse"></i> </span>
-										<h2 class="StepTitle">Manage Your Parking Lots</h2>
+										<h2 class="StepTitle">Manage Parking </h2>
 <!-- AFTER WORD SEE WHAT cl-effect-1 is -->
 										<p class="links cl-effect-1">
 											<a href="new_hotel_parking.php">Click Here!
@@ -272,7 +271,7 @@ position:absolute;
 								<div class="card card-white no-radius text-center">
 									<div class="card-body">
 										<span class="fa-stack fa-2x"> <i class="fa fa-square fa-stack-2x text-primary"></i> <i class="fas fa-history fa-stack-1x fa-inverse"></i> </span>
-										<h2 class="StepTitle">Check Your Parking History</h2>
+										<h2 class="StepTitle">Parking History</h2>
 
 										<p class="links cl-effect-1">
 											<a href="new_parking_history.php"> Click Here!
@@ -462,7 +461,7 @@ position:absolute;
 
     <!--Copyright-->
     <div class="footer-copyright py-3">
-      © 2019 Copyright:
+      © 2020 Copyright:
       <a href="#" target="_blank"> Parking-Street </a>
     </div>
     <!--/.Copyright-->
