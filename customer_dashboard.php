@@ -170,11 +170,11 @@ position:absolute;
     <!-- Navbar -->
 
     <!-- Sidebar -->
-    <div class="sidebar-fixed position-fixed">
+    <div class="sidebar-fixed position-fixed text-center">
 
-      <a class="logo-wrapper waves-effect">
-        <img src="images/Park_logo.png" class="img-fluid" alt="logo">
-      </a>
+<a class="logo waves-effect ">
+  <img src="images/Park_logo.png" alt="logo" height="150px" width="150px">
+</a>
 
       <div class="list-group list-group-flush">
         <a href="#" class="list-group-item active waves-effect">
