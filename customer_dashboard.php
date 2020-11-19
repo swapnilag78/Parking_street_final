@@ -170,11 +170,12 @@ position:absolute;
     <!-- Navbar -->
 
     <!-- Sidebar -->
-    <div class="sidebar-fixed position-fixed">
+    <div class="sidebar-fixed position-fixed text-center">
 
-      <a class="logo-wrapper waves-effect">
-        <img src="images/Park_logo.png" class="img-fluid" alt="logo">
-      </a>
+<a class="logo waves-effect ">
+  <img src="images/Park_logo.png" alt="logo" height="150px" width="150px">
+</a>
+
 
       <div class="list-group list-group-flush">
         <a href="#" class="list-group-item active waves-effect">
@@ -335,14 +336,14 @@ position:absolute;
   $preb=$custdet['p_book'];
   }
 ?>
-<?php  if ($preb == 1) { ?>
+<?php  if ($preb == 0) { ?>
           <div class="card  danger-color text-white">
           <?php }else{ ?>
             <div class="card  success-color text-white">
 <?php } ?>
           <div class = "card-header text-center"> BOOKING STATUS</div>
           <div class="card-body py-3 text-center text-white">
-          <?php  if ($preb == 1) { ?>
+          <?php  if ($preb == 0) { ?>
             <h4>No current bookings</h4>
           <?php }else{ ?>
             <p>
