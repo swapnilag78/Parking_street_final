@@ -40,7 +40,7 @@ $_SESSION['VAR2']=$_POST["sub_sub_category_id"];
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Customer Dashboard</title>
+  <title>Parking Street</title>
   <!-- Font Awesome -->
 
 
@@ -173,7 +173,7 @@ position:absolute;
     <div class="sidebar-fixed position-fixed">
 
       <a class="logo-wrapper waves-effect">
-        <img src="images/Park_logo.png" class="img-fluid" alt="">
+        <img src="images/Park_logo.png" class="img-fluid" alt="logo">
       </a>
 
       <div class="list-group list-group-flush">
@@ -404,7 +404,7 @@ position:absolute;
     <!--Copyright-->
     <div class="footer-copyright py-3">
       © 2019 Copyright:
-      <a href="https://mdbootstrap.com/education/bootstrap/" target="_blank"> MDBootstrap.com </a>
+      <a href="#" target="_blank"> Parking-Street </a>
     </div>
     <!--/.Copyright-->
 
