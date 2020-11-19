@@ -2,12 +2,20 @@
 <html lang="en">
 
 <style>
+
+
+
+
+
+
     .navbar .navbar-brand img {
-      height: 70px;
+      height: 50px;
+     
     }
 
     .navbar .navbar-brand {
       padding-top: 0;
+  
     }
 
     .navbar .nav-link {
@@ -70,8 +78,8 @@
         <div class="container">
   
           <!-- Brand -->
-          <a class="navbar-brand waves-effect" href="#" >
-            <img src="images/Park_logo.png" alt="Logo"  height="80px"  width="70px" >
+          <a class="navbar-brand waves-effect " href="#" >
+            <img src="images/Park_logo.png" alt="Logo"  width="100" >
           </a>
   
           <!-- Collapse -->
