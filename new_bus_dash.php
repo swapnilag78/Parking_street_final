@@ -225,7 +225,7 @@ position:absolute;
 										<h2 class="StepTitle">Update Profile</h2>
 
 										<p class="links cl-effect-1">
-											<a href="edit_profile_hotel.php"> Click Here!
+											<a href="new_edit_profile_hotel.php"> Click Here!
 												
 											</a>
 										</p>
