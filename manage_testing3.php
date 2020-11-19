@@ -35,6 +35,8 @@ $t=((($h*100)+$m)*100);
   // check for spelling of vehicle in database
   $_SESSION['ve1']=$custdet['cust_vehicle_num1'];
   }
+  $z=1;
+  $query1=mysqli_query($con,"UPDATE customer_table SET p_book='$z' WHERE cust_id='$custid' ");
 
 //i have inserted everything in parking lot table ony IN FUTURE i should insert them in pre book table
   $query = mysqli_query($con, "UPDATE parking_lot_table SET vehicle_num='".$_SESSION['ve1']."',parking_status='yes',entering_time='$tim1' WHERE bus_id='".$_SESSION['id']."' and lot_num= '".$_SESSION['vari']."' and floor_num='$page'     ");
