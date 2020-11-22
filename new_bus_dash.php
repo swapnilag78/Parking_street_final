@@ -133,8 +133,7 @@ position:absolute;
               </a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link border border-light rounded waves-effect"
-                target="_blank">
+              <a href="bus_logout.php" class="nav-link border border-light rounded waves-effect">
                 LOGOUT
               </a>
             </li>
@@ -147,23 +146,23 @@ position:absolute;
     <!-- Navbar -->
 
     <!-- Sidebar -->
-    <div class="sidebar-fixed position-fixed">
+    <div class="sidebar-fixed position-fixed text-center">
 
-      <a class="logo-wrapper waves-effect">
-        <img src="images/Park_logo.png" class="img-fluid" alt="logo">
+      <a class="logo waves-effect ">
+        <img src="images/Park_logo.png" alt="logo" height="150px" width="150px">
       </a>
 
       <div class="list-group list-group-flush">
-        <a href="#" class="list-group-item active waves-effect">
+        <a href="new_bus_dashboard.php" class="list-group-item active waves-effect">
           <i class="fas fa-chart-pie mr-3"></i>Dashboard
         </a>
-        <a href="#" class="list-group-item list-group-item-action waves-effect">
+        <a href="new_edit_profile_hotel.php" class="list-group-item list-group-item-action waves-effect">
           <i class="fas fa-user mr-3"></i>Update Profile</a>
-        <a href="#" class="list-group-item list-group-item-action waves-effect">
+        <a href="new_manage_emp.php" class="list-group-item list-group-item-action waves-effect">
           <i class="fas fa-table mr-3"></i>Manage Employee</a>
-        <a href="#" class="list-group-item list-group-item-action waves-effect">
+        <a href="new_hotel_parking.php" class="list-group-item list-group-item-action waves-effect">
           <i class="fas fa-map mr-3"></i>Manage Parking</a>
-        <a href="#" class="list-group-item list-group-item-action waves-effect">
+        <a href="new_parking_history.php" class="list-group-item list-group-item-action waves-effect">
           <i class="fas fa-money-bill-alt mr-3"></i>Parking History</a>
       </div>
 
@@ -214,7 +213,7 @@ position:absolute;
 								<div class="card card-white no-radius text-center ">
 									<div class="card-body">
 										<span class="fa-stack fa-2x"> <i class="fa fa-square fa-stack-2x text-primary"></i> <i class="fa fa-user fa-stack-1x fa-inverse"></i> </span>
-										<h2 class="StepTitle">Update Your Business Profile</h2>
+										<h2 class="StepTitle">Update  Profile</h2>
 
 										<p class="links cl-effect-1">
 											<a href="new_edit_profile_hotel.php"> Click Here!
@@ -235,7 +234,7 @@ position:absolute;
 								<div class="card card-white no-radius text-center">
 									<div class="card-body">
 										<span class="fa-stack fa-2x"> <i class="fa fa-square fa-stack-2x text-primary"></i> <i class="fa fa-users fa-stack-1x fa-inverse"></i> </span>
-										<h2 class="StepTitle">Manage Your Employees</h2>
+										<h2 class="StepTitle">Manage Employees</h2>
 
 										<p class="links cl-effect-1">
 											<a href="new_manage_emp.php">
@@ -255,7 +254,7 @@ position:absolute;
 								<div class="card card-white no-radius text-center">
 									<div class="card-body">
 										<span class="fa-stack fa-2x"> <i class="fa fa-square fa-stack-2x text-primary"></i> <i class="fas fa-car-side fa-stack-1x fa-inverse"></i> </span>
-										<h2 class="StepTitle">Manage Your Parking Lots</h2>
+										<h2 class="StepTitle">Manage Parking </h2>
 <!-- AFTER WORD SEE WHAT cl-effect-1 is -->
 										<p class="links cl-effect-1">
 											<a href="new_hotel_parking.php">Click Here!
@@ -272,7 +271,7 @@ position:absolute;
 								<div class="card card-white no-radius text-center">
 									<div class="card-body">
 										<span class="fa-stack fa-2x"> <i class="fa fa-square fa-stack-2x text-primary"></i> <i class="fas fa-history fa-stack-1x fa-inverse"></i> </span>
-										<h2 class="StepTitle">Check Your Parking History</h2>
+										<h2 class="StepTitle">Parking History</h2>
 
 										<p class="links cl-effect-1">
 											<a href="new_parking_history.php"> Click Here!
@@ -330,7 +329,7 @@ position:absolute;
 
             <!-- Card header -->
             <div class="card-header text-center">
-              Pie chart
+             Weekly sales
             </div>
 
             <!--Card content-->
@@ -351,8 +350,8 @@ position:absolute;
 
               <!-- List group links -->
               <div class="list-group list-group-flush">
-                <a class="list-group-item list-group-item-action waves-effect">Sales
-                  <span class="badge badge-success badge-pill pull-right">22%
+                <a class="list-group-item list-group-item-action waves-effect">Profits
+                  <span class="badge badge-success badge-pill pull-right">10%
                     <i class="fas fa-arrow-up ml-1"></i>
                   </span>
                 </a>
@@ -361,14 +360,11 @@ position:absolute;
                     <i class="fas fa-arrow-down ml-1"></i>
                   </span>
                 </a>
-                <a class="list-group-item list-group-item-action waves-effect">Orders
-                  <span class="badge badge-primary badge-pill pull-right">14</span>
-                </a>
-                <a class="list-group-item list-group-item-action waves-effect">Issues
-                  <span class="badge badge-primary badge-pill pull-right">123</span>
+                <a class="list-group-item list-group-item-action waves-effect">Queries
+                  <span class="badge badge-primary badge-pill pull-right">20</span>
                 </a>
                 <a class="list-group-item list-group-item-action waves-effect">Messages
-                  <span class="badge badge-primary badge-pill pull-right">8</span>
+                  <span class="badge badge-primary badge-pill pull-right">5</span>
                 </a>
               </div>
               <!-- List group links -->
@@ -453,11 +449,11 @@ position:absolute;
     var myPieChart = new Chart(ctxP, {
       type: 'pie',
       data: {
-        labels: ["Red", "Green", "Yellow", "Grey", "Dark Grey"],
+        labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
         datasets: [{
-          data: [300, 50, 100, 40, 120],
-          backgroundColor: ["#F7464A", "#46BFBD", "#FDB45C", "#949FB1", "#4D5360"],
-          hoverBackgroundColor: ["#FF5A5E", "#5AD3D1", "#FFC870", "#A8B3C5", "#616774"]
+          data: [250, 150, 80, 90, 110, 60, 80],
+          backgroundColor: ["#F62B22", "#46BFBD", "#FDB45C", "#949FB1", "#4D5360","#33FF3C","#66E3EB"],
+          hoverBackgroundColor: ["#F62B22", "#5AD3D1", "#FFC870", "#A8B3C5", "#616774","#4D5360","#33FF3C","#66E3EB" ]
         }]
       },
       options: {

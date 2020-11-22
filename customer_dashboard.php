@@ -156,8 +156,8 @@ position:absolute;
               </a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link border border-light rounded waves-effect"
-                target="_blank">
+              <a href="index.php" class="nav-link border border-light rounded waves-effect"
+                >
                 LOGOUT
               </a>
             </li>
@@ -170,11 +170,11 @@ position:absolute;
     <!-- Navbar -->
 
     <!-- Sidebar -->
-    <div class="sidebar-fixed position-fixed">
+    <div class="sidebar-fixed position-fixed text-center">
 
-      <a class="logo-wrapper waves-effect">
-        <img src="images/Park_logo.png" class="img-fluid" alt="logo">
-      </a>
+<a class="logo waves-effect ">
+  <img src="images/Park_logo.png" alt="logo" height="150px" width="150px">
+</a>
 
       <div class="list-group list-group-flush">
         <a href="#" class="list-group-item active waves-effect">
@@ -234,7 +234,7 @@ position:absolute;
     <h3 align="center">Check the availablity of a Parking Lot</h3>
     <br />
     <div class="card">
-      <div class="card-header-title">Select Place</div>
+      <div class="card-header">Select Place</div>
       <div class="card-body">
         <div class="form-group">
           <label>Select Business Type</label>
@@ -305,59 +305,63 @@ position:absolute;
         <div class="col-md-3 mb-4">
 
           <!--Card-->
-          <div class="card mb-4">
+          <div class="card mb-4 info-color no-radius text-center text-white">
 
             <!-- Card header -->
-            <div class="card-header text-center">
-              Pie chart
+            <div class="card-header text-center text-white ">
+              Parking History
             </div>
 
             <!--Card content-->
             <div class="card-body">
 
-              <canvas id="pieChart"></canvas>
+            <span class="fa-stack fa-2x"> <i class="fa fa-square fa-stack-2x text-white"></i> <i class="fas fa-history fa-stack-1x fa-inverse text-info"></i> </span>
+										<h2 class="StepTitle">Parking History</h2>
+
+										<p >
+											<a href="new_cust_parking_history.php"  class="text-white"> Click Here!
+
+											</a>
+										</p>
 
             </div>
 
           </div>
           <!--/.Card-->
-
-          <!--Card-->
-          <div class="card mb-4">
-
-            <!--Card content-->
-            <div class="card-body">
-
-              <!-- List group links -->
-              <div class="list-group list-group-flush">
-                <a class="list-group-item list-group-item-action waves-effect">Sales
-                  <span class="badge badge-success badge-pill pull-right">22%
-                    <i class="fas fa-arrow-up ml-1"></i>
-                  </span>
-                </a>
-                <a class="list-group-item list-group-item-action waves-effect">Traffic
-                  <span class="badge badge-danger badge-pill pull-right">5%
-                    <i class="fas fa-arrow-down ml-1"></i>
-                  </span>
-                </a>
-                <a class="list-group-item list-group-item-action waves-effect">Orders
-                  <span class="badge badge-primary badge-pill pull-right">14</span>
-                </a>
-                <a class="list-group-item list-group-item-action waves-effect">Issues
-                  <span class="badge badge-primary badge-pill pull-right">123</span>
-                </a>
-                <a class="list-group-item list-group-item-action waves-effect">Messages
-                  <span class="badge badge-primary badge-pill pull-right">8</span>
-                </a>
-              </div>
-              <!-- List group links -->
-
-            </div>
-
+  <?php
+  $arr1=mysqli_query($con,"SELECT * FROM customer_table WHERE cust_id=' ".$_SESSION['cid']."' ");
+  $custdet=mysqli_fetch_array($arr1);
+  if($custdet>0)
+  {
+  // check for spelling of vehicle in database light-blue lighten-1
+  $preb=$custdet['p_book'];
+  }
+?>
+<?php  if ($preb == 0) { ?>
+          <div class="card  danger-color text-white">
+          <?php }else{ ?>
+            <div class="card  success-color text-white">
+<?php } ?>
+          <div class = "card-header text-center"> BOOKING STATUS</div>
+          <div class="card-body py-3 text-center text-white">
+          <?php  if ($preb == 0) { ?>
+            <h4>No current bookings</h4>
+          <?php }else{ ?>
+            <p>
+            <h4>ON GOING</h4>
+            <a href="new_cust_status.php" class="text-white">
+            <h5>click here</h5>
+          </a>
+          </p>
+          <?php } ?>
           </div>
-          <!--/.Card-->
 
         </div>
+
+
+
+
+
         <!--Grid column-->
 
       </div>

@@ -155,14 +155,14 @@ position:absolute;
     <!-- Navbar -->
 
     <!-- Sidebar -->
-    <div class="sidebar-fixed position-fixed">
+    <div class="sidebar-fixed position-fixed text-center">
 
-      <a class="logo-wrapper waves-effect">
-        <img src="images/Park_logo.png" class="img-fluid" alt="">
-      </a>
+<a class="logo waves-effect ">
+  <img src="images/Park_logo.png" alt="logo" height="150px" width="150px">
+</a>
 
       <div class="list-group list-group-flush">
-        <a href="#" class="list-group-item active waves-effect">
+        <a href="new_bus_dash.php" class="list-group-item active waves-effect">
           <i class="fas fa-chart-pie mr-3"></i>Dashboard
         </a>
         <a href="#" class="list-group-item list-group-item-action waves-effect">
@@ -423,7 +423,11 @@ position:absolute;
 
     <!--Copyright-->
     <div class="footer-copyright py-3">
+<<<<<<< HEAD
       ©2020 Copyright:
+=======
+      © 2020 Copyright:
+>>>>>>> 5d41ec35aad8094e8842959bc8e8114c72d0dfde
       <a href="#" target="_blank"> Parking-Street </a>
     </div>
     <!--/.Copyright-->

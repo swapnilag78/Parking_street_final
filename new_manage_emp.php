@@ -145,14 +145,14 @@ position:absolute;
     <!-- Navbar -->
 
     <!-- Sidebar -->
-    <div class="sidebar-fixed position-fixed">
+    <div class="sidebar-fixed position-fixed text-center">
 
-      <a class="logo-wrapper waves-effect">
-        <img src="images/Park_logo.png" class="img-fluid" alt="">
-      </a>
+<a class="logo waves-effect ">
+  <img src="images/Park_logo.png" alt="logo" height="150px" width="150px">
+</a>
 
       <div class="list-group list-group-flush">
-        <a href="#" class="list-group-item active waves-effect">
+        <a href="new_bus_dash.php" class="list-group-item active waves-effect">
           <i class="fas fa-chart-pie mr-3"></i>Dashboard
         </a>
         <a href="#" class="list-group-item list-group-item-action waves-effect">
@@ -287,8 +287,8 @@ position:absolute;
 
               <!-- List group links -->
               <div class="list-group list-group-flush">
-                <a class="list-group-item list-group-item-action waves-effect">Sales
-                  <span class="badge badge-success badge-pill pull-right">22%
+                <a class="list-group-item list-group-item-action waves-effect">Profits
+                  <span class="badge badge-success badge-pill pull-right">10%
                     <i class="fas fa-arrow-up ml-1"></i>
                   </span>
                 </a>
@@ -297,14 +297,11 @@ position:absolute;
                     <i class="fas fa-arrow-down ml-1"></i>
                   </span>
                 </a>
-                <a class="list-group-item list-group-item-action waves-effect">Orders
-                  <span class="badge badge-primary badge-pill pull-right">14</span>
-                </a>
-                <a class="list-group-item list-group-item-action waves-effect">Issues
-                  <span class="badge badge-primary badge-pill pull-right">123</span>
+                <a class="list-group-item list-group-item-action waves-effect">Queries
+                  <span class="badge badge-primary badge-pill pull-right">20</span>
                 </a>
                 <a class="list-group-item list-group-item-action waves-effect">Messages
-                  <span class="badge badge-primary badge-pill pull-right">8</span>
+                  <span class="badge badge-primary badge-pill pull-right">5</span>
                 </a>
               </div>
               <!-- List group links -->
@@ -423,18 +420,16 @@ position:absolute;
   <!-- Charts -->
   <script>
     
-    
-
     //pie
     var ctxP = document.getElementById("pieChart").getContext('2d');
     var myPieChart = new Chart(ctxP, {
       type: 'pie',
       data: {
-        labels: ["Red", "Green", "Yellow", "Grey", "Dark Grey"],
+        labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
         datasets: [{
-          data: [300, 50, 100, 40, 120],
-          backgroundColor: ["#F7464A", "#46BFBD", "#FDB45C", "#949FB1", "#4D5360"],
-          hoverBackgroundColor: ["#FF5A5E", "#5AD3D1", "#FFC870", "#A8B3C5", "#616774"]
+          data: [250, 150, 80, 90, 110, 60, 80],
+          backgroundColor: ["#F62B22", "#46BFBD", "#FDB45C", "#949FB1", "#4D5360","#33FF3C","#66E3EB"],
+          hoverBackgroundColor: ["#F62B22", "#5AD3D1", "#FFC870", "#A8B3C5", "#616774","#4D5360","#33FF3C","#66E3EB" ]
         }]
       },
       options: {
@@ -442,6 +437,9 @@ position:absolute;
         legend: false
       }
     });
+
+    
+
 
   </script>
 

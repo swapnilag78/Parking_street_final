@@ -636,8 +636,8 @@ check_login();
 
     <!--Copyright-->
     <div class="footer-copyright py-3">
-      © 2019 Copyright:
-      <a href="https://mdbootstrap.com/bootstrap-tutorial/" target="_blank"> MDBootstrap.com </a>
+      © 2020 Copyright:
+      <a href="#" target="_blank"> PARKING STREET </a>
     </div>
     <!--/.Copyright-->
 
