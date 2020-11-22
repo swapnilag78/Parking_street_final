@@ -106,7 +106,7 @@
             <ul class="navbar-nav nav-flex-icons">
               <li class="nav-item">
                 <a href="#" class="nav-link waves-effect" target="_blank">
-                  <i class="fab fa-facebook-f"></i>
+                  <i class="fab fa-github"></i>
                 </a>
               </li> 
               <li class="nav-item">
@@ -120,11 +120,7 @@
                   <i class="fab fa-github"></i>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link waves-effect" target="_blank">
-                  <i class="fab fa-instagram"></i>
-                </a>
-              </li>
+              
             </ul>
   
           </div>

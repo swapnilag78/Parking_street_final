@@ -243,12 +243,12 @@ position:absolute;
           <ul class="navbar-nav nav-flex-icons">
           <li class="nav-item">
               <a href="#" class="nav-link waves-effect" target="_blank">
-                <i class="fab fa-instagram"></i>
+                <i class="fab fa-github"></i>
               </a>
             </li>
             <li class="nav-item">
               <a href="#" class="nav-link waves-effect" target="_blank">
-                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-linkedin"></i>
               </a>
             </li>
             <li class="nav-item">
@@ -273,7 +273,7 @@ position:absolute;
     <div class="sidebar-fixed position-fixed">
 
       <a class="logo-wrapper waves-effect">
-        <img src="https://mdbootstrap.com/img/logo/mdb-email.png" class="img-fluid" alt="">
+        <img src="images/Park_logo.png" class="img-fluid" alt="">
       </a>
 
       <div class="list-group list-group-flush">
@@ -543,30 +543,24 @@ position:absolute;
     <!-- Social icons -->
     <div class="pb-4">
       <a href="#" target="_blank">
-        <i class="fab fa-facebook-f mr-3"></i>
+        <i class="fab fa-github mr-3"></i>
+      </a>
+
+      <a href="#" target="_blank">
+        <i class="fab fa-linkedin mr-3"></i>
       </a>
 
       <a href="#" target="_blank">
         <i class="fab fa-twitter mr-3"></i>
       </a>
 
-      <a href="#" target="_blank">
-        <i class="fab fa-youtube mr-3"></i>
-      </a>
-
-      <a href="#" target="_blank">
-        <i class="fab fa-pinterest mr-3"></i>
-      </a>
-
-      <a href="#" target="_blank">
-        <i class="fab fa-github mr-3"></i>
-      </a>
+      
     </div>
     <!-- Social icons -->
 
     <!--Copyright-->
     <div class="footer-copyright py-3">
-      © 2019 Copyright:
+      © 2020 Copyright:
       <a href="#" target="_blank"> Parking-Street </a>
     </div>
     <!--/.Copyright-->

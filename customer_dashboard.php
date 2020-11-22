@@ -142,12 +142,12 @@ position:absolute;
           <ul class="navbar-nav nav-flex-icons">
           <li class="nav-item">
               <a href="#" class="nav-link waves-effect" target="_blank">
-                <i class="fab fa-instagram"></i>
+                <i class="fab fa-github"></i>
               </a>
             </li>
             <li class="nav-item">
               <a href="#" class="nav-link waves-effect" target="_blank">
-                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-linkdedin"></i>
               </a>
             </li>
             <li class="nav-item">
@@ -184,6 +184,8 @@ position:absolute;
           <i class="fas fa-user mr-3"></i>Favourite Places</a>
         <a href="#" class="list-group-item list-group-item-action waves-effect">
           <i class="fas fa-table mr-3"></i>Booking Status</a>
+          <a href="#" class="list-group-item list-group-item-action waves-effect">
+          <i class="fas fa-table mr-3"></i>Contact Us</a>
       </div>
 
     </div>
@@ -380,22 +382,15 @@ position:absolute;
     <!-- Social icons -->
     <div class="pb-4">
       <a href="#" target="_blank">
-        <i class="fab fa-facebook-f mr-3"></i>
+        <i class="fab fa-linkedin mr-3"></i>
       </a>
 
       <a href="#" target="_blank">
         <i class="fab fa-twitter mr-3"></i>
       </a>
 
-      <a href="#" target="_blank">
-        <i class="fab fa-youtube mr-3"></i>
-      </a>
 
-      <a href="#" target="_blank">
-        <i class="fab fa-pinterest mr-3"></i>
-      </a>
-
-      <a href="#" target="_blank">
+            <a href="#" target="_blank">
         <i class="fab fa-github mr-3"></i>
       </a>
     </div>

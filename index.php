@@ -95,15 +95,15 @@
                 <a class="nav-link waves-effect" href="contact_us.php" >Contact Us</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link waves-effect" href="blog.php" >Blog</a>
+                <a class="nav-link waves-effect" href="#" >Blog</a>
               </li>
             </ul>
    
             <!-- Right -->
             <ul class="navbar-nav nav-flex-icons">
               <li class="nav-item">
-                <a href="https://www.facebook.com/" class="nav-link waves-effect" target="_blank">
-                  <i class="fab fa-facebook-f"></i>
+                <a href="#" class="nav-link waves-effect" target="_blank">
+                  <i class="fab fa-github"></i>
                 </a>
               </li> 
               <li class="nav-item">
@@ -113,8 +113,8 @@
               </li>
              
               <li class="nav-item">
-                <a href="https://www.instagram.com/" class="nav-link waves-effect" target="_blank">
-                  <i class="fab fa-instagram"></i>
+                <a href="#" class="nav-link waves-effect" target="_blank">
+                  <i class="fab fa-linkedin"></i>
                 </a>
               </li>
              
@@ -379,23 +379,19 @@
 
         <div class="mb-5 flex-center">
 
-          <!-- Facebook -->
-          <a class="fb-ic" href="https://www.facebook.com/">
-            <i class="fab fa-facebook-f fa-lg white-text mr-4"> </i>
-          </a>
+          
           <!-- Twitter -->
           <a class="tw-ic" href="https://twitter.com/">
             <i class="fab fa-twitter fa-lg white-text mr-4"> </i>
           </a>
-          <!-- Google +-->
-        
+          
           <!--Linkedin -->
           <a class="li-ic" href="https://in.linkedin.com/">
             <i class="fab fa-linkedin-in fa-lg white-text mr-4"> </i>
           </a>
-          <!--Instagram-->
+          <!--Github-->
           <a class="ins-ic" href="https://www.instagram.com/">
-            <i class="fab fa-instagram fa-lg white-text mr-4"> </i>
+            <i class="fab fa-github fa-lg white-text mr-4"> </i>
           </a>
           <!--Pinterest-->
         
