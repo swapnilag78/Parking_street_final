@@ -233,7 +233,7 @@ position:absolute;
     <h3 align="center">Check the availablity of a Parking Lot</h3>
     <br />
     <div class="card">
-      <div class="card-header-title">Select Place</div>
+      <div class="card-header">Select Place</div>
       <div class="card-body">
         <div class="form-group">
           <label>Select Business Type</label>
@@ -328,7 +328,7 @@ position:absolute;
           </div>
           <!--/.Card-->
   <?php
-  $arr1=mysqli_query($con,"SELECT * FROM customer_table WHERE cust_id='$custid' ");
+  $arr1=mysqli_query($con,"SELECT * FROM customer_table WHERE cust_id=' ".$_SESSION['cid']."' ");
   $custdet=mysqli_fetch_array($arr1);
   if($custdet>0)
   {
