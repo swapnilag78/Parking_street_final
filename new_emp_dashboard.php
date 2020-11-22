@@ -281,8 +281,8 @@ position:absolute;
               </a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link border border-light rounded waves-effect"
-                target="_blank">
+              <a href="index.php" class="nav-link border border-light rounded waves-effect"
+                >
                 LOGOUT
               </a>
             </li>

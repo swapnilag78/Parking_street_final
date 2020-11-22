@@ -176,7 +176,6 @@ position:absolute;
   <img src="images/Park_logo.png" alt="logo" height="150px" width="150px">
 </a>
 
-
       <div class="list-group list-group-flush">
         <a href="#" class="list-group-item active waves-effect">
           <i class="fas fa-chart-pie mr-3"></i>Dashboard
