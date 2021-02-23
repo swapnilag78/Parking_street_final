@@ -35,6 +35,8 @@ if(isset($_POST['bookId']))
   
   $timen=date('y-m-d H:i:s',$timen);
 
+
+
   $query = mysqli_query($con, "UPDATE parking_lot_table SET vehicle_num='".$_SESSION['vechile_E']."',parking_status='yes',entering_time='$timen' WHERE bus_id='".$_SESSION['id']."' and lot_num= '".$_SESSION['varentry']."' and floor_num='$page'     ");
   if ($query) {
      echo "<script>alert('vehicle details entered successfully.');</script>";
@@ -80,6 +82,11 @@ $flr=$parkdet['floor_num'];
 $lnum=$parkdet['lot_num'];
 
   }
+$k=0;
+  $querychange = mysqli_query($con, "UPDATE customer_table SET p_book=$k where cust_vehicle_num1='$venum' ");
+
+
+
 //note : need to make many changes , the data base is not proper and i need to insert exit  time in paring lot before making it null and billing also
   $queryhist = mysqli_query($con, "insert into history_table(bus_id,floor_num,lot_num,vehicle_num,entering_time,exiting_time,pre_booking) values ( '$busi','$flr','$lnum', '$venum', '$entryt', '$timeE', '$pre')");
 
@@ -142,7 +149,7 @@ $lnum=$parkdet['lot_num'];
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Material Design Bootstrap</title>
+  <title>Parking Street</title>
   <!-- Font Awesome -->
 
 
@@ -226,7 +233,7 @@ position:absolute;
 
         <!-- Brand -->
         <a class="navbar-brand waves-effect" href="https://mdbootstrap.com/docs/jquery/" target="_blank">
-          <strong class="blue-text">MDB</strong>
+          <strong class="blue-text">Parking Street</strong>
         </a>
 
         <!-- Collapse -->
@@ -246,36 +253,37 @@ position:absolute;
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link waves-effect" href="https://mdbootstrap.com/docs/jquery/" target="_blank">About
-                MDB</a>
+              <a class="nav-link waves-effect" href="#" target="_blank">About Us
+              </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link waves-effect" href="https://mdbootstrap.com/docs/jquery/getting-started/download/"
-                target="_blank">Free
-                download</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link waves-effect" href="https://mdbootstrap.com/education/bootstrap/" target="_blank">Free
-                tutorials</a>
+              <a class="nav-link waves-effect" href="#"
+                target="_blank">Contact Us
+                </a>
             </li>
           </ul>
 
           <!-- Right -->
           <ul class="navbar-nav nav-flex-icons">
-            <li class="nav-item">
-              <a href="https://www.facebook.com/mdbootstrap" class="nav-link waves-effect" target="_blank">
-                <i class="fab fa-facebook-f"></i>
+          <li class="nav-item">
+              <a href="#" class="nav-link waves-effect" target="_blank">
+                <i class="fab fa-github"></i>
               </a>
             </li>
             <li class="nav-item">
-              <a href="https://twitter.com/MDBootstrap" class="nav-link waves-effect" target="_blank">
+              <a href="#" class="nav-link waves-effect" target="_blank">
+                <i class="fab fa-linkedin"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link waves-effect" target="_blank">
                 <i class="fab fa-twitter"></i>
               </a>
             </li>
             <li class="nav-item">
-              <a href="https://github.com/mdbootstrap/bootstrap-material-design" class="nav-link border border-light rounded waves-effect"
-                target="_blank">
-                <i class="fab fa-github mr-2"></i>MDB GitHub
+              <a href="index.php" class="nav-link border border-light rounded waves-effect"
+                >
+                LOGOUT
               </a>
             </li>
           </ul>
@@ -286,12 +294,11 @@ position:absolute;
     </nav>
     <!-- Navbar -->
 
-    <!-- Sidebar -->
-    <div class="sidebar-fixed position-fixed">
+    <div class="sidebar-fixed position-fixed text-center">
 
-      <a class="logo-wrapper waves-effect">
-        <img src="https://mdbootstrap.com/img/logo/mdb-email.png" class="img-fluid" alt="">
-      </a>
+<a class="logo waves-effect ">
+  <img src="images/Park_logo.png" alt="logo" height="150px" width="150px">
+</a>
 
       <div class="list-group list-group-flush">
         <a href="#" class="list-group-item active waves-effect">
@@ -299,12 +306,7 @@ position:absolute;
         </a>
         <a href="#" class="list-group-item list-group-item-action waves-effect">
           <i class="fas fa-user mr-3"></i>Profile</a>
-        <a href="#" class="list-group-item list-group-item-action waves-effect">
-          <i class="fas fa-table mr-3"></i>Tables</a>
-        <a href="#" class="list-group-item list-group-item-action waves-effect">
-          <i class="fas fa-map mr-3"></i>Maps</a>
-        <a href="#" class="list-group-item list-group-item-action waves-effect">
-          <i class="fas fa-money-bill-alt mr-3"></i>Orders</a>
+        
       </div>
 
     </div>
@@ -324,19 +326,12 @@ position:absolute;
         <div class="card-body d-sm-flex justify-content-between">
 
           <h4 class="mb-2 mb-sm-0 pt-1">
-            <a href="https://mdbootstrap.com/docs/jquery/" target="_blank">Home Page</a>
+            <a href="#/" target="_blank">Employee</a>
             <span>/</span>
             <span>Dashboard</span>
           </h4>
 
-          <form class="d-flex justify-content-center">
-            <!-- Default input -->
-            <input type="search" placeholder="Type your query" aria-label="Search" class="form-control">
-            <button class="btn btn-primary btn-sm my-0 p" type="submit">
-              <i class="fas fa-search"></i>
-            </button>
-
-          </form>
+          
 
         </div>
 
@@ -659,62 +654,29 @@ position:absolute;
   <!--Footer-->
   <footer class="page-footer text-center font-small primary-color-dark darken-2 mt-4 wow fadeIn">
 
-    <!--Call to action-->
-    <div class="pt-4">
-      <a class="btn btn-outline-white" href="https://mdbootstrap.com/docs/jquery/getting-started/download/" target="_blank"
-        role="button">Download
-        MDB
-        <i class="fas fa-download ml-2"></i>
-      </a>
-      <a class="btn btn-outline-white" href="https://mdbootstrap.com/education/bootstrap/" target="_blank" role="button">Start
-        free tutorial
-        <i class="fas fa-graduation-cap ml-2"></i>
-      </a>
-    </div>
-    <!--/.Call to action-->
-
     <hr class="my-4">
 
     <!-- Social icons -->
     <div class="pb-4">
-      <a href="https://www.facebook.com/mdbootstrap" target="_blank">
-        <i class="fab fa-facebook-f mr-3"></i>
-      </a>
-
-      <a href="https://twitter.com/MDBootstrap" target="_blank">
-        <i class="fab fa-twitter mr-3"></i>
-      </a>
-
-      <a href="https://www.youtube.com/watch?v=7MUISDJ5ZZ4" target="_blank">
-        <i class="fab fa-youtube mr-3"></i>
-      </a>
-
-      <a href="https://plus.google.com/u/0/b/107863090883699620484" target="_blank">
-        <i class="fab fa-google-plus mr-3"></i>
-      </a>
-
-      <a href="https://dribbble.com/mdbootstrap" target="_blank">
-        <i class="fab fa-dribbble mr-3"></i>
-      </a>
-
-      <a href="https://pinterest.com/mdbootstrap" target="_blank">
-        <i class="fab fa-pinterest mr-3"></i>
-      </a>
-
-      <a href="https://github.com/mdbootstrap/bootstrap-material-design" target="_blank">
+      <a href="#" target="_blank">
         <i class="fab fa-github mr-3"></i>
       </a>
 
-      <a href="http://codepen.io/mdbootstrap/" target="_blank">
-        <i class="fab fa-codepen mr-3"></i>
+      <a href="#" target="_blank">
+        <i class="fab fa-linkedin mr-3"></i>
       </a>
+
+      <a href="#" target="_blank">
+        <i class="fab fa-twitter mr-3"></i>
+      </a>
+
     </div>
     <!-- Social icons -->
 
     <!--Copyright-->
     <div class="footer-copyright py-3">
-      © 2019 Copyright:
-      <a href="https://mdbootstrap.com/education/bootstrap/" target="_blank"> MDBootstrap.com </a>
+      © 2020 Copyright:
+      <a href="#" target="_blank"> Parking-Street </a>
     </div>
     <!--/.Copyright-->
 

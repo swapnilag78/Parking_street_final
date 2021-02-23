@@ -12,7 +12,7 @@ if (isset($_POST['submit']))
 	$empname = $_POST['em_name'];
 	$emusername = $_POST['username'];
 	$ememail = $_POST['em_email'];
-	$password = $_POST['npass'];
+	$password = $_GET['npass'];
 	$emp_cont = $_POST['phone_num'];
 	$bus=$_SESSION['id'];
 	$sql = mysqli_query($con, "insert into employee_table(emp_name, emp_username,emp_email,emp_password,bus_id,emp_contact_num) values ('$empname', '$emusername', '$ememail', '$password', '$bus', '$emp_cont')");
@@ -148,7 +148,6 @@ if (isset($_POST['submit']))
 														</label>
 														<input type="password" name="cfpass" class="form-control" placeholder="Confirm Password" required="required">
 													</div>
-
 													<button type="submit" name="submit" id="submit" class="btn btn-o btn-primary">
 														Submit
 													</button>

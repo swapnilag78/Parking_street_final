@@ -2,8 +2,8 @@
 session_start();
 error_reporting(0);
 include('config.php');
-$custid=$_SESSION['cid'];
-$_SESSION['id']=$_SESSION['VAR2'];
+
+
 $page = isset($_GET['page']) ? $_GET['page'] : 1;
 $b_name = mysqli_query($con,"SELECT * from business_table where bus_id='".$_SESSION['id']."' ");
 $row = mysqli_fetch_array($b_name);
@@ -11,54 +11,44 @@ $pages= $row['num_floor'];
 $Previous = $page - 1;
 $Next = $page + 1;
 date_default_timezone_set('Asia/Calcutta');
+$busi=$_SESSION['id'];
+
+
 if(isset($_POST['bookId']))
 {
-
-
- $_SESSION['timehr']=$_POST['formH'];
- $_SESSION['timemin']=$_POST['form_min'];
-$h=$_POST['formH'];
-$m=$_POST['form_min'];
-$t=((($h*100)+$m)*100);
-
-
-  $_SESSION['vari']=$_POST['bookId'];
-
-
-  $tim=strtotime($t) ;
-  $tim1=date('y-m-d H:i:s',$tim);
+ $_SESSION['hvechile_E']=$_POST['form3'];
+ $_SESSION['hcust_em']=$_POST['form2'];
+  $_SESSION['hvarentry']=$_POST['bookId'];
   
-  $arr1=mysqli_query($con,"SELECT * FROM customer_table WHERE cust_id='$custid' ");
-  $custdet=mysqli_fetch_array($arr1);
-  if($custdet>0)
-  {
-  // check for spelling of vehicle in database
-  $_SESSION['ve1']=$custdet['cust_vehicle_num1'];
-  }
-  $z=1;
-  $query1=mysqli_query($con,"UPDATE customer_table SET p_book='$z' WHERE cust_id='$custid' ");
+  $timen=strtotime("now");
+  
+  $timen=date('y-m-d H:i:s',$timen);
 
-//i have inserted everything in parking lot table ony IN FUTURE i should insert them in pre book table
-  $query = mysqli_query($con, "UPDATE parking_lot_table SET vehicle_num='".$_SESSION['ve1']."',parking_status='yes',entering_time='$tim1' WHERE bus_id='".$_SESSION['id']."' and lot_num= '".$_SESSION['vari']."' and floor_num='$page'     ");
+  $query = mysqli_query($con, "UPDATE parking_lot_table SET vehicle_num='".$_SESSION['hvechile_E']."',parking_status='yes',entering_time='$timen' WHERE bus_id='".$_SESSION['id']."' and lot_num= '".$_SESSION['hvarentry']."' and floor_num='$page'     ");
   if ($query) {
-     echo "<script>alert('Booking done successfully.');</script>";
-//$_SESSION['CHECK']=$tim1;
+     echo "<script>alert('vehicle details entered successfully.');</script>";
 
-//$_SESSION['FLOORCHECK']=$page;
-
-  //   $extra="checkanother.php";
-     
-  //   $host=$_SERVER['HTTP_HOST'];
-  //   $uri=rtrim(dirname($_SERVER['PHP_SELF']),'/\\');
-  //   header("location:http://$host$uri/$extra");
     
 
      
 
-    echo "<script>window.location.href ='customer_dashboard.php'</script>";
+    echo "<script>window.location.href ='new_hotel_parking.php'</script>";
+
+
   }
 
+
+
+
+
+
+
+ //$extra="check.php";
  
+ //$host=$_SERVER['HTTP_HOST'];
+ //$uri=rtrim(dirname($_SERVER['PHP_SELF']),'/\\');
+ //header("location:http://$host$uri/$extra");
+
 
 
 }
@@ -66,10 +56,22 @@ $t=((($h*100)+$m)*100);
 
 
 
+
+
+
+
+
+
+
+
+
 ?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
-
 
 <head>
   <meta charset="utf-8">
@@ -85,7 +87,6 @@ $t=((($h*100)+$m)*100);
   
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/mdb.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/css/bootstrap-select.min.css">
 
   <link href="css/style.min.css" rel="stylesheet">
 
@@ -94,9 +95,6 @@ $t=((($h*100)+$m)*100);
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
  
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
-<!-- Bootstrap core CSS -->
-<link rel="stylesheet" href="custmain.css" />
 
   
 
@@ -118,12 +116,16 @@ $t=((($h*100)+$m)*100);
 
   
   <style>
-   .fa-color{
+
+/*     THE PART ENCLOSED BY THIS is written by me DONOT DELETE */
+
+.fa-color{
     color:limegreen;
      }
    .fa-color2{
     color:red;
      }
+/*     THE PART ENCLOSED BY THIS is written by me DONOT DELETE */
 
 
 
@@ -160,8 +162,8 @@ position:absolute;
       <div class="container-fluid">
 
         <!-- Brand -->
-        <a class="navbar-brand waves-effect" href="#">
-        <strong class="blue-text">Parking Street</strong>
+        <a class="navbar-brand waves-effect" href="#" target="_blank">
+          <strong class="blue-text">Parking Street</strong>
         </a>
 
         <!-- Collapse -->
@@ -180,27 +182,27 @@ position:absolute;
                 <span class="sr-only">(current)</span>
               </a>
             </li>
-            <li class="nav-item ">
-              <a class="nav-link waves-effect" href="#">About Us
-              </a>
+            <li class="nav-item">
+              <a class="nav-link waves-effect" href="#" target="_blank">About
+                Us</a>
             </li>
-            <li class="nav-item ">
-              <a class="nav-link waves-effect" href="#">Contact Us
-              </a>
-            </li>
-           </ul>
-           
+            <li class="nav-item">
+              <a class="nav-link waves-effect" href="#"
+                target="_blank">Contact Us
+                </a>
+            
+          </ul>
 
           <!-- Right -->
           <ul class="navbar-nav nav-flex-icons">
           <li class="nav-item">
               <a href="#" class="nav-link waves-effect" target="_blank">
-                <i class="fab fa-instagram"></i>
+                <i class="fab fa-github"></i>
               </a>
             </li>
             <li class="nav-item">
               <a href="#" class="nav-link waves-effect" target="_blank">
-                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-linkedin"></i>
               </a>
             </li>
             <li class="nav-item">
@@ -209,9 +211,8 @@ position:absolute;
               </a>
             </li>
             <li class="nav-item">
-              <a href="index.php" class="nav-link border border-light rounded waves-effect"
-                >
-                LOGOUT
+              <a href="#" class="nav-link border border-light rounded waves-effect"
+                target="_blank">LOGOUT
               </a>
             </li>
           </ul>
@@ -229,15 +230,18 @@ position:absolute;
   <img src="images/Park_logo.png" alt="logo" height="150px" width="150px">
 </a>
 
-
       <div class="list-group list-group-flush">
-        <a href="customer_dashboard.php" class="list-group-item active waves-effect">
+        <a href="new_bus_dash.php" class="list-group-item active waves-effect">
           <i class="fas fa-chart-pie mr-3"></i>Dashboard
         </a>
         <a href="#" class="list-group-item list-group-item-action waves-effect">
-          <i class="fas fa-user mr-3"></i>Favourite Places</a>
+          <i class="fas fa-user mr-3"></i>Update Profile</a>
         <a href="#" class="list-group-item list-group-item-action waves-effect">
-          <i class="fas fa-table mr-3"></i>Booking Status</a>
+          <i class="fas fa-table mr-3"></i>Manage Employee</a>
+        <a href="#" class="list-group-item list-group-item-action waves-effect">
+          <i class="fas fa-map mr-3"></i>Manage Parking</a>
+        <a href="#" class="list-group-item list-group-item-action waves-effect">
+          <i class="fas fa-money-bill-alt mr-3"></i>Parking History</a>
       </div>
 
     </div>
@@ -257,27 +261,21 @@ position:absolute;
         <div class="card-body d-sm-flex justify-content-between">
 
           <h4 class="mb-2 mb-sm-0 pt-1">
-            <a href="#" target="_blank">Customer</a>
+            <a href="#" target="_blank">Business Admin</a>
             <span>/</span>
-            <span>Dashboard</span>
+            <span>Manage Parking</span>
           </h4>
-
-          
 
         </div>
 
       </div>
-
-
-
-
       <!-- Heading -->
 
       <!--Grid row-->
       <div class="row wow fadeIn">
 
         <!--Grid column-->
-        <div class="col-md-9 mb-4">
+        <div class="col-md-12 mb-4">
 
           <!--Card-->
           <div class="card">
@@ -285,8 +283,11 @@ position:absolute;
             <!--Card content-->
             <div class="card-body">
  <!--ajax aaaaaaaaaaaaaaaaaaaaaaaaaaaaa    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa content-->
+ 
+
+
  <div class="row justify-content-center">
-        <div class= "col-md-6">
+        <div class= "col-md-4">
    <div class= "card colorful-card">
 
    <div class="rounded-top deep-purple darken-4 text-white">
@@ -307,12 +308,12 @@ position:absolute;
             </ul>
           </div>
 
-          
+
           <nav class="deep-purple accent-4 py-0">
           <div class="d-flex  justify-content-center">
  <ul class="pagination pg-blue  my-1   ">
     <li class="page-item ">
-      <a href="manage_testing3.php?page=<?= $Previous; ?>" class="page-link text-white" aria-label="Previous">
+      <a href="new_hotel_parking.php?page=<?= $Previous; ?>" class="page-link text-white" aria-label="Previous">
         <span aria-hidden="true">&laquo;</span>
         <span class="sr-only">Previous</span>
       </a>
@@ -322,7 +323,7 @@ position:absolute;
 				    	<li class="page-item ">
             
 
-              <a class="page-link text-white " href="manage_testing3.php?page=<?= $i; ?>"><?= $i; ?>
+              <a class="page-link text-white " href="new_hotel_parking.php?page=<?= $i; ?>"><?= $i; ?>
               
              </a>
               </li>
@@ -330,7 +331,7 @@ position:absolute;
 
 
     <li class="page-item text-white">
-      <a  href="manage_testing3.php?page=<?= $Next; ?>"  class="page-link text-white" aria-label="Next">
+      <a  href="new_hotel_parking.php?page=<?= $Next; ?>"  class="page-link text-white" aria-label="Next">
         <span aria-hidden="true">&raquo;</span>
         <span class="sr-only">Next</span>
       </a>
@@ -338,18 +339,6 @@ position:absolute;
   </ul>
               </div>
               </nav>
-             
-              
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -358,7 +347,7 @@ position:absolute;
    
 <div class="card-body">
 
-<div class="row my-4 ">
+<div class="row my-4">
 <?php $street = $_SESSION['id']; ?> 
         <?php
         $var=1;
@@ -385,13 +374,12 @@ position:absolute;
          <?php } else {?>
                
                      <?php $x=$row['lot_num'] ; ?> 
-                     <button class="open-AddBookDialog btn  btn-outline-dark" name='click' data-id= "<?= $x;?>"  data-toggle="modal" data-target="#exampleModal" >
-
+                                        <button class="open-AddBookDialog btn  btn-outline-dark" name='click' data-id= "<?= $x;?>"  data-toggle="modal" data-target="#exampleModal" >
                           <i class="fas fa-4x fa-parking fa-color"></i>
                           <div>Parking lot: <?php echo  $row['lot_num'] ; ?>  </div>
                     </button> 
                       
-               
+         
                     <?php }?>
             </div>
         
@@ -408,61 +396,35 @@ position:absolute;
     </div>
     </div>
    
-    
+ 
 
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
   aria-hidden="true">
   <div class="modal-dialog  modal-notify modal-info" role="document">
     <div class="modal-content">
       <div class="modal-header text-center text-white">
-        <h4 class="modal-title w-100 font-weight-bold">BOOK</h4>
+        <h4 class="modal-title w-100 font-weight-bold">BOOK </h4>
         <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <form action="" method="POST">
       <div class="modal-body mx-3">
-          <!-- UN NECESSARY 
         <div class="md-form mb-5">
           <i class=" fas fa-car-side prefix grey-text"></i>
-          <input type="text" id="form3" class="form-control validate">
+          <input type="text" id="form3" name="form3" class="form-control validate">
           <label data-error="wrong" data-success="right" for="form3">Enter vehicle number</label>
         </div>
 
         <div class="md-form mb-4">
           <i class="fas fa-envelope prefix grey-text"></i>
-          <input type="email" id="form2" class="form-control validate">
+          <input type="email" id="form2" name="form2" class="form-control validate">
           <label data-error="wrong" data-success="right" for="form2">Enter customer email</label>
         </div>
-        -->
-
-
-        <div class="md-form mb-4">
-        <div class="time-picker" data-time="00:00"  >
-		<div class="hour">
-			<div class="hr-up"></div>
-			<input type="number" class="hr" value="00" id="formH" name="formH"/>
-			<div class="hr-down"></div>
-		</div>
-
-		<div class="separator">:</div>
-
-		<div class="minute">
-			<div class="min-up"></div>
-			<input type="number" class="min" value="00" id="form_min" name="form_min"        >
-			<div class="min-down"></div>
-		</div>
-	</div>
-    </div>
-
-
-
-
-
-
+       <!-- <form action="" method="POST">-->
       </div>
       <div class="modal-footer d-flex justify-content-center">
-      <button class="btn btn-indigo" id ="bookId" value="" name="bookId">Submit<i class="fas fa-paper-plane-o ml-1"></i></button>
+        <button class="btn btn-indigo" id ="bookId" value="bookId" name="bookId">Submit<i class="fas fa-paper-plane-o ml-1"></i></button>
       </div>
       </form>
 
@@ -470,43 +432,17 @@ position:absolute;
   </div>
 </div>
 
+
+
+
+
+
+    
  
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-              
  
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -521,15 +457,55 @@ position:absolute;
         <!--Grid column-->
 
         <!--Grid column-->
-        
+      
         <!--Grid column-->
 
       </div>
  
+      
+     
+
   
-      
-      
-              
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+ 
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+     </div> 
+</div>
+</div>
+</div>       
               
                
        
@@ -546,37 +522,30 @@ position:absolute;
     <!-- Social icons -->
     <div class="pb-4">
       <a href="#" target="_blank">
-        <i class="fab fa-facebook-f mr-3"></i>
+        <i class="fab fa-github mr-3"></i>
+      </a>
+
+      <a href="#" target="_blank">
+        <i class="fab fa-linkedin mr-3"></i>
       </a>
 
       <a href="#" target="_blank">
         <i class="fab fa-twitter mr-3"></i>
       </a>
 
-      <a href="#" target="_blank">
-        <i class="fab fa-youtube mr-3"></i>
-      </a>
-
-      <a href="#" target="_blank">
-        <i class="fab fa-pinterest mr-3"></i>
-      </a>
-
-      <a href="#" target="_blank">
-        <i class="fab fa-github mr-3"></i>
-      </a>
     </div>
     <!-- Social icons -->
 
     <!--Copyright-->
     <div class="footer-copyright py-3">
-      © 2019 Copyright:
+      © 2020 Copyright:
       <a href="#" target="_blank"> Parking-Street </a>
     </div>
     <!--/.Copyright-->
 
   </footer>
-  <!--/.for time selectorrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr-->
-  <script src="custmain.js"></script>
+  <!--/.Footer-->
+
   <!-- SCRIPTS -->
   <!-- JQuery -->
   <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
@@ -595,34 +564,23 @@ position:absolute;
 
   <!-- Charts -->
   <script>
-    
-    
+  $(function(){
+  $('[data-toggle="popover"]').popover()
+})
+</script>
 
-    //pie
-    var ctxP = document.getElementById("pieChart").getContext('2d');
-    var myPieChart = new Chart(ctxP, {
-      type: 'pie',
-      data: {
-        labels: ["Red", "Green", "Yellow", "Grey", "Dark Grey"],
-        datasets: [{
-          data: [300, 50, 100, 40, 120],
-          backgroundColor: ["#F7464A", "#46BFBD", "#FDB45C", "#949FB1", "#4D5360"],
-          hoverBackgroundColor: ["#FF5A5E", "#5AD3D1", "#FFC870", "#A8B3C5", "#616774"]
-        }]
-      },
-      options: {
-        responsive: true,
-        legend: false
-      }
-    });
 
-  </script>
+
+
+
 
 
 
 <script>
-  $(function(){
-  $('[data-toggle="popover"]').popover()
+$(function () {
+$('.example-popover').popover({
+container: 'body'
+})
 })
 </script>
 
@@ -659,6 +617,12 @@ $(document).on("click", ".open-AddBookDialog", function () {
 </body>
 
 </html>
+
+
+
+
+
+
 
 
 

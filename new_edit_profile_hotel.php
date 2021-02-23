@@ -3,28 +3,24 @@ session_start();
 error_reporting(0);
 include('config.php');
 
-
-if(isset($_POST['meow'])){
-    
-    $extra="manage_testing3.php";
- 
-    $host=$_SERVER['HTTP_HOST'];
-    $uri=rtrim(dirname($_SERVER['PHP_SELF']),'/\\');
-    header("location:http://$host$uri/$extra");
-
-
+if (isset($_POST['submit'])) {
+	$busname = $_POST['business_n'];
+	$bus_address = $_POST['address'];
+	$bus_contactno = $_POST['phne'];
+	$bus_email = $_POST['email'];
+	$bus=$_SESSION['id']; 
+	$sql = mysqli_query($con, "UPDATE business_table set bus_name='$busname',bus_address='$bus_address',bus_contact_num='$bus_contactno',bus_email='$bus_email' where bus_id='$bus'");
+	if ($sql) {
+		echo "<script>alert('Hotel Details updated Successfully');</script>";
+	}
 }
 
 
-if(isset($_POST["type"]))
-{
- if($_POST["type"] == "sub_sub_category_data")
- {
 
-$_SESSION['VAR2']=$_POST["sub_sub_category_id"];
- }
- 
-}
+
+
+
+
 
 
 ?>
@@ -34,7 +30,6 @@ $_SESSION['VAR2']=$_POST["sub_sub_category_id"];
 
 <!DOCTYPE html>
 <html lang="en">
-
 
 <head>
   <meta charset="utf-8">
@@ -50,7 +45,6 @@ $_SESSION['VAR2']=$_POST["sub_sub_category_id"];
   
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/mdb.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/css/bootstrap-select.min.css">
 
   <link href="css/style.min.css" rel="stylesheet">
 
@@ -107,8 +101,8 @@ position:absolute;
       <div class="container-fluid">
 
         <!-- Brand -->
-        <a class="navbar-brand waves-effect" href="#">
-        <strong class="blue-text">Parking Street</strong>
+        <a class="navbar-brand waves-effect" href="https://mdbootstrap.com/docs/jquery/" target="_blank">
+          <strong class="blue-text">Parking Street</strong>
         </a>
 
         <!-- Collapse -->
@@ -127,16 +121,16 @@ position:absolute;
                 <span class="sr-only">(current)</span>
               </a>
             </li>
-            <li class="nav-item ">
-              <a class="nav-link waves-effect" href="#">About Us
+            <li class="nav-item">
+              <a class="nav-link waves-effect" href="#" target="_blank">About Us
+                </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link waves-effect" href="#"
+                target="_blank">Contact Us
               </a>
             </li>
-            <li class="nav-item ">
-              <a class="nav-link waves-effect" href="#">Contact Us
-              </a>
-            </li>
-           </ul>
-           
+          </ul>
 
           <!-- Right -->
           <ul class="navbar-nav nav-flex-icons">
@@ -147,7 +141,7 @@ position:absolute;
             </li>
             <li class="nav-item">
               <a href="#" class="nav-link waves-effect" target="_blank">
-                <i class="fab fa-linkdedin"></i>
+                <i class="fab fa-linkedin"></i>
               </a>
             </li>
             <li class="nav-item">
@@ -156,8 +150,8 @@ position:absolute;
               </a>
             </li>
             <li class="nav-item">
-              <a href="index.php" class="nav-link border border-light rounded waves-effect"
-                >
+              <a href="#" class="nav-link border border-light rounded waves-effect"
+                target="_blank">
                 LOGOUT
               </a>
             </li>
@@ -172,20 +166,22 @@ position:absolute;
     <!-- Sidebar -->
     <div class="sidebar-fixed position-fixed text-center">
 
-<a class="logo waves-effect ">
-  <img src="images/Park_logo.png" alt="logo" height="150px" width="150px">
-</a>
+      <a class="logo waves-effect ">
+        <img src="images/Park_logo.png" alt="logo" height="150px" width="150px">
+      </a>
 
       <div class="list-group list-group-flush">
-        <a href="#" class="list-group-item active waves-effect">
+        <a href="new_bus_dash.php" class="list-group-item active waves-effect">
           <i class="fas fa-chart-pie mr-3"></i>Dashboard
         </a>
         <a href="#" class="list-group-item list-group-item-action waves-effect">
-          <i class="fas fa-user mr-3"></i>Favourite Places</a>
+          <i class="fas fa-user mr-3"></i>Update Profile</a>
         <a href="#" class="list-group-item list-group-item-action waves-effect">
-          <i class="fas fa-table mr-3"></i>Booking Status</a>
-          <a href="#" class="list-group-item list-group-item-action waves-effect">
-          <i class="fas fa-table mr-3"></i>Contact Us</a>
+          <i class="fas fa-table mr-3"></i>Manage Employee</a>
+        <a href="#" class="list-group-item list-group-item-action waves-effect">
+          <i class="fas fa-map mr-3"></i>Manage Parking</a>
+        <a href="#" class="list-group-item list-group-item-action waves-effect">
+          <i class="fas fa-money-bill-alt mr-3"></i>Parking History</a>
       </div>
 
     </div>
@@ -205,12 +201,10 @@ position:absolute;
         <div class="card-body d-sm-flex justify-content-between">
 
           <h4 class="mb-2 mb-sm-0 pt-1">
-            <a href="#" target="_blank">Customer</a>
+            <a href="https://mdbootstrap.com/docs/jquery/" target="_blank">Business Admin</a>
             <span>/</span>
-            <span>Dashboard</span>
+            <span>Update Profile</span>
           </h4>
-
-          
 
         </div>
 
@@ -221,7 +215,7 @@ position:absolute;
       <div class="row wow fadeIn">
 
         <!--Grid column-->
-        <div class="col-md-9 mb-4">
+        <div class="col-md-12 mb-4">
 
           <!--Card-->
           <div class="card">
@@ -229,45 +223,125 @@ position:absolute;
             <!--Card content-->
             <div class="card-body">
  <!--ajax aaaaaaaaaaaaaaaaaaaaaaaaaaaaa    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa content-->
- <br />
-    
-    <h3 align="center">Check the availablity of a Parking Lot</h3>
-    <br />
-    <div class="card">
-      <div class="card-header">Select Place</div>
-      <div class="card-body">
-        <div class="form-group">
-          <label>Select Business Type</label>
-          <select name="category_item" id="category_item" class="form-control input-lg" data-live-search="true" title="Select Category">
+ 
+ <div class="container-fluid container-fullw bg-white">
+						<div class="row">
+							<div class="col-md-12">
 
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Select Business Name</label>
-          <select name="sub_category_item" id="sub_category_item" class="form-control input-lg" data-live-search="true" title="Select Sub Category">
+								<div class="row margin-top-30">
+									<div class="col-lg-8 col-md-12">
+										<div class="card card-white">
+											<div class="card-header">
+												<h3>Edit Your Profile</h3>
+											</div>
+											<div class="card-body">
+												<?php $sql = mysqli_query($con, "select * from business_table where admin_username='" . $_SESSION['login'] . "'");
+												while ($data = mysqli_fetch_array($sql)) {
+												?>
+													<h4><?php echo htmlentities($data['bus_name']); ?>'s Profile</h4>
 
-          </select>
+													<hr />
+													<form role="form" name="adddoc" method="post" onSubmit="return valid();">
+														<div class="form-group">
+															<label for="business_n">
+																Name Of Business
+															</label>
+															<input type="text" name="business_n" class="form-control" value="<?php echo htmlentities($data['bus_name']); ?>">
+														</div>
+
+
+														<div class="form-group">
+															<label for="address">
+																Hotel Address
+															</label>
+															<textarea name="address" class="form-control"><?php echo htmlentities($data['bus_address']); ?></textarea>
+														</div>
+
+														<div class="form-group">
+															<label for="valet_park"> Do You Want Valet Parking?</label>
+															<label class="radio-inline">
+																<input type="radio" name="valet_park" checked <?php echo htmlentities($data['bus_valet']); ?> >
+															</label>
+															<label class="radio-inline">
+																<input type="radio" name="valet_park" <?php echo htmlentities($data['bus_valet']); ?>>
+															</label>
+														</div>
+
+														<div class="form-group">
+															<label for="phne">
+																Hotel Contact no
+															</label>
+															<input type="text" name="phne" class="form-control" required="required" value="<?php echo htmlentities($data['bus_contact_num']); ?>">
+														</div>
+
+														<div class="form-group">
+															<label for="email">
+																Email
+															</label>
+															<input type="email" name="email" class="form-control" readonly="readonly" value="<?php echo htmlentities($data['bus_email']); ?>">
+														</div>
+
+
+
+
+													<?php } ?>
+
+
+													<button type="submit" name="submit" class="btn btn-o btn-primary">
+														Update
+													</button>
+													</form>
+											</div>
+										</div>
+									</div>
+
+								</div>
+							</div>
+
+						</div>
+                 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+
+
+
+ 
+
+
+
+
+
+            </div>
+
+          </div>
+          <!--/.Card-->
+
         </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+       
+
       </div>
-    </div>
  
+      
+     
 
-
-    <form action="" method="POST"> <button class="btn  btn-primary" name='meow' >Search </button> </form>
-
-
-
-
-
-
-
-
-
-
-
-
-              
- 
   
 
 
@@ -282,94 +356,33 @@ position:absolute;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-            </div>
-
-          </div>
-          <!--/.Card-->
-
-        </div>
-        <!--Grid column-->
-
-        <!--Grid column-->
-        <div class="col-md-3 mb-4">
-
-          <!--Card-->
-          <div class="card mb-4 info-color no-radius text-center text-white">
-
-            <!-- Card header -->
-            <div class="card-header text-center text-white ">
-              Parking History
-            </div>
-
-            <!--Card content-->
-            <div class="card-body">
-
-            <span class="fa-stack fa-2x"> <i class="fa fa-square fa-stack-2x text-white"></i> <i class="fas fa-history fa-stack-1x fa-inverse text-info"></i> </span>
-										<h2 class="StepTitle">Parking History</h2>
-
-										<p >
-											<a href="new_cust_parking_history.php"  class="text-white"> Click Here!
-
-											</a>
-										</p>
-
-            </div>
-
-          </div>
-          <!--/.Card-->
-  <?php
-  $arr1=mysqli_query($con,"SELECT * FROM customer_table WHERE cust_id=' ".$_SESSION['cid']."' ");
-  $custdet=mysqli_fetch_array($arr1);
-  if($custdet>0)
-  {
-  // check for spelling of vehicle in database light-blue lighten-1
-  $preb=$custdet['p_book'];
-  }
-?>
-<?php  if ($preb == 0) { ?>
-          <div class="card  danger-color text-white">
-          <?php }else{ ?>
-            <div class="card  success-color text-white">
-<?php } ?>
-          <div class = "card-header text-center"> BOOKING STATUS</div>
-          <div class="card-body py-3 text-center text-white">
-          <?php  if ($preb == 0) { ?>
-            <h4>No current bookings</h4>
-          <?php }else{ ?>
-            <p>
-            <h4>ON GOING</h4>
-            <a href="new_cust_status.php" class="text-white">
-            <h5>click here</h5>
-          </a>
-          </p>
-          <?php } ?>
-          </div>
-
-        </div>
-
-
-
-
-
-        <!--Grid column-->
-
-      </div>
+   
  
-     
-      
-      
-              
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+     </div> 
+</div>
+</div>
+</div>       
               
                
        
@@ -380,29 +393,27 @@ position:absolute;
 
   <!--Footer-->
   <footer class="page-footer text-center font-small primary-color-dark darken-2 mt-4 wow fadeIn">
-
     <hr class="my-4">
 
     <!-- Social icons -->
     <div class="pb-4">
       <a href="#" target="_blank">
-        <i class="fab fa-linkedin mr-3"></i>
+        <i class="fab fa-github mr-3"></i>
       </a>
 
       <a href="#" target="_blank">
         <i class="fab fa-twitter mr-3"></i>
       </a>
 
-
-            <a href="#" target="_blank">
-        <i class="fab fa-github mr-3"></i>
+      <a href="#" target="_blank">
+        <i class="fab fa-linkedin mr-3"></i>
       </a>
     </div>
     <!-- Social icons -->
 
     <!--Copyright-->
     <div class="footer-copyright py-3">
-      © 2019 Copyright:
+      © 2020 Copyright:
       <a href="#" target="_blank"> Parking-Street </a>
     </div>
     <!--/.Copyright-->
@@ -453,7 +464,6 @@ position:absolute;
 
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/js/bootstrap-select.min.js"></script>
 
 
 
@@ -478,53 +488,6 @@ position:absolute;
 
 
 
-<script>
-$(document).ready(function(){
-
-  $('#category_item').selectpicker();
-
-  $('#sub_category_item').selectpicker();
-
-  load_data('category_data');
-
-  function load_data(type, category_id = '')
-  {
-    $.ajax({
-      url:"load_data.php",
-      method:"POST",
-      data:{type:type, category_id:category_id},
-      dataType:"json",
-      success:function(data)
-      {
-        var html = '';
-        for(var count = 0; count < data.length; count++)
-        {
-          html += '<option value="'+data[count].id+'">'+data[count].name+'</option>';
-        }
-        if(type == 'category_data')
-        {
-          $('#category_item').html(html);
-          $('#category_item').selectpicker('refresh');
-        }
-        else
-        {
-          $('#sub_category_item').html(html);
-          $('#sub_category_item').selectpicker('refresh');
-        }
-      }
-    })
-  }
-
-  function final (type, sub_sub_category_id = '')
-  {
-    $.ajax({
-      url:"testingadmin_3.php",
-      method:"POST",
-      data:{type:type, sub_sub_category_id:sub_sub_category_id},
-      dataType:"json",
-     
-    })
-  }
 
 
 
@@ -532,21 +495,3 @@ $(document).ready(function(){
 
 
 
-
-  $(document).on('change', '#category_item', function(){
-    var category_id = $('#category_item').val();
-    load_data('sub_category_data', category_id);
-  });
-
-  $(document).on('change', '#sub_category_item', function(){
-    var sub_sub_category_id = $('#sub_category_item').val();
-    final('sub_sub_category_data', sub_sub_category_id);
-  });
-
-
-
-
-
-  
-});
-</script>
